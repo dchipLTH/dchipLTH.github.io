@@ -1,0 +1,264 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { MAIL } from '../../consts';
+import en from '../../locales/en.json';
+import sv from '../../locales/sv.json';
+
+
+// Extract the language from the first segment of the URL path
+const pathParts = Astro.url.pathname.split('/');
+const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specified
+
+// Set the appropriate translations based on the language
+const translations = lang === 'en' ? en : sv;
+
+const president = [
+{
+    name: "Linnea Sandsjö",
+	position: "Ordförande",
+    class: "C19",
+    description: "A passionate learner and aspiring developer.",
+    contact: "alice@example.com",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  }
+]
+const teamMembers = [
+  {
+    name: "Linnea Sandsjö",
+	position: "Ordförande",
+    class: "C19",
+    description: "A passionate learner and aspiring developer.",
+    contact: "alice@example.com",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  },
+  {
+    name: "Linnea Sandsjö",
+	position: "Ordförande",
+    class: "C19",
+    description: "A passionate learner and aspiring developer.",
+    contact: "alice@example.com",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  },
+  {
+    name: "Linnea Sandsjö",
+	position: "Ordförande",
+    class: "C19",
+    description: "A passionate learner and aspiring developer.",
+    contact: "alice@example.com",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  },
+  {
+    name: "Linnea Sandsjö",
+	position: "Ordförande",
+    class: "C19",
+    description: "A passionate learner and aspiring developer.",
+    contact: "alice@example.com",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  },
+  {
+    name: "Linnea Sandsjö",
+	position: "Ordförande",
+    class: "C19",
+    description: "A passionate learner and aspiring developer.",
+    contact: "alice@example.com",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  }, 
+  {
+    name: "Linnea Sandsjö",
+	position: "Ordförande",
+    class: "C19",
+    description: "A passionate learner and aspiring developer.",
+    contact: "alice@example.com",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  },
+
+];
+const funkisar = [
+{
+    name: "Kristina Sedelius",
+	position: "Revisor",
+    class: "C19",
+    description: "A passionate learner and aspiring developer.",
+    contact: "alice@example.com",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  },
+  {
+    name: "Linnéa Samuelsson",
+	position: "Revisor",
+    class: "C19",
+    description: "A passionate learner and aspiring developer.",
+    contact: "alice@example.com",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  }
+]
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <BaseHead title="Om oss" description="Träffa oss!" />
+</head>
+<body>
+    <Header />
+    <main>
+		<h1>Vad är D-chip?</h1>
+		<p>D-Chip är föreningen på D-sektionen vid LTH för alla tjejer och icke-binära som läser Datateknik eller InfoCom.
+			
+			Föreningen bildades hösten 1995 för att främja flickornas framtid och trivsel på sektionen samt att verka för mer kvinnligt engagemang.
+			Vi försöker öka trivseln bland tjejerna genom att hitta på roliga saker tillsammans och lära känna varandra.
+			
+			D-Chip välkomnar alla nya tjejer och icke-binära som börjar läsa på sektionen, bland annat genom att anordna en välkomstlunch för alla tjejer innan skolan börjar. Alla blir medlemmar efter den hemliga invigningsriten. Fram tills denna ägt rum är man ett Micro-Chip.
+			
+			Ett D-Chip har förutom råsa (Datateknik) eller lila (InfoCom) spegater i sin tofs även en råsa rosett.</p>
+			<img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
+		<h1>Styrelsen</h1>
+        <div class="president-grid-container">
+            {
+                president.map(member => (
+                    <div class="card">
+                        <img src={member.image} alt={member.name} class="profile-image" />
+                        <h3>{member.position}</h3>
+                        <h4>{member.name}, {member.class}</h4>
+                        <p>{member.description}</p>
+                        <p class="contact">Kontakt: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
+                    </div>
+                ))
+            }
+        </div>
+        <div class="grid-container">
+            {
+                teamMembers.map(member => (
+                    <div class="card">
+                        <img src={member.image} alt={member.name} class="profile-image" />
+                        <h3>{member.position}</h3>
+                        <h4>{member.name}, {member.class}</h4>
+                        <p>{member.description}</p>
+                        <p class="contact">Kontakt: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
+                    </div>
+                ))
+            }
+        </div>
+        <h1>Funktionärer</h1>
+        <div class="grid-container">
+            {
+                funkisar.map(member => (
+                    <div class="card">
+                        <h3>{member.position}</h3>
+                        <h4>{member.name}, {member.class}</h4>
+                        <p>{member.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+        <div>
+            <h1>Vill du engagera dig?</h1>
+            <p> Vad kul! Hör av dig till oss på {MAIL}.</p>
+            <a href={`/${lang}/contact`} class="contact-button">Kontakta oss</a>
+        </div>
+    </main>
+    <Footer />
+</body>
+</html>
+
+<style>
+    body {
+        margin: 0;
+        padding: 1em;
+        color: #333;
+        text-align: center;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 2em;
+    }
+
+	.big-image {
+		display: block;              /* Ensure the image behaves as a block element */
+    margin-left: auto;          /* Center the image horizontally */
+    margin-right: auto;         /* Center the image horizontally */
+    width: 50%;                 /* Adjust the width as needed */
+    height: auto;               /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
+    border-radius: 8px;         /* Optional: round the corners */
+}
+
+    h1 {
+        font-size: 3.5em;
+        margin-bottom: 0.5em;
+		padding-top: 0.5em;
+        color: #4a4a4a;
+    }
+
+    .president-grid-container {
+        display: block;              /* Ensure the image behaves as a block element */
+        margin-left: auto;          /* Center the image horizontally */
+        margin-right: auto;         /* Center the image horizontally */
+        margin-bottom: 1em;
+        width: 32.5%;                 /* Adjust the width as needed */
+        height: auto;               /* Maintain aspect ratio */
+        border-radius: 8px;         /* Optional: round the corners */
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* First row will have 3 columns */
+        gap: 20px;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 1em;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    /*.card:hover {
+        transform: translateY(-5px);
+    }*/
+
+    .profile-image {
+        display: block;              /* Ensure the image behaves as a block element */
+    margin-left: auto;          /* Center the image horizontally */
+    margin-right: auto;         /* Center the image horizontally */
+        width: 70%;
+        height: auto;
+        border-radius: 50%; /* Makes the image circular */
+    }
+
+    .contact a {
+        color: #f180a1; /* Blue color for links */
+        text-decoration: none;
+    }
+
+    .contact a:hover {
+        text-decoration: underline;
+    }
+
+    .contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #f180a1; /* Button color */
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    transition: background-color 0.3s ease;
+  }
+
+  .contact-button:hover {
+    background-color: #ff3366; /* Darker color on hover */
+  }
+
+	footer {
+		margin-top: 2em;
+	}
+</style>
+

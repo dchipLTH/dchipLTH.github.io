@@ -1,0 +1,105 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import en from '../../../locales/en.json';
+import sv from '../../../locales/sv.json';
+
+const posts = (await getCollection('events')).sort(
+(a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
+);
+
+// Filter the posts to get only those in the 'sv' folder
+const enEvents = posts.filter((post) => post.slug.startsWith('en/'));
+
+// Extract the language from the first segment of the URL path
+const pathParts = Astro.url.pathname.split('/');
+const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specified
+
+// Set the appropriate translations based on the language
+const translations = lang === 'en' ? en : sv;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <BaseHead title="Events" description={SITE_DESCRIPTION} />
+    <style>
+        main {
+            width: 1100px; /* You can adjust the width as needed */
+            margin: 0 auto; /* Center the main content */
+        }
+        ul {
+            display: grid; /* Use grid layout for the ul */
+            grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+            gap: 2rem; /* Space between items */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            text-align: center; /* Center text within each card */
+        }
+        ul li img {
+            width: 330px; /* Fixed width for circular images */
+            height: 330px; /* Fixed height for circular images */
+            border-radius: 50%; /* Make the images circular */
+            margin-bottom: 0.5rem; /* Space below the image */
+            transition: transform 0.2s; /* Add transition for hover effect */
+        }
+        ul li a {
+            display: block; /* Make the whole area clickable */
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit color from parent */
+        }
+        .title {
+            margin: 0;
+            color: rgb(var(--black));
+            line-height: 1;
+        }
+        .date {
+            margin: 0;
+            color: rgb(var(--gray));
+        }
+        ul li a:hover img {
+            transform: scale(1.05); /* Slightly enlarge image on hover */
+        }
+        ul a:hover .title,
+        ul a:hover .date {
+            color: rgb(var(--accent)); /* Change color on hover */
+        }
+        @media (max-width: 720px) {
+            ul {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+                gap: 0.5em; /* Smaller gap */
+            }
+        }
+    </style>
+</head>
+<body>
+    <Header />
+    <main>
+        <section>
+            <ul>
+                {
+                    enEvents.map((post) => (
+                        <li>
+                            <a href={`/${lang}/events/${post.slug}/`}>
+                                <img src={post.data.heroImage} alt={post.data.title} />
+                                <h4 class="title">{post.data.title}</h4>
+                                <p class="date">
+                                    <FormattedDate date={post.data.date} />
+                                </p>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+    </main>
+    <Footer />
+</body>
+</html>

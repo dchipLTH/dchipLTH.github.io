@@ -1,0 +1,21 @@
+---
+interface Props {
+	date: Date;
+}
+
+const { date } = Astro.props;
+
+// Format the date as YYYY-MM-DD for both datetime and display
+const datetimeFormatted = date.toISOString().split('T')[0]; // Get the date in YYYY-MM-DD format
+
+const displayFormatted = date.toLocaleDateString('en-CA', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+});
+
+---
+
+<time datetime={datetimeFormatted}>
+	{displayFormatted}
+</time>

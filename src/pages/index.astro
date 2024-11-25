@@ -3,48 +3,217 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import en from '../locales/en.json';
+import sv from '../locales/sv.json';
+
+
+const posts = (await getCollection('events')).sort(
+(a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
+);
+
+// Filter the posts to get only those in the 'sv' folder
+const svEvents = posts.filter((post) => post.slug.startsWith('sv/'));
+
+// Extract the language from the first segment of the URL path
+const pathParts = Astro.url.pathname.split('/');
+const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specified
+
+// Set the appropriate translations based on the language
+const translations = lang === 'en' ? en : sv;
+
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body>
+    <Header />
+    <main>
+        <div>
+            <img src="/images/main1.png" alt="Picture of D-chip" class="big-image" />
+        </div>
+        
+        <!-- Two Column Section -->
+        <div class="content-container">
+            <div class="text-column">
+                <h2>Välkommen till D-Chip22!</h2>
+                <p>D-Chip är en ideell, studentdriven förening vid Datatekniksektionen som 
+					studenterna på Datateknik och InfoCom på LTH hör till. Alla kvinnliga och
+					 icke-binära studenter på de två programmen kan vara med i D-Chip. Vi 
+					 finns för att främja er trivsel på sektionen samt att verka för mer 
+					 kvinnligt och icke-binärt engagemang. Vi arrangerar många olika typer 
+					 av arrangemang för våra medlemmar, som inspirerande träffar med företag,
+					  middagar, fester och pluggkvällar. Dessutom anordnar vi varje år en 
+					  välkomstlunch för alla nyantagna tjejer och icke-binära dagen innan 
+					  uppropet, vilket brukar vara väldigt uppskattat. Det ställs inga krav 
+					  på dig som medlem i D-Chip, utan du kan gå på de aktiviteter du vill, 
+					  eller inga alls om du inte känner för det. Vi hoppas oavsett att vi 
+					  ser dig på LTH i höst!</p>
+            </div>
+            <div class="social-column">
+                <h4>FÖLJ OSS HÄR</h4>
+                <div class="social-links">
+					<a href="https://facebook.com/yourprofile" target="_blank" class="social-icon facebook-icon">
+						<span class="sr-only">Follow us on Facebook</span>
+						<svg fill="#ffcfddff" width="40px" height="40px" viewBox="0 0 24 24" id="facebook" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path id="primary" d="M14,6h3a1,1,0,0,0,1-1V3a1,1,0,0,0-1-1H14A5,5,0,0,0,9,7v3H7a1,1,0,0,0-1,1v2a1,1,0,0,0,1,1H9v7a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V14h2.22a1,1,0,0,0,1-.76l.5-2a1,1,0,0,0-1-1.24H13V7A1,1,0,0,1,14,6Z" style="fill: #ffcfddff;"></path></svg>
+						</svg>
+					</a>
+					
+					<a href="https://www.instagram.com" target="_blank" class="social-icon instagram-icon">
+						<span class="sr-only">Follow us on Instagram</span>
+						<svg fill="#ffcfddff" width="35px" height="35px" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-instagram"><path d='M14.017 0h-8.07A5.954 5.954 0 0 0 0 5.948v8.07a5.954 5.954 0 0 0 5.948 5.947h8.07a5.954 5.954 0 0 0 5.947-5.948v-8.07A5.954 5.954 0 0 0 14.017 0zm3.94 14.017a3.94 3.94 0 0 1-3.94 3.94h-8.07a3.94 3.94 0 0 1-3.939-3.94v-8.07a3.94 3.94 0 0 1 3.94-3.939h8.07a3.94 3.94 0 0 1 3.939 3.94v8.07z'/><path d='M9.982 4.819A5.17 5.17 0 0 0 4.82 9.982a5.17 5.17 0 0 0 5.163 5.164 5.17 5.17 0 0 0 5.164-5.164A5.17 5.17 0 0 0 9.982 4.82zm0 8.319a3.155 3.155 0 1 1 0-6.31 3.155 3.155 0 0 1 0 6.31z'/><circle cx='15.156' cy='4.858' r='1.237'/></svg>
+					</a>
+					
+					<a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin-icon">
+						<span class="sr-only">Follow us on LinkedIn</span>
+						<svg fill="#ffcfddff" width="35px" height="35px" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-linkedin"><path d='M19.959 11.719v7.379h-4.278v-6.885c0-1.73-.619-2.91-2.167-2.91-1.182 0-1.886.796-2.195 1.565-.113.275-.142.658-.142 1.043v7.187h-4.28s.058-11.66 0-12.869h4.28v1.824l-.028.042h.028v-.042c.568-.875 1.583-2.126 3.856-2.126 2.815 0 4.926 1.84 4.926 5.792zM2.421.026C.958.026 0 .986 0 2.249c0 1.235.93 2.224 2.365 2.224h.028c1.493 0 2.42-.989 2.42-2.224C4.787.986 3.887.026 2.422.026zM.254 19.098h4.278V6.229H.254v12.869z' /></svg>
+					</a>
+				  </div>
+            </div>
+        </div>
+
+		<div>
+			<section>
+				<ul class="blog-posts">
+					{
+						svEvents.map((post) => (
+							<li class="blog-post">
+								<a href={`/blog/${post.slug}/`}>
+									<img class="circular-image" src={post.data.heroImage} alt="" />
+									<h4 class="title">{post.data.title}</h4>
+									<p class="date">
+										<FormattedDate date={post.data.date} />
+									</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</div>
+
+        <!-- Google Calendar Embed 
+        <div class="calendar">
+            <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=Europe%2FBerlin" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div> -->
+    </main>
+    <Footer />
+</body>
 </html>
+
+<style>
+	main {
+		padding: 1em;
+		text-align: center;
+	}
+	.big-image {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow here */
+    border-radius: 8px; /* Optional: round the corners of the image */
+}
+	.content-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+    max-width: 1200px; /* Adjust this value for wider layout */
+    margin-left: auto;
+    margin-right: auto;
+}
+	.text-column {
+		flex: 2;
+		padding: 1em;
+		text-align: center;
+	}
+	.social-column {
+		flex: 1;
+		padding: 1em;
+	}
+	.carousel {
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		margin: 2em 0;
+	}
+	.event {
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		padding: 1em;
+		margin: 0 1em;
+		width: 200px;
+		text-align: center;
+	}
+	footer {
+		margin-top: 2em;
+	}
+
+	.blog-posts {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.blog-post {
+    border-radius: 8px; /* Optional: round corners */
+    padding: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.blog-post:hover {
+    background-color: rgba(255, 255, 255, 0.25); /* Change background color on hover */
+}
+
+.circular-image {
+    width: 300px; /* Increase size for circular images */
+    height: 300px; /* Same as width for perfect circle */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Cover to maintain aspect ratio */
+	display: block; /* Ensure the image is treated as a block element */
+    margin: 0 auto; /* Center the image */
+}
+
+.title {
+    font-size: 1.2em; /* Smaller font size for title */
+    margin: 0.5em 0; /* Add margin for spacing */
+	color: #484647;
+}
+
+.date {
+    font-size: 0.9em; /* Smaller font size for date */
+    color: #484647; /* Optional: lighter color for date */
+}
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		margin-top: 1em;
+	}
+	.social-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+	}
+	.social-links a:hover {
+		color: rgb(var(--gray-dark));
+	}
+	.social-icon {
+    display: inline-flex;               /* Use inline-flex to center align the icon */
+    justify-content: center;            /* Center the SVG icon */
+    align-items: center;                /* Center the SVG icon vertically */
+    width: 50px;                       /* Adjust the width of the round background */
+    height: 50px;                      /* Adjust the height of the round background */
+    background-color: rgba(255, 255, 255, 0.7); /* Light background color */
+    border-radius: 50%;                /* Make the background round */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow */
+    transition: background-color 0.3s; /* Optional: Smooth transition effect */
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 1); /* Change background color on hover */
+}
+</style>

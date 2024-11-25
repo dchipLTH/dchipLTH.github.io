@@ -1,0 +1,261 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body>
+    <Header />
+    <main>
+        <section class="collab-intro">
+            <h1>Vill ni samarbeta med oss?</h1>
+            <p>
+                D-chip är ett nätverk för alla kvinnor och icke-binära studenter som läser 
+                Datateknik eller Information- och kommunikationsteknik vid Lunds Tekniska Högskola, 
+                samt tidigare studenter. Genom ett samarbete med D-chip kan ert företag enkelt nå ut 
+                till denna grupp och bygga upp en relation med dem redan innan de når arbetsmarknaden.
+            </p>
+        </section>
+
+         <!-- New Image Gallery Section -->
+         <section class="gallery">
+            <div class="gallery-grid">
+                <img src="/images/collab/2.jpg" alt="Företagsevent med studenter">
+                <img src="/images/collab/3.jpg" alt="Studiebesök hos partnerföretag">
+                <img src="/images/collab/4.jpg" alt="Lunchföreläsning med företaget">
+            </div>
+        </section>
+
+        <section class="what-we-offer">
+            <h3>Hur kan vi mötas?</h3>
+            <p>
+                Vi i D-chip anordnar en rad spännande evenemang för att koppla samman våra medlemmar med näringslivet och skapa meningsfulla nätverk. Här är några exempel på vad vi kan erbjuda:
+            </p>
+        
+            <div class="card-container">
+                <div class="card"><h4>Lunchföreläsning</h4></div>
+                <div class="card"><h4>Chokladprovning</h4></div>
+                <div class="card"><h4>Sushi-kväll</h4></div>
+                <div class="card"><h4>Studiebesök</h4></div>
+                <div class="card"><h4>Pub</h4></div>
+                <div class="card"><h4>Fika</h4></div>
+                <div class="card"><h4>Middag på restaurang</h4></div>
+                <div class="card"><h4>CV-skrivning</h4></div>
+                <div class="card"><h4>Vinprovning</h4></div>
+                <div class="card"><h4>Casekväll</h4></div>
+            </div>
+        
+            <p>
+                Tillsammans kan vi hitta de perfekta aktiviteterna för att skapa minnesvärda upplevelser och bygga starka relationer med framtidens ingenjörer.
+            </p>
+        </section>
+        
+
+        <section class="contact">
+            <h2>Kontakta oss</h2>
+            <p>
+                Är ni intresserade av att samarbeta eller vill ni veta mer? Tveka inte att kontakta oss. Vi ser fram emot att höra från er och skapa ett givande samarbete!
+            </p>
+            <div class="contact-info">
+                <img src="/images/board/hanna.jpg" alt="Kontaktperson" class="contact-image">
+                <div class="contact-details">
+                    <p class="contact-name">Anna Svensson</p>
+                    <p class="contact-role">Näringslivsansvarig</p>
+                    <p class="p-contact-mail"><a href="mailto:frejalth@gmail.com">frejalth@gmail.com</a></p>
+                    <p class="p-contact-phone">+46 70 123 45 67</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</body>
+</html>
+
+<style>
+   main {
+    padding: 2em;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+    color: #484647;
+}
+
+h1 {
+        font-size: 3.5em;
+        margin-bottom: 0.5em;
+		padding-top: 0.5em;
+    }
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+p {
+    margin-bottom: 1.5em;
+    color: #484647;
+    text-align: justify;
+}
+
+/* Card container */
+.what-we-offer {
+    background-color: #f7f7f7;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.what-we-offer h3 {
+    text-align: center;
+    color: #484647;
+    font-size: 28px;
+    margin-bottom: 1em;
+}
+
+.card-container {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin: 2em 0;
+}
+
+.card {
+    background-color: var(--accent);
+    width: 180px; /* Fixed width */
+    height: 80px; /* Fixed height */ 
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h4 {
+    color: white;
+    font-size: 18px;
+    margin: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+/* Contact section */
+.contact {
+    margin: 2em auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    gap: 1.5em;
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-image {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.contact-image:hover {
+    transform: scale(1.05);
+}
+
+.contact-details p {
+    color: #484647;
+    text-align: center;
+    margin-left: 1em;
+}
+
+.contact-details a {
+    color: #f180a1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.contact-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.contact-role {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 0.7em;
+    text-align: center;
+}
+
+.p-contact-mail {
+    margin-bottom: 0em;
+}
+
+.p-contact-phone {
+    margin-bottom: 0em;
+}
+
+/* Gallery Styling */
+.gallery {
+    margin: 3em 0;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    justify-items: center;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+
+</style>

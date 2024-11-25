@@ -5,8 +5,8 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	--accent: #f180a1;
+	--accent-dark: #f180a1;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -29,12 +29,35 @@
 	font-style: normal;
 	font-display: swap;
 }
+@font-face {
+	font-family: 'AfacadFlux'; /* The name you will use to reference the font in your CSS */
+	src: url('/fonts/AfacadFlux-SemiBold.ttf') format('truetype'); /* Path to your TTF file */
+	font-weight: normal; /* You can define 'bold' or other weights too */
+	font-style: normal; /* Can be italic, oblique, etc. */
+  }
+
+  @font-face {
+	font-family: 'AfacadFluxThin'; /* The name you will use to reference the font in your CSS */
+	src: url('/fonts/AfacadFlux-Light.ttf') format('truetype'); /* Path to your TTF file */
+	font-weight: normal; /* You can define 'bold' or other weights too */
+	font-style: normal; /* Can be italic, oblique, etc. */
+  }
+
+  @font-face {
+	font-family: 'AfacadFluxBold'; /* The name you will use to reference the font in your CSS */
+	src: url('/fonts/AfacadFlux-Bold.ttf') format('truetype'); /* Path to your TTF file */
+	font-weight: normal; /* You can define 'bold' or other weights too */
+	font-style: normal; /* Can be italic, oblique, etc. */
+  }
+
+/* Body - Apply thin text fonts */
 body {
-	font-family: 'Atkinson', sans-serif;
+	font-family: 'AfacadFluxThin', serif;
 	margin: 0;
 	padding: 0;
+	padding-top: 70px;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
+	background: #ffcfddff;
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -42,37 +65,56 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 }
+
+/* Main text content */
 main {
-	width: 720px;
+	width: 1200px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
+	background: #ffcfddff;
+	font-family: 'AfacadFluxThin', serif;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+/* Headings - Rotate between the desired heading fonts */
+h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--black));
 	line-height: 1.2;
 }
+
+/* Headings specific font families */
 h1 {
-	font-size: 3.052em;
+	font-family: 'AfacadFlux', sans-serif;
+	font-size: 80px;
+	color: #484647;
 }
+
 h2 {
+	font-family: 'AfacadFlux', sans-serif;
 	font-size: 2.441em;
+	color: #484647;
 }
+
 h3 {
+	font-family: 'AfacadFlux', sans-serif;
 	font-size: 1.953em;
+	color: #484647;
 }
+
 h4 {
+	font-family: 'AfacadFlux', sans-serif;
 	font-size: 1.563em;
+	color: #484647;
 }
+
 h5 {
+	font-family: 'Abril Fatface', serif;
 	font-size: 1.25em;
+	color: #484647;
 }
+
+/* Bold text styling */
 strong,
 b {
 	font-weight: 700;
@@ -152,3 +194,16 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+
+  /* customizable snowflake styling */
+  .snowflake {
+	color: #fff;
+	font-size: 1em;
+	font-family: Arial, sans-serif;
+	text-shadow: 0 0 5px #000;
+  }
+   
+  .snowflake,.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}
+  @keyframes snowflakes-fall{0%{transform:translateY(0)}100%{transform:translateY(110vh)}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;user-select:none;cursor:default;animation-name:snowflakes-shake;animation-duration:3s;animation-timing-function:ease-in-out}.snowflake .inner{animation-duration:10s;animation-name:snowflakes-fall;animation-timing-function:linear}.snowflake:nth-of-type(0){left:1%;animation-delay:0s}.snowflake:nth-of-type(0) .inner{animation-delay:0s}.snowflake:first-of-type{left:10%;animation-delay:1s}.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{animation-delay:1s}.snowflake:nth-of-type(2){left:20%;animation-delay:.5s}.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{animation-delay:6s}.snowflake:nth-of-type(3){left:30%;animation-delay:2s}.snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{animation-delay:4s}.snowflake:nth-of-type(4){left:40%;animation-delay:2s}.snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) .inner{animation-delay:2s}.snowflake:nth-of-type(5){left:50%;animation-delay:3s}.snowflake:nth-of-type(5) .inner{animation-delay:8s}.snowflake:nth-of-type(6){left:60%;animation-delay:2s}.snowflake:nth-of-type(7){left:70%;animation-delay:1s}.snowflake:nth-of-type(7) .inner{animation-delay:2.5s}.snowflake:nth-of-type(8){left:80%;animation-delay:0s}.snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}.snowflake:nth-of-type(9) .inner{animation-delay:3s}.snowflake:nth-of-type(10){left:25%;animation-delay:0s}.snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
+  

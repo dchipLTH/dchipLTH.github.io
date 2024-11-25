@@ -1,0 +1,106 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body>
+    <Header />
+    <main>
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <h1>Galleri</h1>
+            <p>Utforska våra senaste händelser och projekt genom bilder i galleriet.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/images/main.png" alt="Gallery Image 1" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/main2.jpg" alt="Gallery Image 2" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/collab/2.jpg" alt="Gallery Image 3" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/main1.png" alt="Gallery Image 4" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/collab/3.jpg" alt="Gallery Image 5" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/main.png" alt="Gallery Image 6" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/collab/4.jpg" alt="Gallery Image 1" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/collab/5.jpg" alt="Gallery Image 2" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/collab/4.jpg" alt="Gallery Image 3" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/collab/2.jpg" alt="Gallery Image 4" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/collab/3.jpg" alt="Gallery Image 5" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/main.png" alt="Gallery Image 6" />
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</body>
+</html>
+
+<style>
+    main {
+        padding: 2em;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+        color: #484647;
+    }
+
+    p {
+        text-align: center;
+        margin-bottom: 2em;
+        color: #484647;
+    }
+
+    .gallery-section {
+        margin-bottom: 3em;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1em;
+        justify-items: center;
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+</style>
