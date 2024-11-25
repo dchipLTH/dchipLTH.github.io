@@ -7,6 +7,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://example.com',
+    site: 'https://dchiplth.github.io',
+    base: 'hemsida',
     integrations: [mdx(), sitemap(), tailwind()],
 });
