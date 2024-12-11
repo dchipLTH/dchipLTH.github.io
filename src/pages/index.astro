@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import FormattedDateNews from '../components/FormattedDateNews.astro';
 import en from '../locales/en.json';
 import sv from '../locales/sv.json';
 
@@ -12,6 +13,13 @@ import sv from '../locales/sv.json';
 const posts = (await getCollection('events')).sort(
 (a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
 );
+
+const news = (await getCollection('news')).sort(
+(a, b) =>  b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+// Filter the posts to get only those in the 'sv' folder
+const svNews = news.filter((post) => post.slug.startsWith('sv/'));
 
 // Filter the posts to get only those in the 'sv' folder
 const svEvents = posts.filter((post) => post.slug.startsWith('sv/'));
@@ -33,29 +41,30 @@ const translations = lang === 'en' ? en : sv;
 </head>
 <body>
     <Header />
+    <div>
+        <img src="/images/main3.png" alt="Picture of D-chip" class="big-image" />
+    </div>
     <main>
-        <div>
-            <img src="/images/main1.png" alt="Picture of D-chip" class="big-image" />
-        </div>
-        
         <!-- Two Column Section -->
         <div class="content-container">
             <div class="text-column">
-                <h2>Välkommen till D-Chip22!</h2>
-                <p>D-Chip är en ideell, studentdriven förening vid Datatekniksektionen som 
-					studenterna på Datateknik och InfoCom på LTH hör till. Alla kvinnliga och
-					 icke-binära studenter på de två programmen kan vara med i D-Chip. Vi 
-					 finns för att främja er trivsel på sektionen samt att verka för mer 
-					 kvinnligt och icke-binärt engagemang. Vi arrangerar många olika typer 
-					 av arrangemang för våra medlemmar, som inspirerande träffar med företag,
-					  middagar, fester och pluggkvällar. Dessutom anordnar vi varje år en 
-					  välkomstlunch för alla nyantagna tjejer och icke-binära dagen innan 
-					  uppropet, vilket brukar vara väldigt uppskattat. Det ställs inga krav 
-					  på dig som medlem i D-Chip, utan du kan gå på de aktiviteter du vill, 
-					  eller inga alls om du inte känner för det. Vi hoppas oavsett att vi 
-					  ser dig på LTH i höst!</p>
+                <h2>Välkommen till D-Chip!</h2>
+                <p>D-Chip är en ideell, studentdriven förening
+                för tjejer och icke-binära som studerar vid civilingenjörsprogrammen i datateknik 
+                och information- & kommunikationsteknik samt masterprogrammet i VR/AR vid Lunds Tekniska Högskola. 
+                Vårt syfte är att främja kvinnliga och icke-binära studenters trivsel på 
+                universitetet genom att erbjuda en gemenskap där alla känner sig välkomna och inkluderade. 
+                Det gör vi främst genom att hålla i många olika typer av evenemang, 
+                som brukar vara väldigt uppskattade bland våra medlemmar.<br><br><b>
+                Som studerande kvinna eller icke-binär på programmen nämnda ovan är du automatiskt medlem i D-Chip
+                och varmt välkommen på alla våra event.</b></p>
             </div>
             <div class="social-column">
+				<div class="contact-us">
+					<h4>Har du en kul idé?</h4>
+					<p>Tveka inte på att höra av dig till oss! Vi tar emot idéer på alltifrån event till samarbeten. </p>
+					<a href={`/${lang}/contact`} class="contact-button">Kontakta oss</a>
+				</div>
                 <h4>FÖLJ OSS HÄR</h4>
                 <div class="social-links">
 					<a href="https://facebook.com/yourprofile" target="_blank" class="social-icon facebook-icon">
@@ -77,13 +86,42 @@ const translations = lang === 'en' ? en : sv;
             </div>
         </div>
 
+        <!-- NEW: Instagram & Latest News Section -->
+    <div class="news-container">
+        <!-- Instagram Feed Column -->
+        <div class="instagram-column">
+            <iframe src="https://instagram.com/dchip/embed" width="100%" height="500" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+
+        <!-- Latest News Column -->
+        <div class="news-column">
+            <h2 class="news-header">Senaste nyheterna</h2>
+            <ul class="news-list">
+                {
+                    svNews.slice(0, 3).map((post) => (
+                        <li class="news-post">
+                            <a href={`/${lang}/events/${post.slug}/`}>
+                                <h4 class="news-title">{post.data.title}</h4>
+                                <p class="news-date">
+                                    Publicerat <FormattedDateNews date={post.data.date} />
+                                </p>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+            <a href={`/${lang}/news`} class="contact-button">Se fler nyheter</a>
+        </div>
+    </div>
+
 		<div>
+            <h3>Kommande evenemang</h3>
 			<section>
 				<ul class="blog-posts">
 					{
 						svEvents.map((post) => (
 							<li class="blog-post">
-								<a href={`/blog/${post.slug}/`}>
+								<a href={`/${lang}/events/${post.slug}/`}>
 									<img class="circular-image" src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
@@ -107,16 +145,24 @@ const translations = lang === 'en' ? en : sv;
 </html>
 
 <style>
-	main {
-		padding: 1em;
+    main {
+		padding: 0em;
 		text-align: center;
 	}
-	.big-image {
+
+.big-image {
     width: 100%;
     height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow here */
-    border-radius: 8px; /* Optional: round the corners of the image */
+    display: block; /* Ensure the image is treated as a block element */
+    margin: 0; /* Remove margin to allow full width */
+    border-radius: 0px;
 }
+
+h3 {
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+}
+	
 	.content-container {
     display: flex;
     justify-content: space-between;
@@ -134,12 +180,6 @@ const translations = lang === 'en' ? en : sv;
 		flex: 1;
 		padding: 1em;
 	}
-	.carousel {
-		display: flex;
-		align-items: center;
-		overflow: hidden;
-		margin: 2em 0;
-	}
 	.event {
 		border: 1px solid #ccc;
 		border-radius: 8px;
@@ -151,6 +191,78 @@ const translations = lang === 'en' ? en : sv;
 	footer {
 		margin-top: 2em;
 	}
+
+    .news-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 2em; /* Optional: adds space between the two columns */
+}
+
+.news-header {
+    padding-bottom: 0.5em;
+}
+
+.news-title {
+    font-size: 1.2em; /* Smaller font size for title */
+	color: #484647;
+}
+
+.news-date {
+    font-size: 0.9em; /* Smaller font size for date */
+    color: #484647; /* Optional: lighter color for date */
+}
+
+.instagram-column, .news-column {
+    flex: 1; /* Both columns take equal space */
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+/* Try targeting the account info inside the iframe, this might not always work */
+iframe .account-header, iframe .user-profile-info {
+    display: none;
+}
+
+.news-column {
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+    border-radius: 8px; /* Optional: round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.news-post {
+    padding-top: 0em;
+    text-align: center;
+}
+
+.news-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.news-list li {
+    margin-bottom: 1.5em;
+}
+
+.news-list a {
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.news-list p {
+    font-size: 0.9em;
+    color: #666;
+}
 
 	.blog-posts {
     display: grid; /* Use CSS Grid for layout */
@@ -216,5 +328,73 @@ const translations = lang === 'en' ? en : sv;
 
 .social-icon:hover {
     background-color: rgba(255, 255, 255, 1); /* Change background color on hover */
+}
+
+.contact-us {
+	padding-bottom: 2em;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #f180a1; /* Button color */
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    transition: background-color 0.3s ease;
+  }
+
+  .contact-button:hover {
+    background-color: #ff3366; /* Darker color on hover */
+  }
+
+/* Responsive design for mobile screens (up to 768px wide) */
+@media (max-width: 768px) {
+    /* Stack elements vertically */
+    .content-container, .news-container {
+        flex-direction: column;
+        gap: 1.5em; /* Adds space between stacked items */
+    }
+
+    /* Center-align text on smaller screens */
+    .text-column, .social-column, .instagram-column, .news-column {
+        text-align: center;
+        padding: 1em 0;
+    }
+
+    /* Reduce the size of circular images */
+    .circular-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Make the news and events columns fill the screen */
+    .news-column, .instagram-column {
+        width: 100%;
+        padding: 1em;
+    }
+
+    /* Make blog posts grid stack into a single column */
+    .blog-posts {
+        grid-template-columns: 1fr;
+        gap: 1em; /* Adds space between each post */
+    }
+
+    /* Adjust button and text sizes for mobile readability */
+    .contact-button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    h2, h3, h4 {
+        font-size: 1.5em;
+    }
+
+    p, .news-date, .date {
+        font-size: 1em;
+    }
 }
 </style>
