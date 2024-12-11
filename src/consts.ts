@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = 'D-chip';
 export const SITE_DESCRIPTION = 'Välkommen till vår hemsida!';
-export const MAIL = 'dchip@dsek.se';
+export const MAIL = 'd-chipstyrelse@dsek.se';
