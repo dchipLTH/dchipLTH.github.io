@@ -118,6 +118,7 @@ h5 {
 strong,
 b {
 	font-weight: 700;
+	font-family: 'AfacadFlux', sans-serif;
 }
 a {
 	color: var(--accent);
