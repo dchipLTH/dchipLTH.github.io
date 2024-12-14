@@ -249,7 +249,7 @@ const valberedning = [
     .card {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         align-items: center;
         background-color: rgba(255, 255, 255, 0.7);
         border: 1px solid #e0e0e0;
@@ -265,12 +265,16 @@ const valberedning = [
 
     .profile-image {
         display: block;              /* Ensure the image behaves as a block element */
-    margin-left: auto;          /* Center the image horizontally */
-    margin-right: auto;
-             /* Center the image horizontally */
+        margin-left: auto;          /* Center the image horizontally */
+        margin-right: auto;
+        /* Center the image horizontally */
         width: 250px;
         height: 250px;
         border-radius: 50%; /* Makes the image circular */
+    }
+
+    .contact {
+        margin-top: auto;
     }
 
     .contact a {
@@ -283,21 +287,21 @@ const valberedning = [
     }
 
     .contact-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #f180a1; /* Button color */
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
-    transition: background-color 0.3s ease;
-  }
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1em;
+        background-color: #f180a1; /* Button color */
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+        transition: background-color 0.3s ease;
+    }
 
-  .contact-button:hover {
-    background-color: #ff3366; /* Darker color on hover */
-  }
+    .contact-button:hover {
+        background-color: #ff3366; /* Darker color on hover */
+    }
 
 	footer {
 		margin-top: 2em;
