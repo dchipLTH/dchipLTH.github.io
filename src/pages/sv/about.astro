@@ -146,6 +146,7 @@ const valberedning = [
                     <div class="card">
                         <img src={member.image} alt={member.name} class="profile-image" />
                         <h3>{member.position}</h3>
+                        <div class="divider"></div>
                         <h4>{member.name}, {member.class}</h4>
                         <p>{member.description}</p>
                         <p class="contact">Kontakt: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
@@ -159,6 +160,7 @@ const valberedning = [
                     <div class="card">
                         <img src={member.image} alt={member.name} class="profile-image" />
                         <h3>{member.position}</h3>
+                        <div class="divider"></div>
                         <h4>{member.name}, {member.class}</h4>
                         <p>{member.description}</p>
                         <p class="contact">Kontakt: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
@@ -301,6 +303,15 @@ const valberedning = [
 
     .contact-button:hover {
         background-color: #ff3366; /* Darker color on hover */
+    }
+
+    .divider {
+        height: 5px;
+        width: 90%;
+        background-color: #bd98e1;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        opacity: 0.2;
     }
 
 	footer {
