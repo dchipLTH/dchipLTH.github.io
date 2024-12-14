@@ -31,6 +31,11 @@ const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specifie
 // Set the appropriate translations based on the language
 const translations = lang === 'en' ? en : sv;
 
+const now = new Date();
+const currentMonth = now.getMonth(); // getMonth() returns 0 (Jan) to 11 (Dec)
+
+// Check if the current month is December, January, or February
+const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1;
 ---
 
 <!doctype html>
@@ -41,9 +46,47 @@ const translations = lang === 'en' ? en : sv;
 </head>
 <body>
     <Header />
-    <div>
-        <img src="/images/main3.png" alt="Picture of D-chip" class="big-image" />
-    </div>
+    {isWinter ? (
+        <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+              <div class="inner">❅</div>
+            </div>    
+            <div class="snowflakes" aria-hidden="true">
+            </div>) : (null)
+            }
+    
     <main>
         <!-- Two Column Section -->
         <div class="content-container">
