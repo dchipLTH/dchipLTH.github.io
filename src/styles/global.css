@@ -128,6 +128,8 @@ a:hover {
 }
 p {
 	margin-bottom: 1em;
+	text-align: justify;
+	margin: 0 auto;
 }
 .prose p {
 	margin-bottom: 2em;

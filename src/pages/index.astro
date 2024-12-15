@@ -146,7 +146,8 @@ const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1
                             <a href={`/${lang}/events/${post.slug}/`}>
                                 <h4 class="news-title">{post.data.title}</h4>
                                 <p class="news-date">
-                                    Publicerat <FormattedDateNews date={post.data.date} />
+                                    <center> Publicerat <FormattedDateNews date={post.data.date}
+                                     /> </center>
                                 </p>
                             </a>
                         </li>
@@ -168,7 +169,9 @@ const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1
 									<img class="circular-image" src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
+                                        <center>
 										<FormattedDate date={post.data.date} />
+                                        </center>
 									</p>
 								</a>
 							</li>

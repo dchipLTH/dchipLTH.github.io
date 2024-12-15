@@ -152,7 +152,7 @@ const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1
                             <a href={`/${lang}/events/${post.slug}/`}>
                                 <h4 class="news-title">{post.data.title}</h4>
                                 <p class="news-date">
-                                    Publicerat <FormattedDateNews date={post.data.date} />
+                                    <center> Publicerat <FormattedDateNews date={post.data.date} /> </center>
                                 </p>
                             </a>
                         </li>
@@ -174,7 +174,9 @@ const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1
 									<img class="circular-image" src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
+                                        <center>
 										<FormattedDate date={post.data.date} />
+                                    </center>
 									</p>
 								</a>
 							</li>
@@ -226,6 +228,7 @@ h3 {
 		text-align: center;
 	}
 	.social-column {
+        margin-top: 10px;
 		flex: 1;
 		padding: 1em;
 	}
@@ -392,6 +395,7 @@ iframe .account-header, iframe .user-profile-info {
     border-radius: 8px;
     text-decoration: none;
     text-align: center;
+    margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
     transition: background-color 0.3s ease;
   }
