@@ -152,7 +152,7 @@ const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1
                             <a href={`/${lang}/events/${post.slug}/`}>
                                 <h4 class="news-title">{post.data.title}</h4>
                                 <p class="news-date">
-                                    Publicerat <FormattedDateNews date={post.data.date} />
+                                    <center> Publicerat <FormattedDateNews date={post.data.date} /> </center>
                                 </p>
                             </a>
                         </li>
@@ -174,7 +174,9 @@ const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1
 									<img class="circular-image" src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
+                                        <center>
 										<FormattedDate date={post.data.date} />
+                                    </center>
 									</p>
 								</a>
 							</li>
@@ -215,20 +217,28 @@ h3 {
 	.content-container {
     display: flex;
     justify-content: space-between;
-    margin: 2em 0;
+    margin: 1em 0;
     max-width: 1200px; /* Adjust this value for wider layout */
     margin-left: auto;
     margin-right: auto;
 }
 	.text-column {
 		flex: 2;
-		padding: 1em;
+		padding: 0.5em;
 		text-align: center;
 	}
 	.social-column {
 		flex: 1;
-		padding: 1em;
+		padding: 0.5em;
 	}
+
+    .text-column h2, .social-column h4 {
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
 	.event {
 		border: 1px solid #ccc;
 		border-radius: 8px;
@@ -379,9 +389,6 @@ iframe .account-header, iframe .user-profile-info {
     background-color: rgba(255, 255, 255, 1); /* Change background color on hover */
 }
 
-.contact-us {
-	padding-bottom: 2em;
-}
 
 .contact-button {
     display: inline-block;
@@ -392,6 +399,7 @@ iframe .account-header, iframe .user-profile-info {
     border-radius: 8px;
     text-decoration: none;
     text-align: center;
+    margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
     transition: background-color 0.3s ease;
   }
