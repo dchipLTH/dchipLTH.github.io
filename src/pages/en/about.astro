@@ -1,0 +1,337 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { MAIL } from '../../consts';
+import en from '../../locales/en.json';
+import sv from '../../locales/sv.json';
+
+
+// Extract the language from the first segment of the URL path
+const pathParts = Astro.url.pathname.split('/');
+const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specified
+
+// Set the appropriate translations based on the language
+const translations = lang === 'en' ? en : sv;
+
+const president = [
+{
+    name: "Linnea Sandsjö",
+	position: "President",
+    class: "C22",
+    description: "The president is responsible for, in consultation with the board, leading the association, as well as representing the association in official contexts.",
+    contact: "d-chipordforande@dsek.se",
+    image: "/images/board/linnea.png" // Add the actual image path
+  }
+]
+const teamMembers = [
+  {
+    name: "Hanna Arendt",
+	position: "Vice President",
+    class: "C23",
+    description: "The vice president is responsible for representing the association in the absence of the president, as well as performing tasks that align with the association's purpose, as delegated by the president.",
+    contact: "d-chipvordforande@dsek.se",
+    image: "/images/board/hanna.jpg" // image path
+  },
+  {
+    name: "Ylva Lengborg",
+	position: "Event Manager",
+    class: "C23",
+    description: "The event manager is primarily responsible for the events organized by the association and for managing the association's sellable items.",
+    contact: "d-chipevent@dsek.se",
+    image: "/images/board/ylva.jpg" // image path
+  },
+  {
+    name: "Ester Nielsen Gulis",
+	position: "Head of Information",
+    class: "C22",
+    description: "The Head of Information is responsible for the association's website and social media. They are also in charge of distributing internal information related to D-Chip.",
+    contact: "d-chipinfo@dsek.se",
+    image: "/images/board/ester.png" // image path
+  },
+  {
+    name: "Elly Hedin Oleniusson",
+	position: "Head of Corporate Relations",
+    class: "D23",
+    description: "The Head of Corporate Relations is responsible for managing and initiating the association's corporate contacts.",
+    contact: "d-chipnaringsliv@dsek.se",
+    image: "/images/board/elly.jpg" // image path
+  }, 
+  {
+    name: "Emma Kujala",
+	position: "Treasurer",
+    class: "C21",
+    description: "The treasurer is responsible for, in consultation with the board, overseeing the association's finances.",
+    contact: "d-chipekonomi@dsek.se",
+    image: "/images/board/emma.png" // image path
+  },
+  {
+  name: "Linn Eripe",
+	position: "Secretary",
+    class: "C23",
+    description: "The secretary is responsible for taking minutes at all association meetings and board meetings, as well as ensuring that the protocols are approved and published in an appropriate manner.",
+    contact: "d-chipsekreterare@dsek.se",
+    image: "/images/board/linn.jpg" // image path
+  },
+
+];
+const revisorer = [
+{
+    name: "Kristina Sedelius",
+	position: "Auditor",
+    class: "D21",
+    description: "The auditor is responsible for reviewing and ensuring the accuracy of the association's financial records and operations.",
+    contact: "d-chiprevisor@dsek.se",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  },
+  {
+    name: "Linnéa Samuelsson",
+	position: "Auditor",
+    class: "C21",
+    description: "The auditor is responsible for reviewing and ensuring the accuracy of the association's financial records and operations.",
+    contact: "d-chiprevisor@dsek.se",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  },
+];
+const valberedning = [
+{
+    name: "Clara Schagerström",
+	position: "Member of Nomination Committee",
+    class: "C23",
+    description: "The nominating committee is responsible for proposing candidates for the association's various positions.",
+    contact: "d-chiprevisor@dsek.se",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  },
+  {
+    name: "Elsa Ryrlén",
+	position: "Member of Nomination Committee",
+    class: "C21",
+    description: "The nominating committee is responsible for proposing candidates for the association's various positions.",
+    contact: "d-chiprevisor@dsek.se",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  },
+  {
+    name: "Julia Blomgren",
+	position: "Member of Nomination Committee",
+    class: "D21",
+    description: "The nominating committee is responsible for proposing candidates for the association's various positions.",
+    contact: "d-chiprevisor@dsek.se",
+    image: "/images/board/hanna.jpg" // Add the actual image path
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <BaseHead title="Om oss" description="Träffa oss!" />
+</head>
+<body>
+    <Header />
+    <main>
+		<h1>What is D-Chip?</h1>
+		<p>D-Chip is an independent association that was founded in the fall of 1995. 
+            Our purpose is to promote the well-being and safety of women and non-binary 
+            individuals in the D-guild of TLTH at Lund University's Faculty of Engineering (LTH), 
+            as well as to strengthen their engagement. <br><br>
+
+            In the fall we organize a welcoming lunch the day 
+            before the semester starts and a mentorship program for all new students, 
+            as well as a variety of other activities and events throughout the remainder 
+            of the year. <br><br>
+            
+            As a "nolla", you are called a <b>microchip.</b> 
+            Once you are elevated to a first-year student, you can call yourself <b>D-Chip.</b> 
+            Alumni are also referred to as <b>Super Hacker Babes,</b> 
+            a tradition that has been in place since the association was founded 30 years ago. 
+            A D-Chip, in addition to having a pink (Computer Engineering) or 
+            purple (Information and Communication Technology) tassel, 
+            also has a pink ribbon.</p>
+			
+            <img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
+		<h1>The Board</h1>
+        <div class="president-grid-container">
+            {
+                president.map(member => (
+                    <div class="card">
+                        <img src={member.image} alt={member.name} class="profile-image" />
+                        <h3>{member.position}</h3>
+                        <div class="divider"></div>
+                        <h4>{member.name}, {member.class}</h4>
+                        <p>{member.description}</p>
+                        <p class="contact">Contact: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
+                    </div>
+                ))
+            }
+        </div>
+        <div class="grid-container">
+            {
+                teamMembers.map(member => (
+                    <div class="card">
+                        <img src={member.image} alt={member.name} class="profile-image" />
+                        <h3>{member.position}</h3>
+                        <div class="divider"></div>
+                        <h4>{member.name}, {member.class}</h4>
+                        <p>{member.description}</p>
+                        <p class="contact">Contact: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
+                    </div>
+                ))
+            }
+        </div>
+        <h1>Funktionärer</h1>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Auditors</h3>
+                <div class="divider"></div>
+            {
+                revisorer.map(member => (
+                    <h4>{member.name}, {member.class}</h4>
+                ))
+            }
+            <p>The association shall have at least one, and no more than two, auditors. The auditors must be legal adults, Swedish citizens, members of the D-section at Lund University of Technology, and possess the financial knowledge required for the task.</p>
+            </div>
+            <div class="card"> 
+            <h3>The Nomination Committee</h3>
+            <div class="divider"></div>
+            {
+                valberedning.map(member => (
+                    <h4>{member.name}, {member.class}</h4>
+                ))
+            }
+            <p>The Nomination Committee consists of at least two representatives from the Computer Sciene and Information and Communication Technology programmes.</p>
+            </div>
+        </div>
+            
+        </div>
+        <div>
+            <h1>Would you like to join the association?</h1>
+            <p> Please contact us through mail: {MAIL}.</p>
+            <a href={`/${lang}/contact`} class="contact-button">Contact us</a>
+        </div>
+    </main>
+    <Footer />
+</body>
+</html>
+
+<style>
+    body {
+        margin: 0;
+        padding: 1em;
+        color: #333;
+        text-align: center;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 2em;
+    }
+
+	.big-image {
+		display: block;              /* Ensure the image behaves as a block element */
+    margin-left: auto;          /* Center the image horizontally */
+    margin-right: auto;         /* Center the image horizontally */
+    width: 50%;                 /* Adjust the width as needed */
+    height: auto;               /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
+    border-radius: 50px;         /* Optional: round the corners */
+}
+
+    h1 {
+        font-size: 3.5em;
+        margin-bottom: 0.5em;
+		padding-top: 0.5em;
+        color: #4a4a4a;
+    }
+
+    .president-grid-container {
+        display: block;              /* Ensure the image behaves as a block element */
+        margin-left: auto;          /* Center the image horizontally */
+        margin-right: auto;         /* Center the image horizontally */
+        margin-bottom: 1em;
+        width: 32.5%;                 /* Adjust the width as needed */
+        height: auto;               /* Maintain aspect ratio */
+        border-radius: 8px;         /* Optional: round the corners */
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* First row will have 3 columns */
+        gap: 20px;
+    }
+
+    .grid-container:nth-of-type(3) {
+        grid-template-columns: repeat(2, 1fr); /* First row will have 3 columns */
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 1px solid #e0e0e0;
+        border-radius: 50px;
+        padding: 1em;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    /*.card:hover {
+        transform: translateY(-5px);
+    }*/
+
+    .profile-image {
+        display: block;              /* Ensure the image behaves as a block element */
+        margin-left: auto;          /* Center the image horizontally */
+        margin-right: auto;
+        /* Center the image horizontally */
+        width: 250px;
+        height: 250px;
+        border-radius: 50%; /* Makes the image circular */
+    }
+
+    .contact {
+        margin-top: auto;
+    }
+
+    .contact a {
+        color: #f180a1; /* Blue color for links */
+        text-decoration: none;
+    }
+
+    .contact a:hover {
+        text-decoration: underline;
+    }
+
+    .contact-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1em;
+        background-color: #f180a1; /* Button color */
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+        transition: background-color 0.3s ease;
+    }
+
+    .contact-button:hover {
+        background-color: #f36a93; /* Darker color on hover */
+    }
+
+    .divider {
+        height: 5px;
+        width: 90%;
+        background-color: #f180a1;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        opacity: 0.2;
+    }
+
+	footer {
+		margin-top: 2em;
+	}
+</style>
+
