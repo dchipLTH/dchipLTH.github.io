@@ -217,21 +217,28 @@ h3 {
 	.content-container {
     display: flex;
     justify-content: space-between;
-    margin: 2em 0;
+    margin: 1em 0;
     max-width: 1200px; /* Adjust this value for wider layout */
     margin-left: auto;
     margin-right: auto;
 }
 	.text-column {
 		flex: 2;
-		padding: 1em;
+		padding: 0.5em;
 		text-align: center;
 	}
 	.social-column {
-        margin-top: 10px;
 		flex: 1;
-		padding: 1em;
+		padding: 0.5em;
 	}
+
+    .text-column h2, .social-column h4 {
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
 	.event {
 		border: 1px solid #ccc;
 		border-radius: 8px;
@@ -382,9 +389,6 @@ iframe .account-header, iframe .user-profile-info {
     background-color: rgba(255, 255, 255, 1); /* Change background color on hover */
 }
 
-.contact-us {
-	padding-bottom: 2em;
-}
 
 .contact-button {
     display: inline-block;

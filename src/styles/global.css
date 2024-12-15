@@ -130,6 +130,7 @@ p {
 	margin-bottom: 1em;
 	text-align: justify;
 	margin: 0 auto;
+	width: 90%;
 }
 .prose p {
 	margin-bottom: 2em;
