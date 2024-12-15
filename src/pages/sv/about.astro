@@ -130,6 +130,8 @@ const valberedning = [
     <Header />
     <main>
 		<h1>Vad är D-chip?</h1>
+        <img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
+        <br>
 		<p>D-Chip är en fristående förening som bildades hösten 1995. Vårt syfte är att främja kvinnors och icke-binäras 
             trivsel och trygghet på D-sektionen vid Teknologkåren vid Lunds Tekniska Högskola samt verka 
             för att stärka deras engagemang.<br><br>
@@ -141,7 +143,7 @@ const valberedning = [
             Alumner kallas även för <b> Super Hacker Babes,</b> en tradition sedan föreningen startade för 30 år sedan.
             Ett D-Chip har förutom råsa (datateknik) eller lila (infocom) spegater i sin tofs även en råsa rosett.</p>
 			
-            <img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
+            
 		<h1>Styrelsen</h1>
         <div class="president-grid-container">
             {
@@ -151,7 +153,7 @@ const valberedning = [
                         <h3>{member.position}</h3>
                         <div class="divider"></div>
                         <h4>{member.name}, {member.class}</h4>
-                        <p>{member.description}</p>
+                        <p class="centered">{member.description}</p>
                         <p class="contact">Kontakt: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
                     </div>
                 ))
@@ -165,7 +167,7 @@ const valberedning = [
                         <h3>{member.position}</h3>
                         <div class="divider"></div>
                         <h4>{member.name}, {member.class}</h4>
-                        <p>{member.description}</p>
+                        <p class="centered">{member.description}</p>
                         <p class="contact">Kontakt: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
                     </div>
                 ))
@@ -198,7 +200,7 @@ const valberedning = [
         </div>
         <div>
             <h1>Vill du engagera dig?</h1>
-            <p> Vad kul! Hör av dig till oss på {MAIL}.</p>
+            <p class="centered"> Vad kul! Hör av dig till oss på {MAIL}.</p>
             <a href={`/${lang}/contact`} class="contact-button">Kontakta oss</a>
         </div>
     </main>
@@ -232,9 +234,13 @@ const valberedning = [
 
     h1 {
         font-size: 3.5em;
-        margin-bottom: 0.5em;
 		padding-top: 0.5em;
         color: #4a4a4a;
+    }
+
+    p.centered {
+        text-align: center;
+        width: 100%;
     }
 
     .president-grid-container {
@@ -286,6 +292,8 @@ const valberedning = [
 
     .contact {
         margin-top: auto;
+        text-align: center;
+        width: 100%;
     }
 
     .contact a {
@@ -306,6 +314,7 @@ const valberedning = [
         border-radius: 8px;
         text-decoration: none;
         text-align: center;
+        margin-top: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
         transition: background-color 0.3s ease;
     }
