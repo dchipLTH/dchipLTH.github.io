@@ -16,7 +16,7 @@ const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specifie
 // Set the appropriate translations based on the language
 const translations = lang === 'en' ? en : sv;
 
-const { title, date, buttonLink, buttonText, heroImage } = Astro.props;
+const { title, date, buttonLink, buttonText, heroImage, summary } = Astro.props;
 ---
 
 <html lang="en">

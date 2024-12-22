@@ -26,6 +26,7 @@ const news = defineCollection({
 		heroImage: z.string().optional(),
 		buttonLink: z.string().url().optional(),  // Optional button link, must be a valid URL
     	buttonText: z.string().optional(),  // Optional button text
+		summary: z.string().optional(),  // Optional summary field
 	}),
 });
 
