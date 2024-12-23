@@ -101,7 +101,7 @@ const translations = lang === 'en' ? en : sv;
                                     <center> Publicerat <FormattedDateNews date={post.data.date} /> </center>
                                 </p>
                                 <p class="news-excerpt">
-                                    {post.data.summary ? post.data.summary: ((post.body ? post.body.slice(0, 100) + '...' : ''))}
+                                    {post.data.summary ? post.data.summary : ((post.body ? post.body.slice(0, 100) + '...' : ''))}
                                 </p>
                             </a>
                         </li>
@@ -143,7 +143,7 @@ const translations = lang === 'en' ? en : sv;
     padding: 1em;
     background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
     border-radius: 8px; /* Optional: round the corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
 }
 
 .news-post {
@@ -151,6 +151,7 @@ const translations = lang === 'en' ? en : sv;
     text-align: center;
     border: 5px solid rgba(241, 128, 161, 0.2);
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }
 
 .news-list {
