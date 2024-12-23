@@ -181,6 +181,15 @@ hr {
 	}
 }
 
+.divider {
+	height: 5px;
+	width: 90%;
+	background-color: #f180a1;
+	border-radius: 8px;
+	margin-bottom: 10px;
+	opacity: 0.2;
+}
+
 .sr-only {
 	border: 0;
 	padding: 0;

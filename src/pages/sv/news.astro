@@ -1,0 +1,213 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import FormattedDateNews from '../../components/FormattedDateNews.astro';
+import en from '../../locales/en.json';
+import sv from '../../locales/sv.json';
+
+
+const news = (await getCollection('news')).sort(
+(a, b) =>  b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+// Filter the posts to get only those in the 'sv' folder
+const svNews = news.filter((post) => post.slug.startsWith('sv/'));
+
+
+// Extract the language from the first segment of the URL path
+const pathParts = Astro.url.pathname.split('/');
+const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specified
+
+// Set the appropriate translations based on the language
+const translations = lang === 'en' ? en : sv;
+
+--- 
+
+<!doctype html>
+<html lang="en">
+<head>
+    <BaseHead title="Nyheter" description={"Nyheter"} />
+    <style>
+        main {
+            width: 1100px; /* You can adjust the width as needed */
+            margin: 0 auto; /* Center the main content */
+        }
+        p {
+            text-align: center;
+        }
+        ul {
+            display: grid; /* Use grid layout for the ul */
+            grid-template-columns: repeat(2, 1fr); /* Create 3 equal columns */
+            gap: 2rem; /* Space between items */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            text-align: center; /* Center text within each card */
+        }
+        ul li img {
+            width: 330px; /* Fixed width for circular images */
+            height: 330px; /* Fixed height for circular images */
+            border-radius: 50%; /* Make the images circular */
+            margin-bottom: 0.5rem; /* Space below the image */
+            transition: transform 0.2s; /* Add transition for hover effect */
+        }
+        ul li a {
+            display: block; /* Make the whole area clickable */
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit color from parent */
+        }
+        .title {
+            margin: 0;
+            color: rgb(var(--black));
+            line-height: 1;
+        }
+        .date {
+            margin: 0;
+            color: rgb(var(--gray));
+        }
+        ul li a:hover img {
+            transform: scale(1.05); /* Slightly enlarge image on hover */
+        }
+        ul a:hover .title,
+        ul a:hover .date {
+            color: rgb(var(--accent)); /* Change color on hover */
+        }
+        @media (max-width: 720px) {
+            ul {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+                gap: 0.5em; /* Smaller gap */
+            }
+        }
+    </style>
+</head>
+<body>
+    <Header />
+    <main>
+        <div class="news-column">
+            <h2 class="news-header">Senaste nyheterna</h2>
+            <ul class="news-list">
+                {
+                    svNews.map((post) => (
+                        <li class="news-post">
+                            <a href={`/${lang}/news/${post.slug}/`}>
+                                <h4 class="news-title">{post.data.title}</h4>
+                                <p class="news-date">
+                                    <center> Publicerat <FormattedDateNews date={post.data.date} /> </center>
+                                </p>
+                                <p class="news-excerpt">
+                                    {post.data.summary ? post.data.summary : ((post.body ? post.body.slice(0, 100) + '...' : ''))}
+                                </p>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </main>
+    <Footer />
+</body>
+</html>
+
+<style> 
+    .news-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 2em; /* Optional: adds space between the two columns */
+}
+
+.news-header {
+    text-align: center;
+}
+
+.news-title {
+    font-size: 1.2em; /* Smaller font size for title */
+	color: #484647;
+}
+
+.news-date {
+    font-size: 0.9em; /* Smaller font size for date */
+    color: #484647; /* Optional: lighter color for date */
+}
+
+.news-column {
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+    border-radius: 8px; /* Optional: round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+}
+
+.news-post {
+    padding: 1em;
+    text-align: center;
+    border: 5px solid rgba(241, 128, 161, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.news-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.news-list li {
+
+}
+
+.news-list a {
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.news-list p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+	.blog-posts {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.blog-post {
+    border-radius: 8px; /* Optional: round corners */
+    padding: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.blog-post:hover {
+    background-color: rgba(255, 255, 255, 0.25); /* Change background color on hover */
+}
+
+.divider {
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.news-excerpt {
+    font-size: 1em; /* Standardstorlek */
+    color: #555; /* Mörkgrå för kontrast */
+    margin: 0 auto; /* Mellanrum till rubrik och datum */
+    line-height: 1.4; /* För bättre läsbarhet */
+    text-align: center;
+}
+
+h4 {
+    margin: 0 0 0 0;
+}
+
+</style>
