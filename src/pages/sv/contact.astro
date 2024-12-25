@@ -26,13 +26,14 @@ const emailRecipient = {MAIL};
       }
 
       .contact-column h2 {
-        margin-bottom: 1em;
         font-size: 1.5em;
       }
 
       .address-info {
         font-size: 1em;
         line-height: 1.8;
+        text-align: left;
+        width: 100%;
       }
 
       .map-container iframe {
@@ -41,12 +42,14 @@ const emailRecipient = {MAIL};
         border: 0;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
       }
 
       .form-container form {
         display: flex;
         flex-direction: column;
         gap: 1em;
+        margin: 20px 0;
       }
 
       .form-container input, .form-container textarea {
@@ -71,6 +74,10 @@ const emailRecipient = {MAIL};
         background-color: #f180a1;
       }
 
+      .form-container p {
+        width: 100%;
+      }
+
       @media (max-width: 768px) {
         .contact-container {
           flex-direction: column;
@@ -91,11 +98,10 @@ const emailRecipient = {MAIL};
             <strong>Email:</strong> <a href={`mailto:${MAIL}`}>{MAIL}</a><br>
             <p></p>
             <strong>Adress:</strong><br>
-            Ole Römers väg 3<br>
+            Klas Anshelms väg 10 (Tidigare Ole Römers väg 3)<br>
             223 63 Lund<br>
-            Sweden
+            Sverige
           </p>
-          <p></p>
           <div class="map-container">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2285.912129812217!2d13.211071315869743!3d55.71088250198462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a240d59a38d5%3A0xfb3b09df33d2e1d8!2sOle%20R%C3%B6mers%20v%C3%A4g%203%2C%20223%2063%20Lund%2C%20Sweden!5e0!3m2!1sen!2sus!4v1697558951277!5m2!1sen!2sus"
@@ -111,13 +117,12 @@ const emailRecipient = {MAIL};
           <h2>Har du någon fråga?</h2>
           <p> Tveka inte på att höra av dig till oss! Fyll i formuläret eller maila oss på <a href={`mailto:${MAIL}`}>{MAIL}</a>.</p>
           <p> Du får gärna höra av dig direkt till någon av oss i styrelsen också.</p>
-
           <form action={`mailto:${emailRecipient}`} method="POST" enctype="text/plain">
             <input type="text" name="firstname" placeholder="Förnamn" required />
             <input type="text" name="lastname" placeholder="Efternamn" required />
             <input type="email" name="email" placeholder="Din email" required />
             <textarea name="message" rows="5" placeholder="Ditt meddelande" required></textarea>
-            <button type="submit">Skicka Meddelande</button>
+            <button type="submit">Skicka meddelande</button>
           </form>
         </div>
 
