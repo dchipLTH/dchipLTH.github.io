@@ -149,7 +149,7 @@ const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1
                 {
                     svNews.slice(0, 3).map((post) => (
                         <li class="news-post">
-                            <a href={`/${lang}/events/${post.slug}/`}>
+                            <a href={`/${lang}/news/${post.slug}/`}>
                                 <h4 class="news-title">{post.data.title}</h4>
                                 <p class="news-date">
                                     <center> Publicerat <FormattedDateNews date={post.data.date} /> </center>

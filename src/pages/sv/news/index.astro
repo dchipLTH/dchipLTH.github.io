@@ -1,13 +1,12 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import BaseHead from '../../../components/BaseHead.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import FormattedDateNews from '../../components/FormattedDateNews.astro';
-import en from '../../locales/en.json';
-import sv from '../../locales/sv.json';
+import FormattedDateNews from '../../../components/FormattedDate.astro';
+import en from '../../../locales/en.json';
+import sv from '../../../locales/sv.json';
 
 
 const news = (await getCollection('news')).sort(
