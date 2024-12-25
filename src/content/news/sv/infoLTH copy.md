@@ -1,5 +1,5 @@
 ---
-title: 'Har du några föräbttringsförslag?'
+title: 'Har du några förbättringsförslag?'
 date: '2024-11-19'
 heroImage: '/images/event/barbie.png'
 ---
