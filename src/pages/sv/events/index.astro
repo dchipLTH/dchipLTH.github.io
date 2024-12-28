@@ -26,14 +26,20 @@ const translations = lang === 'en' ? en : sv;
 <!doctype html>
 <html lang="en">
 <head>
-    <BaseHead title="Evenemang" description={SITE_DESCRIPTION} />
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
         main {
             width: 1100px; /* You can adjust the width as needed */
             margin: 0 auto; /* Center the main content */
         }
+        h1, h2 {
+        text-align: center;
+        color: #484647;
+        }
         p {
-            text-align: center;
+        text-align: center;
+        margin-bottom: 2em;
+        color: #484647;
         }
         ul {
             display: grid; /* Use grid layout for the ul */
@@ -85,6 +91,11 @@ const translations = lang === 'en' ? en : sv;
 <body>
     <Header />
     <main>
+        <section>
+            <h1>Evenemang</h1>
+            <p>Här kan du se våra kommande event. Anmälan och mer information hittar du i eventbeskrivningarna.
+             </p>
+            </section>
         <section>
             <ul>
                 {
