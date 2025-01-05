@@ -1,10 +1,8 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import { MAIL } from '../../consts';
 import en from '../../locales/en.json';
 import sv from '../../locales/sv.json';
+import Body from '../../components/Body.astro';
 
 
 // Extract the language from the first segment of the URL path
@@ -122,12 +120,7 @@ const valberedning = [
 ---
 
 <!doctype html>
-<html lang="en">
-<head>
-    <BaseHead title="Om oss" description="Träffa oss!" />
-</head>
-<body>
-    <Header />
+<Body>
     <main>
 		<h1>Vad är D-chip?</h1>
         <img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
@@ -204,8 +197,7 @@ const valberedning = [
             <a href={`/${lang}/contact`} class="contact-button">Kontakta oss</a>
         </div>
     </main>
-    <Footer />
-</body>
+</Body>
 </html>
 
 <style>
