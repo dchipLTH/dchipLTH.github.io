@@ -1,160 +1,81 @@
 ---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Body from '../../components/Body.astro';
 ---
 
 <!DOCTYPE html>
 <Body>
-    <main>
+    <main class="px-4 md:px-8 lg:px-16 py-8 max-w-6xl mx-auto">
         <!-- Title and description -->
-        <section>
-            <h1>Dokument</h1>
-            <p>Här finns alla dokument som reglerar föreningens verksamhet. 
-               Om du har några frågor om materialet eller saknar något, hör av dig till oss på d-chipstyrelse@dsek.se.
+        <section class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Dokument</h1>
+            <p class="text-sm md:text-base text-gray-600">
+                Här finns alla dokument som reglerar föreningens verksamhet. 
+                Om du har några frågor om materialet eller saknar något, hör av dig till oss via 
+                <a href="mailto:d-chipstyrelse@dsek.se" class="text-[#f180a1] underline">d-chipstyrelse@dsek.se</a>.
             </p>
         </section>
 
         <!-- Current Year Documents Section -->
-        <section class="document-section">
-            <h2>Årets dokument</h2>
-            <ul class="document-cards">
-                <li class="document-card">
-                    <h3>Möteshandlingar VTM</h3>
-                    <a href="path_to_pdf.pdf" class="document-button">Visa handlingar</a>
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-6">Årets dokument</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Möteshandlingar VTM</h3>
+                    <a href="path_to_pdf.pdf" class="contact-button">Visa handlingar</a>
                 </li>
-                <li class="document-card">
-                    <h3>Möteshandlingar HTM</h3>
-                    <a href="path_to_pdf.pdf" class="document-button">Visa handlingar</a>
+                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Möteshandlingar HTM</h3>
+                    <a href="path_to_pdf.pdf" class="contact-button">Visa handlingar</a>
                 </li>
-                <li class="document-card">
-                    <h3>Möteshandlingar Styrelsen</h3>
-                    <a href="path_to_pdf.pdf" class="document-button">Visa handlingar</a>
+                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Möteshandlingar Styrelsen</h3>
+                    <a href="path_to_pdf.pdf" class="contact-button">Visa handlingar</a>
                 </li>
             </ul>
         </section>
 
-        <!-- Current Year Documents Section -->
-        <section class="official-document-section">
-            <h2>Styrdokument</h2>
-            <ul class="official-document-cards">
-                <li class="official-document-card">
-                    <h3>Stadgar</h3>
-                    <a href="https://drive.google.com/file/d/11tJSk8ubLLO6BXNPq6Y439elo_ZJpCT4/view?usp=sharing" class="document-button">Visa PDF</a>
+        <!-- Official Documents Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-6">Styrdokument</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Stadgar</h3>
+                    <a href="https://drive.google.com/file/d/11tJSk8ubLLO6BXNPq6Y439elo_ZJpCT4/view?usp=sharing" 
+                       class="contact-button">Visa PDF</a>
                 </li>
-                <li class="official-document-card">
-                    <h3>Reglemente</h3>
-                    <a href="path_to_pdf.pdf" class="document-button">Visa PDF</a>
+                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Reglemente</h3>
+                    <a href="path_to_pdf.pdf" class="contact-button">Visa PDF</a>
                 </li>
             </ul>
         </section>
 
         <!-- Archive Section -->
-        <section class="archive-section">
-            <h2>Arkiv</h2>
-            <ul class="archive-cards">
-                <li class="archive-card">
-                    <h3>Styrelsemöten</h3>
-                    <a href="path_to_pdf.pdf" class="document-button">Visa handlingar</a>
+        <section>
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-6">Arkiv</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Styrelsemöten</h3>
+                    <a href="path_to_pdf.pdf" class="contact-button">Visa handlingar</a>
                 </li>
-                <li class="archive-card">
-                    <h3>Möteshandlingar</h3>
-                    <a href="path_to_pdf.pdf" class="document-button">Visa handlingar</a>
+                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Möteshandlingar</h3>
+                    <a href="path_to_pdf.pdf" class="contact-button">Visa handlingar</a>
                 </li>
-                <li class="archive-card">
-                    <h3>Ekonomi</h3>
-                    <a href="path_to_pdf.pdf" class="document-button">Visa dokument</a>
+                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Ekonomi</h3>
+                    <a href="path_to_pdf.pdf" class="contact-button">Visa dokument</a>
                 </li>
-                <li class="archive-card">
-                    <h3>Verksamhetsberättelse</h3>
-                    <a href="path_to_pdf.pdf" class="document-button">Visa dokument</a>
+                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Verksamhetsberättelse</h3>
+                    <a href="path_to_pdf.pdf" class="contact-button">Visa dokument</a>
                 </li>
             </ul>
         </section>
     </main>
 </Body>
 </html>
-
-<style>
-    main {
-        padding: 2em;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    h1, h2 {
-        text-align: center;
-        color: #484647;
-    }
-
-    p {
-        text-align: center;
-        margin-bottom: 2em;
-        color: #484647;
-    }
-
-    /* Document Section Styling */
-    .document-section, .archive-section, .official-document-section {
-        margin-bottom: 3em;
-    }
-
-    .official-document-cards {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 3 columns */
-        gap: 1.5em;
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .document-cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns */
-        gap: 1.5em;
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .archive-cards {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 3 columns */
-        gap: 1.5em;
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .official-document-card {
-        background-color: rgb(248, 231, 236);
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 1.5em;
-        text-align: center;
-        transition: transform 0.3s;
-    }
-
-    .document-card, .archive-card {
-        background-color: rgb(248, 231, 236);
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 1.5em;
-        text-align: center;
-        transition: transform 0.3s;
-    }
-
-    .document-card:hover, .archive-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .document-button {
-        display: inline-block;
-        padding: 10px 20px;
-        border: 2px solid #f180a1;
-        color: #f180a1;
-        text-decoration: none;
-        border-radius: 8px;
-        font-size: 1em;
-        transition: background-color 0.3s;
-    }
-
-    .document-button:hover {
-        background-color: #f180a1;
-        color: white;
-    }
-</style>

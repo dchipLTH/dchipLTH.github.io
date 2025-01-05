@@ -61,7 +61,7 @@ import Body from '../../components/Body.astro';
             <div class="contact-info">
                 <img src="/images/board/elly.jpg" alt="Kontaktperson" class="contact-image">
                 <div class="contact-details">
-                    <p class="contact-name">Elly Hedin Oleniusson</p>
+                    <p class="contact-name md:min-w-40">Elly Hedin Oleniusson</p>
                     <p class="contact-role">Näringslivsansvarig</p>
                     <p class="p-contact-mail"><a href="mailto:d-chipnaringsliv@dsek.se">d-chipnaringsliv@dsek.se</a></p>
                 </div>
@@ -140,7 +140,6 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,8 +174,9 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 55%;
-    gap: 1.5em;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    width: 80%; /* Use a percentage for flexibility */
+    max-width: 600px; /* Limit max width for large screens */
     background-color: #fff;
     padding: 1.5em;
     border-radius: 50px;
@@ -185,8 +185,8 @@ p {
 
 .contact-image {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 150px; /* Reduce size for better scaling */
+    height: 150px;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
@@ -199,7 +199,7 @@ p {
 .contact-details p {
     color: #484647;
     text-align: center;
-    margin-left: 1em;
+    min-width: 200px;
 }
 
 .contact-details a {
@@ -213,14 +213,14 @@ p {
 }
 
 .contact-name {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     margin: 0;
     text-align: center;
 }
 
 .contact-role {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 0.7em;
     text-align: center;
@@ -230,8 +230,24 @@ p {
     margin-bottom: 0em;
 }
 
-.p-contact-phone {
-    margin-bottom: 0em;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .contact-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .contact-name {
+        font-size: 20px;
+    }
+
+    .contact-role {
+        font-size: 16px;
+    }
 }
 
 /* Gallery Styling */
