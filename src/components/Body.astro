@@ -1,0 +1,55 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Snowflakes from './Snowflakes.astro';
+import en from '../locales/en.json';
+import sv from '../locales/sv.json';
+
+// Split the URL path to get language and page
+const pathParts = Astro.url.pathname.split('/');
+const lang = pathParts[1] || 'sv'; // Default to 'sv' if no language is specified
+const page = pathParts[2] || 'home'; // Default to 'home' if no page is specified
+
+// Set the appropriate translations based on the language
+const translations = lang === 'en' ? en : sv;
+
+const now = new Date();
+const currentMonth = now.getMonth(); // getMonth() returns 0 (Jan) to 11 (Dec)
+
+// Check if the current month is December, January, or February
+const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1;
+---
+
+<!-- This component is used to set meta data, a coherent structure and logic for the 
+    hamburger menu. Use this file to change all pages, if it's not related to the 
+    specific content -->
+
+<!doctype html>
+<html lang={lang}>
+<head>
+    <BaseHead title={translations[page]} description={translations[page+"Description"]} />
+</head>
+<body>
+    <Header />
+    {isWinter ? (
+        <Snowflakes />) : (null)
+    }
+        <slot /> <!-- This allows dynamic content to be injected -->
+    <Footer />
+    <!-- The script below adjusts the header when it has a hamburger menu -->
+    <script>
+        document.querySelector('.hamburger')?.addEventListener('click', () => {
+          document.querySelector('.nav-links')?.classList.toggle('top-[50%]');
+          document.querySelector('.nav-links')?.classList.toggle('hidden'); // Show menu
+
+            if (document.querySelector('.hamburger')?.getAttribute('name') === 'menu') {
+            document.querySelector('.hamburger')?.setAttribute('name', 'close'); // Change to "close"
+            } else {
+            document.querySelector('.hamburger')?.setAttribute('name', 'menu'); // Change back to "menu"
+            }
+          
+        });
+      </script>
+</body>
+</html>

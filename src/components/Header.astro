@@ -6,7 +6,10 @@ import sv from '../locales/sv.json';
 
 // Extract the language from the first segment of the URL path
 const pathParts = Astro.url.pathname.split('/');
-const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specified
+const lang = pathParts[1] || 'sv'; // Default to 'sv' if no language is specified
+
+const pathname = Astro.request.url; // Current path
+const isEnglish = pathname.startsWith('/en');
 
 // Set the appropriate translations based on the language 				
 const translations = lang === 'en' ? en : sv;
@@ -14,160 +17,31 @@ const translations = lang === 'en' ? en : sv;
 //var w = window.innerWidth;
 ---
 
-<header class="fixed top-0 left-0 h-20 w-full">
-	<nav>
-		<h2>
-			<div class="logo h-20 invisible lg:w-40 xl:w-48 xl:visible">
-				<a href={`/${lang}/`}>
-					<img 
-					src="/images/dchip_icon.png" 
-					alt="D-chip icon"
-					class="rounded-2xl aspect-thumbnail object-cover">
-			</div>
-			<div class="pl-4 md:invisible">☰</div>
-		</a></h2>
-		
-		<div class="internal-links hidden lg:visible">
-			<HeaderLink href={`/${lang}/`}>{translations.home}</HeaderLink>
-			<HeaderLink href={`/${lang}/about`}>{translations.about}</HeaderLink>
-			<HeaderLink href={`/${lang}/news`}>{translations.news}</HeaderLink>
-			<HeaderLink href={`/${lang}/events`}>{translations.events}</HeaderLink>
-			<HeaderLink href={`/${lang}/files`}>{translations.files}</HeaderLink>
-			<HeaderLink href={`/${lang}/company`}>{translations.company}</HeaderLink>
-			<HeaderLink href={`/${lang}/gallery`}>{translations.gallery}</HeaderLink>
-			<HeaderLink href={`/${lang}/contact`}>{translations.contact}</HeaderLink>
-			<HeaderLink href={`/${lang}/newstudent`}>{translations.newstudent}</HeaderLink>
-		</div>
-
-		<!-- Language Dropdown 
-		<div class="language-dropdown">
-			<a href="#" class="dropdown-trigger"> <span>{translations.language}: {translations.thisLang}</span></a>
-			<ul class="dropdown-list">
-				<li><a href={`/en${Astro.url.pathname.replace(/^\/(en|sv)/, '')}`}>English</a></li>
-				<li><a href={`/sv${Astro.url.pathname.replace(/^\/(en|sv)/, '')}`}>Svenska</a></li>
-			</ul>
-		</div> -->
-
-		<!-- Language Switch --->
-		 <div class="language">
-			<a href={lang === 'en' ? `/sv/` : `/en/`}>
-				{lang === 'en' ? 'Svenska' : 'English'}
-			</a>
-		 </div> 
-	</nav>
+<header class="bg-[#f8e7ec] py-4 w-full">
+    <nav class="flex justify-between w-[92%] mx-auto">
+        <div>
+            <a href={`/${lang}`}>
+                <img class="w-44 cursor-pointer py-1" src="/images/dchip_icon.png" alt="...">
+            </a>
+            
+        </div>
+        <div
+            class="nav-links duration-500 absolut bg-[#f8e7ec] min-h-fit left-0 w-auto xl:top-[-100%] hidden xl:flex items-center px-4">
+            <ul class="flex xl:flex-row flex-col xl:items-center xl:gap-10 gap-4">
+                <HeaderLink href={`/${lang}/`}>{translations.home}</HeaderLink>
+                <HeaderLink href={`/${lang}/about`}>{translations.about}</HeaderLink>
+				<HeaderLink href={`/${lang}/news`}>{translations.news}</HeaderLink>
+                <HeaderLink href={`/${lang}/events`}>{translations.events}</HeaderLink>
+                <HeaderLink href={`/${lang}/files`}>{translations.files}</HeaderLink>
+                <HeaderLink href={`/${lang}/company`}>{translations.company}</HeaderLink>
+                <HeaderLink href={`/${lang}/gallery`}>{translations.gallery}</HeaderLink>
+                <HeaderLink href={`/${lang}/contact`}>{translations.contact}</HeaderLink>
+				<HeaderLink href={`/${lang}/newstudent`}>{translations.newstudent}</HeaderLink>
+        </div>
+        <div class="flex w-44 justify-center items-center gap-6 ">
+            <a class="text-[var(--black)]" href={lang === 'en' ? `/sv/` : `/en/`}>
+				{lang === 'en' ? 'Svenska' : 'English'}</a>
+            <ion-icon name="menu" class="hamburger text-3xl cursor-pointer xl:hidden"></ion-icon>
+            <!--  <ion-icon name="close" class="hamburger text-3xl cursor-pointer lg:hidden"></ion-icon> -->
+        </div>
 </header>
-<style>
-	header {
-	background: rgb(248, 231, 236);
-	background-size: cover;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-    z-index: 1000;                /* Ensures the header is above other content */
-}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: center; /* Centering the navigation */
-	}
-	.logo {
-		position: absolute; /* Position the logo absolutely */
-		left: 1em; /* Align to the left */
-		top: -10px; /* Adjust top position to move it higher */
-	}
-	.internal-links {
-		display: flex;
-		justify-content: center; /* Center the links across the full page */
-		gap: 1em; /* Adjust spacing between links */
-		width: 100%; /* Ensure the links take the full width */
-		padding-top: 10px; /* Add padding to push links down */
-	}
-	.language {
-		padding-right: 2em;
-		padding-top: 10px;
-	}
-	nav a {
-		padding: 0.5em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-
-	/* Style the dropdown */
-	.language-dropdown {
-		position: relative;
-		display: inline-block;
-		padding-right: 2em;
-	}
-
-	.dropdown-trigger {
-		cursor: pointer;
-	}
-	.dropdown-trigger span {
-        white-space: nowrap; /* Prevents line breaking */
-    }
-
-	.dropdown-list {
-		display: none; /* Hidden by default */
-		position: absolute;
-		background-color: white;
-		box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-		padding: 0;
-		margin: 0;
-		list-style-type: none;
-	}
-
-	.language-dropdown:hover .dropdown-list {
-		display: block; /* Show the dropdown on hover */
-	}
-
-	.dropdown-list li {
-		margin: 0;
-		padding: 8px 16px;
-	}
-
-	.dropdown-list li a {
-		text-decoration: none;
-		color: black;
-	}
-
-	.dropdown-list li a:hover {
-		background-color: rgba(0, 0, 0, 0.1);
-	}
-
-/* Show the links when the nav toggle is active (JavaScript required) */
-.nav-active .internal-links {
-    display: flex; /* Show links when active */
-    flex-direction: column; /* Stack links vertically */
-    top: 70px; /* Position below the header */
-    left: 0; /* Align to the left */
-    background: rgb(248, 231, 236); /* Match the header background */
-    z-index: 999; /* Ensure it appears above other content */
-}
-
-
-</style>
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-	  const navToggle = document.querySelector('.nav-toggle');
-	  const nav = document.querySelector('nav');
-  
-	  if (navToggle && nav) {
-		navToggle.addEventListener('click', () => {
-		  nav.classList.toggle('nav-open');
-		});
-	  }
-	});
-</script>
-  
