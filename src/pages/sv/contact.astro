@@ -3,96 +3,18 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { MAIL } from '../../consts';
+import Body from '../../components/Body.astro';
 
 const emailRecipient = {MAIL};
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title="Kontakta oss" description="Kontakta D-Chip" />
-    <style>
-      .contact-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 2em;
-        padding: 0em;
-        max-width: 1200px;
-        margin: auto;
-      }
-
-      .contact-column {
-        flex: 1;
-        padding: 1em;
-      }
-
-      .contact-column h2 {
-        font-size: 1.5em;
-      }
-
-      .address-info {
-        font-size: 1em;
-        line-height: 1.8;
-        text-align: left;
-        width: 100%;
-      }
-
-      .map-container iframe {
-        width: 100%;
-        height: 300px;
-        border: 0;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        margin: 20px 0;
-      }
-
-      .form-container form {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        margin: 20px 0;
-      }
-
-      .form-container input, .form-container textarea {
-        width: 100%;
-        padding: 0.75em;
-        font-size: 1em;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-      }
-
-      .form-container button {
-        background-color: #f85a99;
-        color: white;
-        padding: 1em;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 1em;
-      }
-
-      .form-container button:hover {
-        background-color: #f180a1;
-      }
-
-      .form-container p {
-        width: 100%;
-      }
-
-      @media (max-width: 768px) {
-        .contact-container {
-          flex-direction: column;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <Header />
-    <main>
+<!doctype html>
+  <Body>
+    <main class="pt-12">
       <div class="contact-container">
         
         <!-- First Column: Address, Email, and Map -->
-        <div class="contact-column">
+        <div class="contact-column text-left">
           <h2>Kontakta oss</h2>
           <p class="address-info">
             <strong>Email:</strong> <a href={`mailto:${MAIL}`}>{MAIL}</a><br>
@@ -128,6 +50,80 @@ const emailRecipient = {MAIL};
 
       </div>
     </main>
-    <Footer />
-  </body>
+  </Body>
 </html>
+
+<style>
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 0em;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .contact-column {
+    flex: 1;
+    padding: 1em;
+  }
+
+  .contact-column h2 {
+    font-size: 1.5em;
+  }
+
+  .address-info {
+    font-size: 1em;
+    line-height: 1.8;
+    text-align: left;
+    width: 100%;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+  }
+
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 20px 0;
+  }
+
+  .form-container input, .form-container textarea {
+    width: 100%;
+    padding: 0.75em;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .form-container button {
+    background-color: #f85a99;
+    color: white;
+    padding: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+
+  .form-container button:hover {
+    background-color: #f180a1;
+  }
+
+  .form-container p {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+  }
+</style>

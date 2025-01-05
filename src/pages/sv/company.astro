@@ -3,15 +3,11 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import Body from '../../components/Body.astro';
 ---
 
 <!DOCTYPE html>
-<html lang="sv">
-<head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-</head>
-<body>
-    <Header />
+<Body>
     <main>
         <section class="collab-intro">
             <h1>Vill ni samarbeta med oss?</h1>
@@ -72,8 +68,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
             </div>
         </section>
     </main>
-    <Footer />
-</body>
+</Body>
 </html>
 
 <style>

@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import en from '../../locales/en.json';
 import sv from '../../locales/sv.json';
+import Body from '../../components/Body.astro';
 
 // Extract the language from the first segment of the URL path
 const pathParts = Astro.url.pathname.split('/');
@@ -15,19 +16,16 @@ const translations = lang === 'en' ? en : sv;
 ---
 
 <!doctype html>
-<html lang="en">
-<head>
-    <BaseHead title="Ny student" description="Välkommen till Lund!" />
-</head>
-<body>
-    <Header />
+<Body>
     <main>
-		<h1>Grattis till antagningen,</h1>
-        <h3>och välkommen till Sveriges bästa studentstad: Lund!</h3>
-        <p>Det är ofta många frågor man har som ny student. Nedan har vi försökt samla
-            viktig information och länkar. 
-
-        </p>
+        <div>
+            <h1>Grattis till antagningen,</h1>
+            <h3>och välkommen till Sveriges bästa studentstad: Lund!</h3>
+            <p class="text-center">Det är ofta många frågor man har som ny student. Nedan har vi försökt samla
+                viktig information och länkar. 
+    
+            </p>
+        </div>
         <div class="divider"></div>
         <div class="container">
             <h2>Nollning</h2>
@@ -68,23 +66,10 @@ const translations = lang === 'en' ? en : sv;
             </p>
         </div>
     </main>
-    <Footer />
-</body>
+</Body>
 </html>
 
 <style>
-    body {
-        margin: 0;
-        padding: 1em;
-        color: #333;
-        text-align: center;
-    }
-
-    main {
-        max-width: 1200px;
-        margin: auto;
-        padding: 2em;
-    }
 
 	.big-image {
 		display: block;              /* Ensure the image behaves as a block element */
@@ -138,10 +123,5 @@ const translations = lang === 'en' ? en : sv;
     .divider {
         margin: 20px auto;
     }
-    
-
-	footer {
-		margin-top: 2em;
-	}
 </style>
 
