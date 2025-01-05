@@ -138,7 +138,7 @@ const valberedning = [
 			
             
 		<h1>Styrelsen</h1>
-        <div class="president-grid-container">
+        <div class="president-grid-container grid grid-cols-1 md:w-1/2 lg:w-1/3">
             {
                 president.map(member => (
                     <div class="card">
@@ -152,7 +152,7 @@ const valberedning = [
                 ))
             }
         </div>
-        <div class="grid-container">
+        <div class="grid-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {
                 teamMembers.map(member => (
                     <div class="card">
@@ -167,7 +167,7 @@ const valberedning = [
             }
         </div>
         <h1>Funktionärer</h1>
-        <div class="grid-container">
+        <div class="grid-container grid grid-cols-1 md:grid-cols-2">
             <div class="card">
                 <h3>Revisorer</h3>
                 <div class="divider"></div>
@@ -239,19 +239,16 @@ const valberedning = [
         margin-left: auto;          /* Center the image horizontally */
         margin-right: auto;         /* Center the image horizontally */
         margin-bottom: 1em;
-        width: 32.5%;                 /* Adjust the width as needed */
+
         height: auto;               /* Maintain aspect ratio */
         border-radius: 8px;         /* Optional: round the corners */
+        min-width: 360px;
     }
 
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* First row will have 3 columns */
         gap: 20px;
-    }
-
-    .grid-container:nth-of-type(3) {
-        grid-template-columns: repeat(2, 1fr); /* First row will have 3 columns */
+        min-width: 400px;
     }
 
     .card {
@@ -322,9 +319,5 @@ const valberedning = [
         margin-bottom: 10px;
         opacity: 0.2;
     }
-
-	footer {
-		margin-top: 2em;
-	}
 </style>
 
