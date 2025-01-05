@@ -4,3 +4,6 @@
 export const SITE_TITLE = 'D-Chip';
 export const SITE_DESCRIPTION = 'Välkommen till vår hemsida!';
 export const MAIL = 'd-chipstyrelse@dsek.se';
+export const FACEBOOK = 'https://facebook.com/DChip.LTH';
+export const INSTAGRAM = 'https://instagram.com/dchip';
+export const LINKEDIN = 'https://www.linkedin.com';
