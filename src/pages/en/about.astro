@@ -1,10 +1,8 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import { MAIL } from '../../consts';
 import en from '../../locales/en.json';
 import sv from '../../locales/sv.json';
+import Body from '../../components/Body.astro';
 
 
 // Extract the language from the first segment of the URL path
@@ -35,7 +33,7 @@ const teamMembers = [
   },
   {
     name: "Ylva Lengborg",
-	position: "Event Manager",
+	position: "Event manager",
     class: "C23",
     description: "The event manager is primarily responsible for the events organized by the association and for managing the association's sellable items.",
     contact: "d-chipevent@dsek.se",
@@ -43,9 +41,9 @@ const teamMembers = [
   },
   {
     name: "Ester Nielsen Gulis",
-	position: "Head of Information",
+	position: "Head of Communications",
     class: "C22",
-    description: "The Head of Information is responsible for the association's website and social media. They are also in charge of distributing internal information related to D-Chip.",
+    description: "The Head of Communications is responsible for the association's website and social media. They are also in charge of distributing internal information related to D-Chip.",
     contact: "d-chipinfo@dsek.se",
     image: "/images/board/ester.png" // image path
   },
@@ -78,17 +76,17 @@ const teamMembers = [
 const revisorer = [
 {
     name: "Kristina Sedelius",
-	position: "Auditor",
+	position: "Revisor",
     class: "D21",
-    description: "The auditor is responsible for reviewing and ensuring the accuracy of the association's financial records and operations.",
+    description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/hanna.jpg" // Add the actual image path
   },
   {
     name: "Linnéa Samuelsson",
-	position: "Auditor",
+	position: "Revisor",
     class: "C21",
-    description: "The auditor is responsible for reviewing and ensuring the accuracy of the association's financial records and operations.",
+    description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/hanna.jpg" // Add the actual image path
   },
@@ -96,25 +94,25 @@ const revisorer = [
 const valberedning = [
 {
     name: "Clara Schagerström",
-	position: "Member of Nomination Committee",
+	position: "Valberedning",
     class: "C23",
-    description: "The nominating committee is responsible for proposing candidates for the association's various positions.",
+    description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/hanna.jpg" // Add the actual image path
   },
   {
     name: "Elsa Ryrlén",
-	position: "Member of Nomination Committee",
+	position: "Valberedning",
     class: "C21",
-    description: "The nominating committee is responsible for proposing candidates for the association's various positions.",
+    description: "Föreningens valberedning utgörs av en representant från var och en av de fyra senaste årskurserna på Datateknik och Infocom. Valberedningen utgörs av minst två representanter.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/hanna.jpg" // Add the actual image path
   },
   {
     name: "Julia Blomgren",
-	position: "Member of Nomination Committee",
+	position: "Valberedning",
     class: "D21",
-    description: "The nominating committee is responsible for proposing candidates for the association's various positions.",
+    description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/hanna.jpg" // Add the actual image path
   }
@@ -122,35 +120,28 @@ const valberedning = [
 ---
 
 <!doctype html>
-<html lang="en">
-<head>
-    <BaseHead title="Om oss" description="Träffa oss!" />
-</head>
-<body>
-    <Header />
+<Body>
     <main>
 		<h1>What is D-Chip?</h1>
+        <img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
+        <br>
 		<p>D-Chip is an independent association that was founded in the fall of 1995. 
-            Our purpose is to promote the well-being and safety of women and non-binary 
-            individuals in the D-guild of TLTH at Lund University's Faculty of Engineering (LTH), 
-            as well as to strengthen their engagement. <br><br>
+            Our purpose is to promote the well-being and safety of women and non-binary individuals 
+            in the D-guild of TLTH at Lund University's Faculty of Engineering (LTH), 
+            as well as to strengthen their engagement.<br><br>
 
-            In the fall we organize a welcoming lunch the day 
-            before the semester starts and a mentorship program for all new students, 
-            as well as a variety of other activities and events throughout the remainder 
-            of the year. <br><br>
+            In the fall we organize a welcoming lunch the day before the semester starts and a mentorship program for all new students,
+             as well as a variety of other activities and events throughout the remainder of the year.<br><br>
+
+            As a "nolla", you are called a <b> microchip. </b> Once you are elevated to a first-year student, you can call yourself<b> D-Chip. </b>  
+            Alumni are also referred to as <b> Super Hacker Babes,</b> a tradition that has been in place since the association
+             was founded 30 years ago. A D-Chip, in addition to having a pink (Computer Engineering) or 
+             purple (Information and Communication Technology) tassel, also has a pink ribbon.</p>
+
+
             
-            As a "nolla", you are called a <b>microchip.</b> 
-            Once you are elevated to a first-year student, you can call yourself <b>D-Chip.</b> 
-            Alumni are also referred to as <b>Super Hacker Babes,</b> 
-            a tradition that has been in place since the association was founded 30 years ago. 
-            A D-Chip, in addition to having a pink (Computer Engineering) or 
-            purple (Information and Communication Technology) tassel, 
-            also has a pink ribbon.</p>
-			
-            <img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
 		<h1>The Board</h1>
-        <div class="president-grid-container">
+        <div class="president-grid-container grid grid-cols-1 md:w-1/2 lg:w-1/3">
             {
                 president.map(member => (
                     <div class="card">
@@ -158,13 +149,13 @@ const valberedning = [
                         <h3>{member.position}</h3>
                         <div class="divider"></div>
                         <h4>{member.name}, {member.class}</h4>
-                        <p>{member.description}</p>
-                        <p class="contact">Contact: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
+                        <p class="centered">{member.description}</p>
+                        <p class="contact">Contakt: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
                     </div>
                 ))
             }
         </div>
-        <div class="grid-container">
+        <div class="grid-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {
                 teamMembers.map(member => (
                     <div class="card">
@@ -172,14 +163,14 @@ const valberedning = [
                         <h3>{member.position}</h3>
                         <div class="divider"></div>
                         <h4>{member.name}, {member.class}</h4>
-                        <p>{member.description}</p>
-                        <p class="contact">Contact: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
+                        <p class="centered">{member.description}</p>
+                        <p class="contact">Kontakt: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
                     </div>
                 ))
             }
         </div>
-        <h1>Funktionärer</h1>
-        <div class="grid-container">
+        <h1>Volunteers</h1>
+        <div class="grid-container grid grid-cols-1 md:grid-cols-2">
             <div class="card">
                 <h3>Auditors</h3>
                 <div class="divider"></div>
@@ -205,18 +196,16 @@ const valberedning = [
         </div>
         <div>
             <h1>Would you like to join the association?</h1>
-            <p> Please contact us through mail: {MAIL}.</p>
+            <p class="centered"> Please contact us through mail:{MAIL}.</p>
             <a href={`/${lang}/contact`} class="contact-button">Contact us</a>
         </div>
     </main>
-    <Footer />
-</body>
+</Body>
 </html>
 
 <style>
     body {
         margin: 0;
-        padding: 1em;
         color: #333;
         text-align: center;
     }
@@ -239,9 +228,13 @@ const valberedning = [
 
     h1 {
         font-size: 3.5em;
-        margin-bottom: 0.5em;
 		padding-top: 0.5em;
         color: #4a4a4a;
+    }
+
+    p.centered {
+        text-align: center;
+        width: 100%;
     }
 
     .president-grid-container {
@@ -249,19 +242,16 @@ const valberedning = [
         margin-left: auto;          /* Center the image horizontally */
         margin-right: auto;         /* Center the image horizontally */
         margin-bottom: 1em;
-        width: 32.5%;                 /* Adjust the width as needed */
+
         height: auto;               /* Maintain aspect ratio */
         border-radius: 8px;         /* Optional: round the corners */
+        min-width: 360px;
     }
 
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* First row will have 3 columns */
         gap: 20px;
-    }
-
-    .grid-container:nth-of-type(3) {
-        grid-template-columns: repeat(2, 1fr); /* First row will have 3 columns */
+        min-width: 400px;
     }
 
     .card {
@@ -293,6 +283,8 @@ const valberedning = [
 
     .contact {
         margin-top: auto;
+        text-align: center;
+        width: 100%;
     }
 
     .contact a {
@@ -313,6 +305,7 @@ const valberedning = [
         border-radius: 8px;
         text-decoration: none;
         text-align: center;
+        margin-top: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
         transition: background-color 0.3s ease;
     }
@@ -329,9 +322,5 @@ const valberedning = [
         margin-bottom: 10px;
         opacity: 0.2;
     }
-
-	footer {
-		margin-top: 2em;
-	}
 </style>
 
