@@ -1,9 +1,7 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import en from '../../locales/en.json';
 import sv from '../../locales/sv.json';
+import Body from '../../components/Body.astro';
 
 // Extract the language from the first segment of the URL path
 const pathParts = Astro.url.pathname.split('/');
@@ -15,65 +13,52 @@ const translations = lang === 'en' ? en : sv;
 ---
 
 <!doctype html>
-<html lang="en">
-<head>
-    <BaseHead title="New student" description="Welcome to Lund!" />
-</head>
-<body>
-    <Header />
+<Body>
     <main>
-		<h1>Congratulations on your admission,</h1>
-        <h3>and welcome to Sweden's best student city: Lund!</h3>
-        <p>There is often a lot of questions you have as a new student. Below, we have tried to gather
-            some good information and links. 
+        <div>
+            <h1>Congratulations on your admission,</h1>
+            <h3>and welcome to the best student city in Sweden: Lund!</h3>
+            <p class="text-center">There are often a lot of questions you have as a new student. Below, we have tried to gather some useful information and links. 
+            </p>
+        </div>
+        <div class="divider"></div>
+        <div class="container">
+            <h2>Introduction Weeks
+            </h2>
+            <p>The introduction weeks ("nollning") can be described as a 6-week introduction to student life and the university experience. It is an intense period filled with various events, providing you with friends and memories for life. You can participate as much or as little as you want. <br><br>
 
-        </p>
+                On the D-guild's designated Introduction Weeks page, you can find a lot of useful information:
+            </p>
+            <a href={`https://www.dsek.se/nollning`} class="button">To the D-guild's website</a>
+        </div>
         <div class="divider"></div>
-        <h2>Introduction Weeks</h2>
-        <p>The introduction weeks ("nollning") can be described as a 6-week introduction to student life and the university experience.
-            It is an intense period filled with various events, providing you with friends and memories for life.
-            You can participate as much or as little as you want. <br><br>
+        <div class="container">
+            <h2>Welcoming Lunch
+            </h2>
+            <p>The day before the start of the semester, D-Chip traditionally organizes a welcome lunch on campus, where you, as a newly admitted woman or non-binary person to Computer Engineering or Information & Communication Technology, are welcome. The lunch is a perfect opportunity to meet other newly admitted students as well as older students. More information about the welcome lunch will be released sometime in early August.
+            </p>
+        </div>
+        <div class="divider"></div>
+        <div class="container">
+            <h2>Mentorship Program
+            </h2>
+            <p>During the fall semester, D-Chip organizes a mentorship program where you, as a new student,
+                have the opportunity to connect with older female and non-binary students studying the same as you.
+                The program is intended to provide support for women and non-binary individuals in the D-guild at
+                the start of their studies and aims to create a safe and welcoming environment.<br><br>
 
-            On the D-guilds designated Introduction Weeks-page you can find a lot of useful information:
-        </p>
-        <a href={`https://www.dsek.se/en/nollning`} class="button">To the D-guild's website</a>
-        <div class="divider"></div>
-        <h2>Welcoming Lunch</h2>
-		<p>The day before the start of the semester, D-Chip traditionally organizes a welcome lunch on campus,
-            where you, as a newly admitted woman or non-binary person to Computer Engineering or Information & Communication Technology, are welcome.
-            The lunch is a perfect opportunity to meet other newly admitted students as well as older students.
-            More information about the welcome lunch will be released sometime in early August.
-        </p>
-        <div class="divider"></div>
-        <h2>Mentorship Program</h2>
-        <p>During the fall semester, D-Chip organizes a mentorship program where you, as a new student, have the opportunity to connect with older female and non-binary students studying the same as you.
-            The program is intended to provide support for women and non-binary individuals in the D-guild at the start of their studies and aims to create a safe and welcoming environment. <br><br>
+                The mentorship program is a great opportunity to get to know more women and non-binary individuals in the D-guild. In addition to being paired with a mentor, events and activities will also be organized where all participants in the program—both mentees and mentors—can gather and get to know each other. <br><br>
+                
+                Together with your mentor, you'll have the chance to talk about everything from student life and studies to life in Lund in general. The mentors are bound by confidentiality, meaning you can feel safe knowing that anything shared stays between you and your mentor. <br><br>
             
-            The mentorship program is a great opportunity to get to know more women and non-binary individuals in the D-guild.
-            In addition to being paired with a mentor, events and activities will also be organized where all participants in the program—both microchips and mentors—can gather and get to know each other. <br><br>
-            
-            Together with your mentor, you'll have the chance to talk about everything from student life and studies to life in Lund in general. The mentors are bound by confidentiality, meaning you can feel safe knowing that anything shared stays between you and your mentor. <br><br>
-            
-            Information on how to sign up for the mentorship program will be released sometime during the fall.
-        </p>
+                Information on how to sign up for the mentorship program will be released sometime during the fall.
+            </p>
+        </div>
     </main>
-    <Footer />
-</body>
+</Body>
 </html>
 
 <style>
-    body {
-        margin: 0;
-        padding: 1em;
-        color: #333;
-        text-align: center;
-    }
-
-    main {
-        max-width: 1200px;
-        margin: auto;
-        padding: 2em;
-    }
 
 	.big-image {
 		display: block;              /* Ensure the image behaves as a block element */
@@ -96,12 +81,6 @@ const translations = lang === 'en' ? en : sv;
         margin-bottom: 20px;
     }
 
-    p {
-        width: 80%;
-        text-align: justify;
-        margin: 0 auto;
-    }
-
     .button {
         display: inline-block;
         padding: 10px 20px;
@@ -121,18 +100,17 @@ const translations = lang === 'en' ? en : sv;
         background-color: #f36a93; /* Darker color on hover */
     }
 
-    .divider {
-        height: 5px;
+    .container {
+        padding: 1em;
+        background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+        border-radius: 8px; /* Optional: round the corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
         width: 90%;
-        background-color: #f180a1;
-        border-radius: 8px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        opacity: 0.2;
+        margin: 0 auto;
     }
 
-	footer {
-		margin-top: 2em;
-	}
+    .divider {
+        margin: 20px auto;
+    }
 </style>
 
