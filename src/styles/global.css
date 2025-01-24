@@ -146,7 +146,7 @@ img {
 	width: 90%;
 	background-color: #f180a1;
 	border-radius: 8px;
-	margin-bottom: 10px;
+	margin: 0 auto 10px;
 	opacity: 0.2;
 }
 

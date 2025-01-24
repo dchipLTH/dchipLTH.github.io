@@ -23,6 +23,7 @@ const news = await getSortedNews(lang);
         <div class="content-container">
             <div class="text-column">
                 <h2>Välkommen till D-Chip!</h2>
+                <div class="divider"></div>
                 <p class="text-justify">D-Chip är en ideell, studentdriven förening
                 för tjejer och icke-binära som studerar vid civilingenjörsprogrammen i datateknik 
                 och information- & kommunikationsteknik samt masterprogrammet i VR/AR vid Lunds Tekniska Högskola. 
@@ -36,10 +37,12 @@ const news = await getSortedNews(lang);
             <div class="social-column">
 				<div class="pb-6 px-0.5">
 					<h4>Har du en kul idé?</h4>
+                    <div class="divider"></div>
 					<p class="pb-6">Tveka inte på att höra av dig till oss! Vi tar emot idéer på alltifrån event till samarbeten. </p>
 					<a href={`/${lang}/contact`} class="contact-button">Kontakta oss</a>
 				</div>
                 <h4>FÖLJ OSS HÄR</h4>
+                <div class="divider"></div>
                 <div class="social-links">
 					<a href={FACEBOOK} target="_blank" class="social-icon facebook-icon">
 						<span class="sr-only">Follow us on Facebook</span>
@@ -70,6 +73,7 @@ const news = await getSortedNews(lang);
         <!-- Latest News Column -->
         <div class="news-column">
             <h2 class="news-header">Senaste nyheterna</h2>
+            <div class="divider"></div>
             <ul class="news-list">
                 {
                     news.slice(0, 3).map((post) => (
@@ -87,9 +91,9 @@ const news = await getSortedNews(lang);
             <a href={`/${lang}/news`} class="contact-button">Se fler nyheter</a>
         </div>
     </div>
-
 		<div>
             <h3>Kommande evenemang</h3>
+            <div class="divider"></div>
 			<section>
 				<ul class="blog-posts">
 					{
@@ -122,7 +126,6 @@ main {
 }
 h3 {
     margin-top: 2em;
-    margin-bottom: 1.5em;
 }
 	
 .content-container {
@@ -166,10 +169,6 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     gap: 2em; /* Optional: adds space between the two columns */
-}
-
-.news-header {
-    padding-bottom: 0.5em;
 }
 
 .news-title {
