@@ -14,12 +14,12 @@ const translations = lang === 'en' ? en : sv;
 
 const president = [
 {
-    name: "Linnea Sandsjö",
+    name: "Hilma Larsson",
 	position: "Ordförande",
-    class: "C22",
+    class: "C23",
     description: "Ordföranden har i uppgift att i samråd med styrelsen utöva ledningen av föreningen, samt att i officiella sammanhang representera föreningen.",
     contact: "d-chipordforande@dsek.se",
-    image: "/images/board/linnea.png" // Add the actual image path
+    image: "/images/board/NoPicture.jpg" // Add the actual image path
   }
 ]
 const teamMembers = [
@@ -40,12 +40,12 @@ const teamMembers = [
     image: "/images/board/ylva.jpg" // image path
   },
   {
-    name: "Ester Nielsen Gulis",
+    name: "Lisa Clevestam",
 	position: "Informationsansvarig",
-    class: "C22",
+    class: "C23",
     description: "Informationsansvarig har i uppgift att vara ansvarig för föreningens hemsida och sociala medier. Hen ska även ansvara för distributionen av intern information rörande D-Chip.",
     contact: "d-chipinfo@dsek.se",
-    image: "/images/board/ester.png" // image path
+    image: "/images/board/NoPicture.jpg" // image path
   },
   {
     name: "Elly Hedin Oleniusson",
@@ -56,20 +56,20 @@ const teamMembers = [
     image: "/images/board/elly.jpg" // image path
   }, 
   {
-    name: "Emma Kujala",
+    name: "Vivea Upadhyaya",
 	position: "Ekonomiansvarig",
-    class: "C21",
+    class: "D24",
     description: "Ekonomiansvarig har i uppgift att i samråd med styrelsen ha kontroll över föreningens pengar.",
     contact: "d-chipekonomi@dsek.se",
-    image: "/images/board/emma.png" // image path
+    image: "/images/board/NoPicture.jpg" // image path
   },
   {
-  name: "Linn Eripe",
+  name: "Maya Frank",
 	position: "Sekreterare",
-    class: "C23",
+    class: "C24",
     description: "Sekreteraren har i uppgift att protokollföra alla föreningsmöten och styrelsemöten samt se till att dessa protokoll justeras och offentliggörs på lämpligt sätt.",
     contact: "d-chipsekreterare@dsek.se",
-    image: "/images/board/linn.jpg" // image path
+    image: "/images/board/NoPicture.jpg" // image path
   },
 
 ];
@@ -83,9 +83,9 @@ const revisorer = [
     image: "/images/board/hanna.jpg" // Add the actual image path
   },
   {
-    name: "Linnéa Samuelsson",
+    name: "Ester Nielsen Gulis",
 	position: "Revisor",
-    class: "C21",
+    class: "C23",
     description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/hanna.jpg" // Add the actual image path
@@ -122,7 +122,9 @@ const valberedning = [
 <!doctype html>
 <Body>
     <main>
-		<h1>Vad är D-chip?</h1>
+        <div class="container">
+		<h1>Vad är D-Chip?</h1>
+        <div class="divider"></div>
         <img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
         <br>
 		<p>D-Chip är en fristående förening som bildades hösten 1995. Vårt syfte är att främja kvinnors och icke-binäras 
@@ -135,9 +137,9 @@ const valberedning = [
             Som nolla kallas man <b> microchip. </b> När man blivit upphöjd till etta får man kalla sig <b> D-Chip. </b> 
             Alumner kallas även för <b> Super Hacker Babes,</b> en tradition sedan föreningen startade för 30 år sedan.
             Ett D-Chip har, förutom råsa (datateknik) eller lila (infocom) spegater i sin tofs på teknologmössan, även en råsa rosett.</p>
-			
-            
-		<h1>Styrelsen</h1>
+        </div>
+        <br>
+		<h1 class="mt-12 mb-12"><span>Styrelsen</span></h1>
         <div class="president-grid-container grid grid-cols-1 md:w-1/2 lg:w-1/3">
             {
                 president.map(member => (
@@ -166,7 +168,8 @@ const valberedning = [
                 ))
             }
         </div>
-        <h1>Funktionärer</h1>
+        <br>
+        <h1 class="mt-12 mb-12"><span>Funktionärer</span></h1>
         <div class="grid-container grid grid-cols-1 md:grid-cols-2">
             <div class="card">
                 <h3>Revisorer</h3>
@@ -189,13 +192,15 @@ const valberedning = [
             <p>Föreningens valberedning utgörs av en representant från var och en av de fyra senaste årskurserna på Datateknik och Infocom. Valberedningen utgörs av minst två representanter.</p>
             </div>
         </div>
-            
         </div>
+        <br>
+        <div class="container">
         <div>
             <h1>Vill du engagera dig?</h1>
             <p class="centered"> Vad kul! Hör av dig till oss på {MAIL}.</p>
             <a href={`/${lang}/contact`} class="contact-button">Kontakta oss</a>
         </div>
+    </div>
     </main>
 </Body>
 </html>
@@ -215,19 +220,29 @@ const valberedning = [
 
 	.big-image {
 		display: block;              /* Ensure the image behaves as a block element */
-    margin-left: auto;          /* Center the image horizontally */
-    margin-right: auto;         /* Center the image horizontally */
-    width: 50%;                 /* Adjust the width as needed */
-    height: auto;               /* Maintain aspect ratio */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
-    border-radius: 50px;         /* Optional: round the corners */
-}
+        margin: 1em auto 0;
+        width: 50%;                 /* Adjust the width as needed */
+        height: auto;               /* Maintain aspect ratio */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
+        border-radius: 50px;         /* Optional: round the corners */
+    }
+
+    .container {
+        margin-bottom: 1em;
+    }
 
     h1 {
         font-size: 3.5em;
-		padding-top: 0.5em;
         color: #4a4a4a;
     }
+
+    h1 span {
+        background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+        border-radius: 8px; /* Optional: round the corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+        padding: 10px 20px;
+    }
+
 
     p.centered {
         text-align: center;
@@ -236,10 +251,7 @@ const valberedning = [
 
     .president-grid-container {
         display: block;              /* Ensure the image behaves as a block element */
-        margin-left: auto;          /* Center the image horizontally */
-        margin-right: auto;         /* Center the image horizontally */
-        margin-bottom: 1em;
-
+        margin: 1em auto;
         height: auto;               /* Maintain aspect ratio */
         border-radius: 8px;         /* Optional: round the corners */
         min-width: 360px;
@@ -249,6 +261,7 @@ const valberedning = [
         display: grid;
         gap: 20px;
         min-width: 400px;
+        margin: 1em 0 2.5em;
     }
 
     .card {
@@ -311,13 +324,5 @@ const valberedning = [
         background-color: #f36a93; /* Darker color on hover */
     }
 
-    .divider {
-        height: 5px;
-        width: 90%;
-        background-color: #f180a1;
-        border-radius: 8px;
-        margin-bottom: 10px;
-        opacity: 0.2;
-    }
 </style>
 
