@@ -10,13 +10,16 @@ import Body from '../../components/Body.astro';
 <Body>
     <main>
         <section class="collab-intro">
+            <div class="container">
             <h1>Vill ni samarbeta med oss?</h1>
+            <div class="divider"></div>
             <p>
                 D-Chip är ett nätverk för kvinnor och icke-binära studenter och alumner som läser eller har läst 
                 till civilingenjör i datateknik eller information- och kommunikationsteknik vid Lunds Tekniska Högskola. 
                 Genom ett samarbete med <br>D-Chip kan ert företag enkelt nå ut  till denna grupp och bygga upp en relation 
                 med dem redan innan de når arbetsmarknaden.
             </p>
+        </div>
         </section>
 
          <!-- New Image Gallery Section -->
@@ -28,8 +31,9 @@ import Body from '../../components/Body.astro';
             </div>
         </section>
 
-        <section class="what-we-offer">
+        <div class="container">
             <h3>Hur kan vi mötas?</h3>
+            <div class="divider"></div>
             <p>
                 Vi i D-Chip anordnar en rad spännande evenemang för att koppla samman våra medlemmar med näringslivet och skapa meningsfulla nätverk. Här är några exempel på vad vi kan erbjuda:
             </p>
@@ -50,14 +54,17 @@ import Body from '../../components/Body.astro';
             <p>
                 Tillsammans kan vi hitta de perfekta aktiviteterna för att skapa minnesvärda upplevelser och bygga starka relationer med framtidens ingenjörer.
             </p>
-        </section>
+        </div>
         
 
         <section class="contact">
+            <div class="container">
             <h2>Kontakta oss</h2>
+            <div class="divider"></div>
             <p>
                 Är ni intresserade av att samarbeta eller vill ni veta mer? Tveka inte att kontakta oss. Vi ser fram emot att höra från er och skapa ett givande samarbete!
             </p>
+            </div>
             <div class="contact-info">
                 <img src="/images/board/elly.jpg" alt="Kontaktperson" class="contact-image">
                 <div class="contact-details">
@@ -106,7 +113,7 @@ p {
 
 /* Card container */
 .what-we-offer {
-    background-color: #f7f7f7;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 2em;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -171,6 +178,7 @@ p {
 }
 
 .contact-info {
+    margin-top: 2em;
     display: flex;
     align-items: center;
     justify-content: space-around;
