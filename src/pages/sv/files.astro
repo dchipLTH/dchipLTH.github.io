@@ -11,27 +11,30 @@ import Body from '../../components/Body.astro';
     <main class="px-4 md:px-8 lg:px-16 py-8 max-w-6xl mx-auto">
         <!-- Title and description -->
         <section class="mb-8 text-center">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Dokument</h1>
-            <p class="text-sm md:text-base text-gray-600">
+            <div class="container">
+            <h1>Dokument</h1>
+            <div class="divider"></div>
+            <p>
                 Här finns alla dokument som reglerar föreningens verksamhet. 
                 Om du har några frågor om materialet eller saknar något, hör av dig till oss via 
                 <a href="mailto:d-chipstyrelse@dsek.se" class="text-[#f180a1] underline">d-chipstyrelse@dsek.se</a>.
             </p>
+        </div>
         </section>
 
         <!-- Current Year Documents Section -->
         <section class="mb-12">
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-6">Årets dokument</h2>
+            <h2><span>Årets dokument</span></h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Möteshandlingar VTM</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Visa handlingar</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Möteshandlingar HTM</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Visa handlingar</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Möteshandlingar Styrelsen</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Visa handlingar</a>
                 </li>
@@ -40,14 +43,14 @@ import Body from '../../components/Body.astro';
 
         <!-- Official Documents Section -->
         <section class="mb-12">
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-6">Styrdokument</h2>
+            <h2><span>Styrdokument</span></h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Stadgar</h3>
                     <a href="https://drive.google.com/file/d/11tJSk8ubLLO6BXNPq6Y439elo_ZJpCT4/view?usp=sharing" 
                        class="contact-button">Visa PDF</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Reglemente</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Visa PDF</a>
                 </li>
@@ -56,21 +59,21 @@ import Body from '../../components/Body.astro';
 
         <!-- Archive Section -->
         <section>
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-6">Arkiv</h2>
+            <h2><span>Arkiv</span></h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Styrelsemöten</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Visa handlingar</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Möteshandlingar</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Visa handlingar</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Ekonomi</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Visa dokument</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Verksamhetsberättelse</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Visa dokument</a>
                 </li>
@@ -79,3 +82,15 @@ import Body from '../../components/Body.astro';
     </main>
 </Body>
 </html>
+
+<style>
+    h2 {
+        margin: 1.5em 0 1em;
+    }
+    h2 span {
+        background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+        border-radius: 8px; /* Optional: round the corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+        padding: 10px 20px;
+    }
+</style>
