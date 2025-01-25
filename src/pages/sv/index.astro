@@ -22,24 +22,28 @@ const news = await getSortedNews(lang);
         <!-- Two Column Section -->
         <div class="content-container">
             <div class="text-column">
-                <h2>Välkommen till D-Chip!</h2>
-                <div class="divider"></div>
-                <p class="text-justify">D-Chip är en ideell, studentdriven förening
-                för tjejer och icke-binära som studerar vid civilingenjörsprogrammen i datateknik 
-                och information- & kommunikationsteknik samt masterprogrammet i VR/AR vid Lunds Tekniska Högskola. 
-                Vårt syfte är att främja kvinnliga och icke-binära studenters trivsel på 
-                universitetet genom att erbjuda en gemenskap där alla känner sig välkomna och inkluderade. 
-                Det gör vi främst genom att hålla i många olika typer av evenemang, 
-                som brukar vara väldigt uppskattade bland våra medlemmar.<br><br><b>
-                Som studerande kvinna eller icke-binär på programmen nämnda ovan är du automatiskt medlem i D-Chip
-                och varmt välkommen på alla våra event.</b></p>
+                <div class="container">
+                    <h2>Välkommen till D-Chip!</h2>
+                    <div class="divider"></div>
+                    <p class="text-justify">D-Chip är en ideell, studentdriven förening
+                    för tjejer och icke-binära som studerar vid civilingenjörsprogrammen i datateknik 
+                    och information- & kommunikationsteknik samt masterprogrammet i VR/AR vid Lunds Tekniska Högskola. 
+                    Vårt syfte är att främja kvinnliga och icke-binära studenters trivsel på 
+                    universitetet genom att erbjuda en gemenskap där alla känner sig välkomna och inkluderade. 
+                    Det gör vi främst genom att hålla i många olika typer av evenemang, 
+                    som brukar vara väldigt uppskattade bland våra medlemmar.<br><br><b>
+                    Som studerande kvinna eller icke-binär på programmen nämnda ovan är du automatiskt medlem i D-Chip
+                    och varmt välkommen på alla våra event.</b></p>
+                </div>
             </div>
             <div class="social-column">
-				<div class="pb-6 px-0.5">
+				<div class="px-0.5">
+                    <div class="container">
 					<h4>Har du en kul idé?</h4>
                     <div class="divider"></div>
 					<p class="pb-6">Tveka inte på att höra av dig till oss! Vi tar emot idéer på alltifrån event till samarbeten. </p>
 					<a href={`/${lang}/contact`} class="contact-button">Kontakta oss</a>
+                </div>
 				</div>
                 <h4>FÖLJ OSS HÄR</h4>
                 <div class="divider"></div>
@@ -92,7 +96,8 @@ const news = await getSortedNews(lang);
         </div>
     </div>
 		<div>
-            <h3>Kommande evenemang</h3>
+            <div class="container">
+            <h2>Kommande evenemang</h2>
             <div class="divider"></div>
 			<section>
 				<ul class="blog-posts">
@@ -111,6 +116,7 @@ const news = await getSortedNews(lang);
 					}
 				</ul>
 			</section>
+        </div>
 		</div>
     </main>
 </Body>
@@ -123,9 +129,6 @@ main {
 	margin: auto;
 	background: #ffcfddff;
 	font-family: 'AfacadFluxThin', serif;
-}
-h3 {
-    margin-top: 2em;
 }
 	
 .content-container {
@@ -140,6 +143,11 @@ h3 {
 		padding: 0.5em;
 		text-align: center;
 	}
+
+    .text-column .container {
+        padding-bottom: 2.5em;
+    }
+
 	.social-column {
 		flex: 1;
 		padding: 0.5em;
@@ -164,11 +172,19 @@ h3 {
     .news-container {
     display: flex;
     justify-content: space-between;
-    margin: 2em 0;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1em auto;
+    max-width: 1300px;
+    padding: 1em;
     gap: 2em; /* Optional: adds space between the two columns */
+}
+
+.container {
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+    border-radius: 8px; /* Optional: round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    margin: 0 auto;
+    width: 97.5%
 }
 
 .news-title {
@@ -189,6 +205,8 @@ iframe {
     width: 100%;
     height: 500px;
     border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    border-radius: 8px; /* Optional: round the corners */
 }
 
 /* Try targeting the account info inside the iframe, this might not always work */
@@ -200,7 +218,7 @@ iframe .account-header, iframe .user-profile-info {
     padding: 1em;
     background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
     border-radius: 8px; /* Optional: round the corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
 }
 
 .news-post {
