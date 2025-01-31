@@ -64,7 +64,7 @@ import Body from '../../components/Body.astro';
             <p>
                 Är ni intresserade av att samarbeta eller vill ni veta mer? Tveka inte att kontakta oss. Vi ser fram emot att höra från er och skapa ett givande samarbete!
             </p>
-            </div>
+        </div>
             <div class="contact-info">
                 <img src="/images/board/elly.jpg" alt="Kontaktperson" class="contact-image">
                 <div class="contact-details">
@@ -73,6 +73,7 @@ import Body from '../../components/Body.astro';
                     <p class="p-contact-mail"><a href="mailto:d-chipnaringsliv@dsek.se">d-chipnaringsliv@dsek.se</a></p>
                 </div>
             </div>
+        
         </section>
     </main>
 </Body>
@@ -116,7 +117,7 @@ p {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 2em;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
 }
 
@@ -161,7 +162,7 @@ p {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 /* Contact section */
 .contact {
@@ -183,12 +184,12 @@ p {
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    width: 80%; /* Use a percentage for flexibility */
+    width: 70%; /* Use a percentage for flexibility */
     max-width: 600px; /* Limit max width for large screens */
     background-color: #fff;
     padding: 1.5em;
     border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .contact-image {
@@ -196,7 +197,7 @@ p {
     width: 150px; /* Reduce size for better scaling */
     height: 150px;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s;
 }
 
@@ -276,8 +277,8 @@ p {
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
 }
 
 .gallery-grid img:hover {
