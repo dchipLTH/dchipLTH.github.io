@@ -29,12 +29,14 @@ const { title, description, date, time, location, buttonLink, buttonText, heroIm
 			<article>
 				<div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
+				</div> <br>
+				<div class="container">
 				<div class="prose">
 					<div class="title">
-							<h1>{title}</h1>
-							<h3><FormattedDate date={date} />   |   {time}   |   {location}</h3>
+							<h2>{title}</h2>
+							<h4><FormattedDate date={date} />   |   {time}   |   {location}</h4>
 					</div>
+					<div class="divider"></div>
 					<div class="text"> 
 						<slot />
 					</div>
@@ -50,6 +52,7 @@ const { title, description, date, time, location, buttonLink, buttonText, heroIm
 						)}
 					  </div>
 				</div>
+			</div>
 			</article>
 		</main>
 	</Body>
@@ -72,30 +75,24 @@ const { title, description, date, time, location, buttonLink, buttonText, heroIm
 		box-shadow: var(--box-shadow);
 	}
 	.prose {
-		width: 720px;
 		max-width: calc(100% - 2em);
 		margin: auto;
-		padding: 1em;
 		color: rgb(var(--gray-dark));
 	}
 	.title {
-		margin-bottom: 1em;
-		padding: 1em 0;
+		margin: 0.5em 0;
 		text-align: center;
 		line-height: 1;
 	}
-	.title h1 {
-		margin: 0 0 0.5em 0;
-	}
 	.text {
 		font-size: 1.5em;
-		text-align: center;
+		text-align: justify;
 	}
 	/* Center the button */
 .button-container {
 display: flex;
 justify-content: center;  /* Horizontally centers the button */
-margin-top: 2em;          /* Adds some space above the button */
+margin: 1em auto;          /* Adds some space above the button */
 }
 
 /* Style the button */
