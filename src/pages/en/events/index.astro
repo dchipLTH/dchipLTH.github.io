@@ -23,8 +23,10 @@ const translations = lang === 'en' ? en : sv;
 <!doctype html>
 <Body>
     <main class="pt-12">
+        <div class="container">
         <section>
             <h1>Events</h1>
+            <div class="divider"></div>
             <p>Here you can see our upcoming events. Registration and more information can be found in the event descriptions.
              </p>
             </section>
@@ -36,7 +38,7 @@ const translations = lang === 'en' ? en : sv;
                             <a href={`/${lang}/events/${post.slug}/`}>
                                 <img src={post.data.heroImage} alt={post.data.title} />
                                 <h4 class="title">{post.data.title}</h4>
-                                <p class="date">
+                                <p class="text-md text-[#484647] text-center">
                                     <FormattedDate date={post.data.date} />
                                 </p>
                             </a>
@@ -45,13 +47,14 @@ const translations = lang === 'en' ? en : sv;
                 }
             </ul>
         </section>
+    </div>
     </main>
-</body>
+</Body>
 </html>
 
 <style>
     main {
-        width: 1100px; /* You can adjust the width as needed */
+        width: 1200px; /* You can adjust the width as needed */
         margin: 0 auto; /* Center the main content */
     }
     h1, h2 {
@@ -73,6 +76,7 @@ const translations = lang === 'en' ? en : sv;
     }
     ul li {
         text-align: center; /* Center text within each card */
+        margin: 0 auto;
     }
     ul li img {
         width: 330px; /* Fixed width for circular images */
@@ -109,4 +113,3 @@ const translations = lang === 'en' ? en : sv;
         }
     }
 </style>
-

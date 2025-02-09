@@ -14,12 +14,12 @@ const translations = lang === 'en' ? en : sv;
 
 const president = [
 {
-    name: "Linnea Sandsjö",
+    name: "Hilma Larsson",
 	position: "President",
-    class: "C22",
+    class: "C23",
     description: "The president is responsible for, in consultation with the board, leading the association, as well as representing the association in official contexts.",
     contact: "d-chipordforande@dsek.se",
-    image: "/images/board/linnea.png" // Add the actual image path
+    image: "/images/board/NoPicture.jpg" // Add the actual image path
   }
 ]
 const teamMembers = [
@@ -40,12 +40,12 @@ const teamMembers = [
     image: "/images/board/ylva.jpg" // image path
   },
   {
-    name: "Ester Nielsen Gulis",
+    name: "Lisa Clevestam",
 	position: "Head of Communications",
-    class: "C22",
+    class: "C23",
     description: "The Head of Communications is responsible for the association's website and social media. They are also in charge of distributing internal information related to D-Chip.",
     contact: "d-chipinfo@dsek.se",
-    image: "/images/board/ester.png" // image path
+    image: "/images/board/NoPicture.jpg" // image path
   },
   {
     name: "Elly Hedin Oleniusson",
@@ -56,20 +56,20 @@ const teamMembers = [
     image: "/images/board/elly.jpg" // image path
   }, 
   {
-    name: "Emma Kujala",
+    name: "Vivea Upadhyaya",
 	position: "Treasurer",
-    class: "C21",
+    class: "D24",
     description: "The treasurer is responsible for, in consultation with the board, overseeing the association's finances.",
     contact: "d-chipekonomi@dsek.se",
-    image: "/images/board/emma.png" // image path
+    image: "/images/board/NoPicture.jpg" // image path
   },
   {
-  name: "Linn Eripe",
-	position: "Secretary",
-    class: "C23",
+    name: "Maya Frank",
+    position: "Secretary",
+    class: "C24",
     description: "The secretary is responsible for taking minutes at all association meetings and board meetings, as well as ensuring that the protocols are approved and published in an appropriate manner.",
     contact: "d-chipsekreterare@dsek.se",
-    image: "/images/board/linn.jpg" // image path
+    image: "/images/board/NoPicture.jpg" // image path
   },
 
 ];
@@ -83,9 +83,9 @@ const revisorer = [
     image: "/images/board/hanna.jpg" // Add the actual image path
   },
   {
-    name: "Linnéa Samuelsson",
+    name: "Ester Nielsen Gulis",
 	position: "Revisor",
-    class: "C21",
+    class: "C23",
     description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/hanna.jpg" // Add the actual image path
@@ -117,12 +117,41 @@ const valberedning = [
     image: "/images/board/hanna.jpg" // Add the actual image path
   }
 ];
+
+const jubileegroup = [
+{
+    name: "Anna Hallin",
+    class: "C23",
+  },
+  {
+    name: "Alice Ward",
+    class: "D24",
+  },
+  {
+    name: "Alma Karlsson",
+    class: "C23",
+  },
+  {
+    name: "Astrid Mildner",
+    class: "C23",
+  },
+  {
+    name: "Ellen Persson",
+    class: "C23",
+  },
+  {
+  name: "Linn Eripe",
+    class: "C23",
+  }
+];
 ---
 
 <!doctype html>
 <Body>
     <main>
+        <div class="container">
 		<h1>What is D-Chip?</h1>
+        <div class="divider"></div>
         <img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
         <br>
 		<p>D-Chip is an independent association that was founded in the fall of 1995. 
@@ -137,10 +166,9 @@ const valberedning = [
             Alumni are also referred to as <b> Super Hacker Babes,</b> a tradition that has been in place since the association
              was founded 30 years ago. A D-Chip, in addition to having a pink (Computer Engineering) or 
              purple (Information and Communication Technology) tassel, also has a pink ribbon.</p>
-
-
-            
-		<h1>The Board</h1>
+        </div>
+        <br>
+		<h1 class="mt-12 mb-12"><span>The Board</span></h1>
         <div class="president-grid-container grid grid-cols-1 md:w-1/2 lg:w-1/3">
             {
                 president.map(member => (
@@ -150,7 +178,7 @@ const valberedning = [
                         <div class="divider"></div>
                         <h4>{member.name}, {member.class}</h4>
                         <p class="centered">{member.description}</p>
-                        <p class="contact">Contakt: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
+                        <p class="contact">Contact: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
                     </div>
                 ))
             }
@@ -164,12 +192,13 @@ const valberedning = [
                         <div class="divider"></div>
                         <h4>{member.name}, {member.class}</h4>
                         <p class="centered">{member.description}</p>
-                        <p class="contact">Kontakt: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
+                        <p class="contact">Contact: <a href={`mailto:${member.contact}`}>{member.contact}</a></p>
                     </div>
                 ))
             }
         </div>
-        <h1>Volunteers</h1>
+        <br>
+        <h1 class="mt-12 mb-12"><span>Volunteers</span></h1>
         <div class="grid-container grid grid-cols-1 md:grid-cols-2">
             <div class="card">
                 <h3>Auditors</h3>
@@ -180,7 +209,7 @@ const valberedning = [
                 ))
             }
             <p>The association shall have at least one, and no more than two, auditors. The auditors must be legal adults, Swedish citizens, members of the D-section at Lund University of Technology, and possess the financial knowledge required for the task.</p>
-            </div>
+        </div>
             <div class="card"> 
             <h3>The Nomination Committee</h3>
             <div class="divider"></div>
@@ -190,15 +219,29 @@ const valberedning = [
                 ))
             }
             <p>The Nomination Committee consists of at least two representatives from the Computer Sciene and Information and Communication Technology programmes.</p>
-            </div>
         </div>
-            
         </div>
+        <div class="jubilee-card">
+            <h3>Jubilee Group 2025</h3>
+            <div class="divider"></div>
+            <div class="jubilee-names">
+            {
+                jubileegroup.map(member => (
+                    <h4>{member.name}, {member.class}</h4>
+                ))
+            }
+        </div>
+        <p><center>The Jubilee Group is responsible for planning the 30th anniversary of D-Chip 2025.</center></p>
+    </div>
+        </div>
+        <br> <br>
+        <div class="container">
         <div>
             <h1>Would you like to join the association?</h1>
-            <p class="centered"> Please contact us through mail:{MAIL}.</p>
+            <p class="centered"> Please contact us through our social medias or mail: {MAIL}.</p>
             <a href={`/${lang}/contact`} class="contact-button">Contact us</a>
         </div>
+    </div>
     </main>
 </Body>
 </html>
@@ -218,18 +261,28 @@ const valberedning = [
 
 	.big-image {
 		display: block;              /* Ensure the image behaves as a block element */
-    margin-left: auto;          /* Center the image horizontally */
-    margin-right: auto;         /* Center the image horizontally */
-    width: 50%;                 /* Adjust the width as needed */
-    height: auto;               /* Maintain aspect ratio */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
-    border-radius: 50px;         /* Optional: round the corners */
-}
+        margin: 1em auto 0;
+        width: 50%;                 /* Adjust the width as needed */
+        height: auto;               /* Maintain aspect ratio */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
+        border-radius: 50px;         /* Optional: round the corners */
+    }
+
+    .container {
+        margin-bottom: 1em;
+    }
 
     h1 {
         font-size: 3.5em;
-		padding-top: 0.5em;
         color: #4a4a4a;
+    }
+
+    h1 span {
+        background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+        border: 1px solid #e0e0e0;
+        border-radius: 8px; /* Optional: round the corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+        padding: 10px 20px;
     }
 
     p.centered {
@@ -239,10 +292,7 @@ const valberedning = [
 
     .president-grid-container {
         display: block;              /* Ensure the image behaves as a block element */
-        margin-left: auto;          /* Center the image horizontally */
-        margin-right: auto;         /* Center the image horizontally */
-        margin-bottom: 1em;
-
+        margin: 1em auto;
         height: auto;               /* Maintain aspect ratio */
         border-radius: 8px;         /* Optional: round the corners */
         min-width: 360px;
@@ -252,6 +302,7 @@ const valberedning = [
         display: grid;
         gap: 20px;
         min-width: 400px;
+        margin: 1em 0;
     }
 
     .card {
@@ -263,9 +314,34 @@ const valberedning = [
         border: 1px solid #e0e0e0;
         border-radius: 50px;
         padding: 1em;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
         transition: transform 0.2s;
     }
+
+    .jubilee-card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 1px solid #e0e0e0;
+        border-radius: 50px;
+        padding: 1em;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+
+    .jubilee-names {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Två kolumner */
+        width: 80%;
+        text-align: left;
+    }
+
+    .jubilee-names h4 {
+        margin: 5px 5px; /* Minskar avståndet mellan namn */
+    }
+
 
     /*.card:hover {
         transform: translateY(-5px);
@@ -314,13 +390,5 @@ const valberedning = [
         background-color: #f36a93; /* Darker color on hover */
     }
 
-    .divider {
-        height: 5px;
-        width: 90%;
-        background-color: #f180a1;
-        border-radius: 8px;
-        margin-bottom: 10px;
-        opacity: 0.2;
-    }
 </style>
 

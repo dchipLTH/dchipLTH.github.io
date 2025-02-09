@@ -1,33 +1,40 @@
 ---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Body from '../../components/Body.astro';
 ---
 
 <!DOCTYPE html>
 <Body>
-    <main class="px-4 md:px-8 lg:px-16 py-8 max-w-6xl mx-auto">
+    <main class="px-4 md:px-8 lg:px-16 py-8 max-w-[1200px] mx-auto">
         <!-- Title and description -->
         <section class="mb-8 text-center">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Documents</h1>
-            <p class="text-sm md:text-base text-gray-600">
+            <div class="container">
+            <h1>Document</h1>
+            <div class="divider"></div>
+            <p>
                 All documents that regulate the association's activities can be found here.
                 If you have any questions or if something is missing, please don't hesitate to reach out to us at 
                 <a href="mailto:d-chipstyrelse@dsek.se" class="text-[#f180a1] underline">d-chipstyrelse@dsek.se</a>.
             </p>
+        </div>
         </section>
 
         <!-- Current Year Documents Section -->
         <section class="mb-12">
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-6">This Year's Documents</h2>
+            <h2><span>This year's documents</span></h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">VTM Meeting Documents</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Show Documents</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">HTM Meeting Documents</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Show Documents</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Board Meeting Documents</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Show Documents</a>
                 </li>
@@ -36,14 +43,14 @@ import Body from '../../components/Body.astro';
 
         <!-- Official Documents Section -->
         <section class="mb-12">
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-6">Policy Documents</h2>
+            <h2><span>Policy Documents</span></h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Bylaws</h3>
                     <a href="https://drive.google.com/file/d/11tJSk8ubLLO6BXNPq6Y439elo_ZJpCT4/view?usp=sharing" 
                        class="contact-button">Show PDF</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Regulations</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Show PDF</a>
                 </li>
@@ -52,26 +59,41 @@ import Body from '../../components/Body.astro';
 
         <!-- Archive Section -->
         <section>
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 text-center mb-6">Archive</h2>
+            <h2><span>Arcive</span></h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Board Meetings</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Show Documents</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Meeting Documents</h3>
                     <a href="path_to_pdf.pdf" class="contact-button">Show Documents</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Economy</h3>
-                    <a href="path_to_pdf.pdf" class="contact-button">Show Document</a>
+                    <a href="path_to_pdf.pdf" class="contact-button">Show Documents</a>
                 </li>
-                <li class="bg-pink-100 rounded-lg shadow p-6 text-center transition">
+                <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
                     <h3 class="text-2xl font-semibold text-[#484647] mb-4">Activity Report</h3>
-                    <a href="path_to_pdf.pdf" class="contact-button">Show Document</a>
+                    <a href="path_to_pdf.pdf" class="contact-button">Show Documents</a>
                 </li>
             </ul>
         </section>
     </main>
 </Body>
 </html>
+
+<style>
+    h2 {
+        margin: 1.5em 0 1em;
+    }
+    h2 span {
+        background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+        border-radius: 8px; /* Optional: round the corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+        padding: 10px 20px;
+    }
+    li {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    }
+</style>

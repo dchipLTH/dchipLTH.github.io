@@ -1,0 +1,112 @@
+---
+import Body from '../../components/Body.astro';
+
+---
+
+<!DOCTYPE html>
+<Body>
+    <main>
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <div class="container">
+            <h1>Gallery</h1>
+            <div class="divider"></div>
+            <p>Explore our latest happenings and events through images in the gallery below.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/images/gallery/8.png" alt="Gallery Image 1" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/9.jpeg" alt="Gallery Image 2" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/10.jpeg" alt="Gallery Image 3" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/11.jpeg" alt="Gallery Image 4" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/13.jpeg" alt="Gallery Image 5" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/14.jpeg" alt="Gallery Image 6" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/15.jpeg" alt="Gallery Image 7" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/16.jpeg" alt="Gallery Image 8" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/17.jpeg" alt="Gallery Image 9" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/18.jpeg" alt="Gallery Image 10" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/19.jpeg" alt="Gallery Image 11" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/20.jpeg" alt="Gallery Image 12" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/21.jpeg" alt="Gallery Image 13" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/22.jpeg" alt="Gallery Image 14" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/23.jpeg" alt="Gallery Image 15" />
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/gallery/25.jpeg" alt="Gallery Image 16" />
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+</Body>
+</html>
+
+<style>
+    main {
+        padding: 2em;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+        color: #484647;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .gallery-section {
+        margin-bottom: 3em;
+    }
+
+    .gallery-grid {
+        margin-top: 1em;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1em;
+        justify-items: center;
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+</style>

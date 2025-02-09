@@ -27,7 +27,8 @@ const translations = lang === 'en' ? en : sv;
 <Body>
     <main class="pt-12">
         <div class="news-column">
-            <h2 class="news-header">Latest news</h2>
+            <h1 class="news-header">News</h1>
+            <div class="divider"></div>
             <ul class="news-list">
                 {
                     svNews.map((post) => (
@@ -52,7 +53,7 @@ const translations = lang === 'en' ? en : sv;
 
 <style>
     main {
-        width: 1100px; /* You can adjust the width as needed */
+        max-width: 1200px; /* You can adjust the width as needed */
         margin: 0 auto; /* Center the main content */
     }
     p {

@@ -1,0 +1,139 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { MAIL } from '../../consts';
+import Body from '../../components/Body.astro';
+
+const emailRecipient = {MAIL};
+---
+
+<!doctype html>
+  <Body>
+    <main class="pt-12">
+      <div class="contact-container">
+        
+        <!-- First Column: Address, Email, and Map -->
+        <div class="contact-column text-left">
+          <h3>Contact us</h3>
+          <div class="divider"></div>
+          <p class="address-info">
+            <strong>Email:</strong> <a href={`mailto:${MAIL}`}>{MAIL}</a><br>
+            <p></p>
+            <strong>Address:</strong><br>
+            Klas Anshelms väg 10 (Previously Ole Römers väg 3)<br>
+            223 63 Lund<br>
+            Sverige
+          </p>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2285.912129812217!2d13.211071315869743!3d55.71088250198462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a240d59a38d5%3A0xfb3b09df33d2e1d8!2sOle%20R%C3%B6mers%20v%C3%A4g%203%2C%20223%2063%20Lund%2C%20Sweden!5e0!3m2!1sen!2sus!4v1697558951277!5m2!1sen!2sus"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Second Column: Form -->
+        <div class="contact-column form-container">
+          <h2>Do you have a question?</h2>
+          <p class="pb-8">Don't hestitate to reach out! Send us an e-mail at <a href={`mailto:${MAIL}`}>{MAIL}</a> or contact someone in the board directly.</p>
+          <button type="button" onclick="window.location.href='mailto:d-chipstyrelse@dsek.com';">Send e-mail</button>
+          
+          <!--- FORM NOT WORKING -->
+          <!--- <form action={`mailto:${emailRecipient}`} method="POST" enctype="text/plain">
+            <input type="text" name="firstname" placeholder="Förnamn" required />
+            <input type="text" name="lastname" placeholder="Efternamn" required />
+            <input type="email" name="email" placeholder="Din email" required />
+            <textarea name="message" rows="5" placeholder="Ditt meddelande" required></textarea>
+            <button type="submit">Skicka meddelande</button>
+          </form>  -->
+        </div>
+      </div>
+    </main>
+  </Body>
+</html>
+
+<style>
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 0em;
+    max-width: 1200px;
+    margin: auto;
+    align-items: stretch;
+  }
+
+  .contact-column {
+    flex: 1;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+    border-radius: 8px; /* Optional: round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-column.form-container {
+    height: 50%;
+  }
+
+  .contact-column h2 {
+    font-size: 1.5em;
+  }
+
+  .address-info {
+    font-size: 1em;
+    line-height: 1.8;
+    text-align: left;
+    width: 100%;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+  }
+
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 20px 0;
+  }
+
+  .form-container input, .form-container textarea {
+    width: 100%;
+    padding: 0.75em;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .form-container button {
+    background-color: #f85a99;
+    color: white;
+    padding: 0.5em 3em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+
+  .form-container button:hover {
+    background-color: #f180a1;
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+  }
+
+  .divider {
+    margin: 0 0 10px;
+  }
+</style>
