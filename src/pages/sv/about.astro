@@ -117,6 +117,33 @@ const valberedning = [
     image: "/images/board/hanna.jpg" // Add the actual image path
   }
 ];
+
+const jubileegroup = [
+{
+    name: "Anna Hallin",
+    class: "C23",
+  },
+  {
+    name: "Alice Ward",
+    class: "D24",
+  },
+  {
+    name: "Alma Karlsson",
+    class: "C23",
+  },
+  {
+    name: "Astrid Mildner",
+    class: "C23",
+  },
+  {
+    name: "Ellen Persson",
+    class: "C23",
+  },
+  {
+  name: "Linn Eripe",
+    class: "C23",
+  }
+];
 ---
 
 <!doctype html>
@@ -192,12 +219,24 @@ const valberedning = [
             <p>Föreningens valberedning utgörs av en representant från var och en av de fyra senaste årskurserna på Datateknik och Infocom. Valberedningen utgörs av minst två representanter.</p>
             </div>
         </div>
+        <div class="jubilee-card">
+            <h3>Jubileumsgruppen 2025</h3>
+            <div class="divider"></div>
+            <div class="jubilee-names">
+            {
+                jubileegroup.map(member => (
+                    <h4>{member.name}, {member.class}</h4>
+                ))
+            }
         </div>
-        <br>
+        <p><center>Jubileumsgruppen har i uppgift att planera firandet av D-Chips 30-årsjubileum våren 2025.</center></p>
+    </div>
+        </div>
+        <br> <br>
         <div class="container">
         <div>
             <h1>Vill du engagera dig?</h1>
-            <p class="centered"> Vad kul! Hör av dig till oss på {MAIL}.</p>
+            <p class="centered"> Vad kul! Hör av dig till oss på våra sociala medier eller vår {MAIL}.</p>
             <a href={`/${lang}/contact`} class="contact-button">Kontakta oss</a>
         </div>
     </div>
@@ -238,11 +277,11 @@ const valberedning = [
 
     h1 span {
         background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+        border: 1px solid #e0e0e0;
         border-radius: 8px; /* Optional: round the corners */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
         padding: 10px 20px;
     }
-
 
     p.centered {
         text-align: center;
@@ -261,7 +300,7 @@ const valberedning = [
         display: grid;
         gap: 20px;
         min-width: 400px;
-        margin: 1em 0 2.5em;
+        margin: 1em 0;
     }
 
     .card {
@@ -276,6 +315,31 @@ const valberedning = [
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
         transition: transform 0.2s;
     }
+
+    .jubilee-card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 1px solid #e0e0e0;
+        border-radius: 50px;
+        padding: 1em;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+
+    .jubilee-names {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Två kolumner */
+        width: 80%;
+        text-align: left;
+    }
+
+    .jubilee-names h4 {
+        margin: 5px 5px; /* Minskar avståndet mellan namn */
+    }
+
 
     /*.card:hover {
         transform: translateY(-5px);
