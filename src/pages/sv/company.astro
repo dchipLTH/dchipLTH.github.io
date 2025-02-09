@@ -16,7 +16,7 @@ import Body from '../../components/Body.astro';
             <p>
                 D-Chip är ett nätverk för kvinnor och icke-binära studenter och alumner som läser eller har läst 
                 till civilingenjör i datateknik eller information- och kommunikationsteknik vid Lunds Tekniska Högskola. 
-                Genom ett samarbete med <br>D-Chip kan ert företag enkelt nå ut  till denna grupp och bygga upp en relation 
+                Genom ett samarbete med D-Chip kan ert företag enkelt nå ut  till denna grupp och bygga upp en relation 
                 med dem redan innan de når arbetsmarknaden.
             </p>
         </div>
@@ -32,7 +32,7 @@ import Body from '../../components/Body.astro';
         </section>
 
         <div class="container">
-            <h3>Hur kan vi mötas?</h3>
+            <h2>Hur kan vi mötas?</h2>
             <div class="divider"></div>
             <p>
                 Vi i D-Chip anordnar en rad spännande evenemang för att koppla samman våra medlemmar med näringslivet och skapa meningsfulla nätverk. Här är några exempel på vad vi kan erbjuda:
@@ -82,24 +82,13 @@ import Body from '../../components/Body.astro';
 <style>
    main {
     padding: 2em;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 h1, h2, h3, h4 {
     text-align: center;
     color: #484647;
-}
-
-h1 {
-        font-size: 3.5em;
-        margin-bottom: 0.5em;
-		padding-top: 0.5em;
-    }
-
-h2 {
-    margin-top: 1em;
-    margin-bottom: 1em;
 }
 
 h4 {
@@ -133,10 +122,11 @@ p {
 }
 
 .card-container {
+    width: 90%;
     display: grid;
     gap: 1em;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    margin: 2em 0;
+    margin: 2em auto;
 }
 
 .card {
@@ -171,11 +161,6 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.contact h2 {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
 }
 
 .contact-info {
