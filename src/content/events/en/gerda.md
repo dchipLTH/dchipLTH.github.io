@@ -4,7 +4,7 @@ description: 'beskrivning' # jag tror inte denna syns någonstans...?
 date: '2025-03-25' # datum för eventet
 time: '17.25'
 location: 'Gerdahallen'
-heroImage: '/images/events/gerda.png' # bild
+heroImage: '/images/event/gerda.png' # bild
 ---
 
 BodyPump at Gerdahallen together with Elektra.
