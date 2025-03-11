@@ -2,9 +2,9 @@
 title: 'BodyPump på Gerda' # obs: kan ej använda specialtecken här!
 description: 'beskrivning' # jag tror inte denna syns någonstans...?
 date: '2025-03-25' # datum för eventet
-time: '17.00'
+time: '17.25'
 location: 'Gerdahallen'
-heroImage: '/images/jubileum.png' # bild
+heroImage: '/images/events/gerda.png' # bild
 ---
 
 BodyPump på Gerdahallen tillsammans med Elektra.
