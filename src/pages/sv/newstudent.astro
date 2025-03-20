@@ -1,10 +1,8 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import en from '../../locales/en.json';
 import sv from '../../locales/sv.json';
 import Body from '../../components/Body.astro';
+import { text } from '../../content/text/sv/newstudent.ts';
 
 // Extract the language from the first segment of the URL path
 const pathParts = Astro.url.pathname.split('/');
@@ -20,101 +18,27 @@ const translations = lang === 'en' ? en : sv;
     <main>
         <div>
             <div class="container">
-            <h1>Grattis till antagningen,</h1>
-            <h3>och välkommen till Sveriges bästa studentstad: Lund!</h3>
-            <p class="text-center">Det är ofta många frågor man har som ny student. Nedan har vi försökt samla
-                viktig information och länkar. 
-            </p> <br>
+            <h1>{text.title}</h1>
+            <h3>{text.subTitle}</h3>
+            <p class="text-center"> {text.info} </p> <br>
         
-            <h2>Nollning</h2>
+            <h2>{text.nollning}</h2>
             <div class="divider"></div>
-            <p>Nollningen kan beskrivas som en 6 veckor lång introduktion till studietiden och livet som student.
-                Det är en intensiv period fylld med olika former av evenemang, som ger en vänner och minnen för livet. 
-                Att vara med på nollningen är helt frivilligt, och du är med på så mycket eller lite som du vill. <br>
+            <p> {text.nollningInfo}<br>
                 <! På D-sektionens egen nollningssida hittar du massvis med bra information: >
             </p> <br>
-            <! <a href={`https://www.dsek.se/nollning`} class="button"> <! Till D-sektionens nollningssida</a>
+            <! <a href={`https://www.dsek.se/nollning`} class="contact-button"> <! Till D-sektionens nollningssida</a>
         
         
-            <h2>Välkomstlunch</h2>
+            <h2>{text.welcomingLunch}</h2>
             <div class="divider"></div>
-            <p>Dagen innan studiestart anordnar D-Chip traditionsenligt en välkomstlunch på campus, 
-                där du som nyantagen kvinna eller icke-binär till datateknik eller information- & kommunikationsteknik är välkommen. 
-                Lunchen är ett perfekt tillfälle att träffa både andra nyantagna samt äldre studenter.
-                Mer information om välkomstlunchen kommer ut någon gång i början på augusti.
-            </p> <br>
+            <p>{text.welcomingLunchInfo}</p> <br>
         
         
-            <h2>Mentorskapsprogrammet</h2>
+            <h2>{text.mentorship}</h2>
             <div class="divider"></div>
-            <p>Under höstterminen anordnar D-Chip ett mentorskapsprogram där du som ny student får möjlighet 
-                att knyta kontakt med äldre kvinnliga och icke-binära studenter som pluggar samma sak som dig.
-                Programmet är tänkt att fungera som ett stöd för kvinnor och icke-binära på D-sektionen 
-                i början av utbildningen och syftar till att skapa en trygg och välkomnande miljö.<br><br>
-
-                Mentorskapsprogrammet är ett utmärkt tillfälle att lära känna fler tjejer och icke-binära på sektionen. 
-                Förutom att du tilldelas en mentor, kommer det även hållas evenemang och aktiviteter 
-                där alla microchip och mentorer som deltar i programmet samlas och lär känna varandra. <br><br>
-                
-                Tillsammans med din mentor har du möjlighet att prata om allt från studentlivet 
-                och studierna, till livet i Lund i allmänhet. Mentorerna har tystnadsplikt, 
-                vilket innebär att du kan känna dig trygg med att allt som delas stannar mellan dig och din mentor. <br><br>
-            
-                Information om hur du anmäler dig till mentorskapsprogrammet kommer ut någon gång under hösten.
-            </p>
+            <p>{text.mentorshipInfo.split('\n').map(line => <>{line}<br/></>)}</p>
         </div>
     </main>
 </Body>
 </html>
-
-<style>
-
-	.big-image {
-		display: block;              /* Ensure the image behaves as a block element */
-    margin-left: auto;          /* Center the image horizontally */
-    margin-right: auto;         /* Center the image horizontally */
-    width: 50%;                 /* Adjust the width as needed */
-    height: auto;               /* Maintain aspect ratio */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
-    border-radius: 50px;         /* Optional: round the corners */
-}
-
-    h1 {
-        font-size: 3.5em;
-        margin-bottom: 0em;
-        color: #4a4a4a;
-    }
-
-    h3 {
-        margin-bottom: 10px;
-    }
-
-    .button {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 1em;
-        background-color: #f180a1; /* Button color */
-        color: white;
-        border-radius: 8px;
-        text-decoration: none;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
-        transition: background-color 0.3s ease;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .button:hover {
-        background-color: #f36a93; /* Darker color on hover */
-    }
-
-    .container {
-        width: 90%;
-        margin: 2em auto;
-    }
-
-    .divider {
-        margin: 10px auto;
-    }
-</style>
-
