@@ -4,6 +4,7 @@ import FormattedDate from '../../../components/FormattedDate.astro';
 import en from '../../../locales/en.json';
 import sv from '../../../locales/sv.json';
 import Body from '../../../components/Body.astro';
+import { text } from '../../../content/text/en/event';
 
 const posts = (await getCollection('events')).sort(
 (a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
@@ -22,13 +23,12 @@ const translations = lang === 'en' ? en : sv;
 
 <!doctype html>
 <Body>
-    <main class="pt-12">
+    <main>
         <div class="container">
         <section>
-            <h1>Events</h1>
+            <h1>{text.title}</h1>
             <div class="divider"></div>
-            <p>Here you can see our upcoming events. Registration and more information can be found in the event descriptions.
-             </p>
+            <p class="text-center">{text.info}</p>
             </section>
         <section>
             <ul>
@@ -36,7 +36,7 @@ const translations = lang === 'en' ? en : sv;
                     enEvents.map((post) => (
                         <li>
                             <a href={`/${lang}/events/${post.slug}/`}>
-                                <img src={post.data.heroImage} alt={post.data.title} />
+                                <img class="circular-image" src={post.data.heroImage} alt={post.data.title} />
                                 <h4 class="title">{post.data.title}</h4>
                                 <p class="text-md text-[#484647] text-center">
                                     <FormattedDate date={post.data.date} />
@@ -53,63 +53,27 @@ const translations = lang === 'en' ? en : sv;
 </html>
 
 <style>
-    main {
-        width: 1200px; /* You can adjust the width as needed */
-        margin: 0 auto; /* Center the main content */
-    }
-    h1, h2 {
-    text-align: center;
-    color: #484647;
-    }
-    p {
-    text-align: center;
-    margin-bottom: 2em;
-    color: #484647;
-    }
     ul {
         display: grid; /* Use grid layout for the ul */
         grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
         gap: 2rem; /* Space between items */
         list-style-type: none;
-        margin: 0;
+        margin: 1em;
         padding: 0;
     }
-    ul li {
-        text-align: center; /* Center text within each card */
-        margin: 0 auto;
-    }
-    ul li img {
-        width: 330px; /* Fixed width for circular images */
-        height: 330px; /* Fixed height for circular images */
-        border-radius: 50%; /* Make the images circular */
-        margin-bottom: 0.5rem; /* Space below the image */
-        transition: transform 0.2s; /* Add transition for hover effect */
-    }
+
     ul li a {
         display: block; /* Make the whole area clickable */
         text-decoration: none; /* Remove underline */
         color: inherit; /* Inherit color from parent */
     }
-    .title {
-        margin: 0;
-        color: rgb(var(--black));
-        line-height: 1;
-    }
-    .date {
-        margin: 0;
-        color: rgb(var(--gray));
-    }
-    ul li a:hover img {
-        transform: scale(1.05); /* Slightly enlarge image on hover */
-    }
-    ul a:hover .title,
-    ul a:hover .date {
-        color: rgb(var(--accent)); /* Change color on hover */
-    }
-    @media (max-width: 720px) {
+
+    @media (max-width: 768px) {
         ul {
             grid-template-columns: 1fr; /* Stack on smaller screens */
             gap: 0.5em; /* Smaller gap */
         }
     }
 </style>
+
+
