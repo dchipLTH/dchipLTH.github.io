@@ -4,24 +4,24 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { MAIL } from '../../consts';
 import Body from '../../components/Body.astro';
+import { text } from '../../content/text/en/contact';
 
 const emailRecipient = {MAIL};
 ---
 
 <!doctype html>
   <Body>
-    <main class="pt-12">
+    <main>
       <div class="contact-container">
         
         <!-- First Column: Address, Email, and Map -->
         <div class="contact-column text-left">
-          <h3>Contact us</h3>
+          <h3>{text.title}</h3>
           <div class="divider"></div>
           <p class="address-info">
             <strong>Email:</strong> <a href={`mailto:${MAIL}`}>{MAIL}</a><br>
-            <p></p>
-            <strong>Address:</strong><br>
-            Klas Anshelms väg 10 (Previously Ole Römers väg 3)<br>
+            <strong>Adress:</strong><br>
+            Klas Anshelms väg 10 (Tidigare Ole Römers väg 3)<br>
             223 63 Lund<br>
             Sverige
           </p>
@@ -37,9 +37,9 @@ const emailRecipient = {MAIL};
 
         <!-- Second Column: Form -->
         <div class="contact-column form-container">
-          <h2>Do you have a question?</h2>
-          <p class="pb-8">Don't hestitate to reach out! Send us an e-mail at <a href={`mailto:${MAIL}`}>{MAIL}</a> or contact someone in the board directly.</p>
-          <button type="button" onclick="window.location.href='mailto:d-chipstyrelse@dsek.com';">Send e-mail</button>
+          <h2>{text.question}</h2>
+          <p class="pb-8"> {text.mailUs} <a href={`mailto:${MAIL}`}>{MAIL}</a> {text.mailUsCont}</p>
+          <button type="button" onclick="window.location.href='mailto:d-chipstyrelse@dsek.com';">{text.sendMail}</button>
           
           <!--- FORM NOT WORKING -->
           <!--- <form action={`mailto:${emailRecipient}`} method="POST" enctype="text/plain">
@@ -59,9 +59,7 @@ const emailRecipient = {MAIL};
   .contact-container {
     display: flex;
     justify-content: space-between;
-    gap: 2em;
-    padding: 0em;
-    max-width: 1200px;
+    gap: 1.5em;
     margin: auto;
     align-items: stretch;
   }
@@ -125,6 +123,10 @@ const emailRecipient = {MAIL};
 
   .form-container button:hover {
     background-color: #f180a1;
+  }
+
+  .form-container p {
+    width: 100%;
   }
 
   @media (max-width: 768px) {
