@@ -4,78 +4,77 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Body from '../../components/Body.astro';
+import { text } from '../../content/text/en/files.ts';
 ---
 
 <!DOCTYPE html>
 <Body>
-    <main class="px-4 md:px-8 lg:px-16 py-8 max-w-[1200px] mx-auto">
+    <main>
         <!-- Title and description -->
         <section class="mb-8 text-center">
             <div class="container">
-            <h1>Document</h1>
+            <h1>{text.title}</h1>
             <div class="divider"></div>
             <p>
-                All documents that regulate the association's activities can be found here.
-                If you have any questions or if something is missing, please don't hesitate to reach out to us at 
-                <a href="mailto:d-chipstyrelse@dsek.se" class="text-[#f180a1] underline">d-chipstyrelse@dsek.se</a>.
+                {text.info} <a href="mailto:d-chipstyrelse@dsek.se" class="text-[#f180a1] underline">d-chipstyrelse@dsek.se</a>.
             </p>
         </div>
         </section>
 
         <!-- Current Year Documents Section -->
         <section class="mb-12">
-            <h2><span>This year's documents</span></h2>
+            <h2><span>{text.currentDocuments}</span></h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
-                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">VTM Meeting Documents</h3>
-                    <a href="https://drive.google.com/drive/folders/1ACzqHuKF-UqYBSU0wdmyLzjRl4qA4ELW?usp=drive_link" class="contact-button">Show Documents</a>
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">{text.meetingDocumentsVTM}</h3>
+                    <a href="https://drive.google.com/drive/folders/1ACzqHuKF-UqYBSU0wdmyLzjRl4qA4ELW?usp=drive_link" class="contact-button">{text.showDocuments}</a>
                 </li>
                 <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
-                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">HTM Meeting Documents</h3>
-                    <a href="https://drive.google.com/drive/folders/1py3XISXOdSbHyoG49Q5QHaMJ-CDzzWkG?usp=drive_link" class="contact-button">Show Documents</a>
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">{text.meetingDocumentsHTM}</h3>
+                    <a href="https://drive.google.com/drive/folders/1py3XISXOdSbHyoG49Q5QHaMJ-CDzzWkG?usp=drive_link" class="contact-button">{text.showDocuments}</a>
                 </li>
                 <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
-                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Board Meeting Documents</h3>
-                    <a href="https://drive.google.com/drive/folders/1O5x_OaMSy8yo4U5HS07Q5wK04qZ3jf2J?usp=drive_link" class="contact-button">Show Documents</a>
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">{text.meetingDocumentsBoard}</h3>
+                    <a href="https://drive.google.com/drive/folders/1O5x_OaMSy8yo4U5HS07Q5wK04qZ3jf2J?usp=drive_link" class="contact-button">{text.showDocuments}</a>
                 </li>
             </ul>
         </section>
 
         <!-- Official Documents Section -->
         <section class="mb-12">
-            <h2><span>Policy Documents</span></h2>
+            <h2><span>{text.policyDocuments}</span></h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
-                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Bylaws</h3>
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">{text.bylaws}</h3>
                     <a href="https://drive.google.com/file/d/1uhLWTYZtaf4BfmoEefbhsfUvz0KQ3bKX/view?usp=drive_link" 
-                       class="contact-button">Show PDF</a>
+                       class="contact-button">{text.showPDF}</a>
                 </li>
                 <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
-                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Regulations</h3>
-                    <a href="https://drive.google.com/file/d/1nL27N0Jnkq0_jDTIU2qRK3rqWoThqQNL/view?usp=sharing" class="contact-button">Show PDF</a>
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">{text.regulations}</h3>
+                    <a href="https://drive.google.com/file/d/1nL27N0Jnkq0_jDTIU2qRK3rqWoThqQNL/view?usp=sharing" class="contact-button">{text.showPDF}</a>
                 </li>
             </ul>
         </section>
 
         <!-- Archive Section -->
         <section>
-            <h2><span>Arcive</span></h2>
+            <h2><span>{text.archive}</span></h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
                 <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
-                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Board Meetings</h3>
-                    <a href="https://drive.google.com/drive/folders/15XqL8Z2PxC0nE6qgVWBlKu0py3fdJBr0?usp=drive_link" class="contact-button">Show Documents</a>
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">{text.boardMeetings}</h3>
+                    <a href="https://drive.google.com/drive/folders/15XqL8Z2PxC0nE6qgVWBlKu0py3fdJBr0?usp=drive_link" class="contact-button">{text.showDocuments}</a>
                 </li>
                 <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
-                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Meeting Documents</h3>
-                    <a href="https://drive.google.com/drive/folders/15XqL8Z2PxC0nE6qgVWBlKu0py3fdJBr0?usp=drive_link" class="contact-button">Show Documents</a>
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">{text.meetingDocuments}</h3>
+                    <a href="https://drive.google.com/drive/folders/15XqL8Z2PxC0nE6qgVWBlKu0py3fdJBr0?usp=drive_link" class="contact-button">{text.showDocuments}</a>
                 </li>
                 <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
-                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Economy</h3>
-                    <a href="path_to_pdf.pdf" class="contact-button">Show Documents</a>
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">{text.economy}</h3>
+                    <a href="path_to_pdf.pdf" class="contact-button">Visa dokument</a>
                 </li>
                 <li class="bg-white bg-opacity-70 rounded-lg shadow p-6 text-center transition">
-                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">Activity Report</h3>
-                    <a href="https://drive.google.com/drive/folders/1UhpVvcoxz6b1jGy_XYSorPs70wqzj77N?usp=drive_link" class="contact-button">Show Documents</a>
+                    <h3 class="text-2xl font-semibold text-[#484647] mb-4">{text.activityReport}</h3>
+                    <a href="https://drive.google.com/drive/folders/1UhpVvcoxz6b1jGy_XYSorPs70wqzj77N?usp=drive_link" class="contact-button">{text.showDocuments}</a>
                 </li>
             </ul>
         </section>
