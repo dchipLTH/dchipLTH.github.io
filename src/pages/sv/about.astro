@@ -3,7 +3,8 @@ import { MAIL } from '../../consts';
 import en from '../../locales/en.json';
 import sv from '../../locales/sv.json';
 import Body from '../../components/Body.astro';
-
+import { board } from '../../content/text/sv/board';
+import { text } from '../../content/text/sv/about';
 
 // Extract the language from the first segment of the URL path
 const pathParts = Astro.url.pathname.split('/');
@@ -11,167 +12,24 @@ const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specifie
 
 // Set the appropriate translations based on the language
 const translations = lang === 'en' ? en : sv;
-
-const president = [
-{
-    name: "Hilma Larsson",
-	position: "Ordförande",
-    class: "C23",
-    description: "Ordföranden har i uppgift att i samråd med styrelsen utöva ledningen av föreningen, samt att i officiella sammanhang representera föreningen.",
-    contact: "d-chipordforande@dsek.se",
-    image: "/images/board/NoPicture.jpg" // Add the actual image path
-  }
-]
-const teamMembers = [
-  {
-    name: "Hanna Arendt",
-	position: "Vice Ordförande",
-    class: "C23",
-    description: "Vice ordförande har i uppgift att representera föreningen i ordförandes frånvaro samt utföra de uppgifter, som ligger i föreningens ändamål, vilka delegeras av ordförande.",
-    contact: "d-chipvordforande@dsek.se",
-    image: "/images/board/hanna.jpg" // image path
-  },
-  {
-    name: "Ylva Lengborg",
-	position: "Eventansvarig",
-    class: "C23",
-    description: "Eventansvarig har huvudansvaret för de event som anordnas av föreningen och att handha föreningens säljbara artiklar.",
-    contact: "d-chipevent@dsek.se",
-    image: "/images/board/ylva.jpg" // image path
-  },
-  {
-    name: "Lisa Clevestam",
-	position: "Informationsansvarig",
-    class: "C23",
-    description: "Informationsansvarig har i uppgift att vara ansvarig för föreningens hemsida och sociala medier. Hen ska även ansvara för distributionen av intern information rörande D-Chip.",
-    contact: "d-chipinfo@dsek.se",
-    image: "/images/board/NoPicture.jpg" // image path
-  },
-  {
-    name: "Elly Hedin Oleniusson",
-	position: "Näringslivsansvarig",
-    class: "D23",
-    description: "Näringslivsansvarig har i uppgift att förvalta och initiera föreningens företagskontakter.",
-    contact: "d-chipnaringsliv@dsek.se",
-    image: "/images/board/elly.jpg" // image path
-  }, 
-  {
-    name: "Vivea Upadhyaya",
-	position: "Ekonomiansvarig",
-    class: "D24",
-    description: "Ekonomiansvarig har i uppgift att i samråd med styrelsen ha kontroll över föreningens pengar.",
-    contact: "d-chipekonomi@dsek.se",
-    image: "/images/board/NoPicture.jpg" // image path
-  },
-  {
-  name: "Maya Frank",
-	position: "Sekreterare",
-    class: "C24",
-    description: "Sekreteraren har i uppgift att protokollföra alla föreningsmöten och styrelsemöten samt se till att dessa protokoll justeras och offentliggörs på lämpligt sätt.",
-    contact: "d-chipsekreterare@dsek.se",
-    image: "/images/board/NoPicture.jpg" // image path
-  },
-
-];
-const revisorer = [
-{
-    name: "Kristina Sedelius",
-	position: "Revisor",
-    class: "D21",
-    description: "A passionate learner and aspiring developer.",
-    contact: "d-chiprevisor@dsek.se",
-    image: "/images/board/hanna.jpg" // Add the actual image path
-  },
-  {
-    name: "Ester Nielsen Gulis",
-	position: "Revisor",
-    class: "C23",
-    description: "A passionate learner and aspiring developer.",
-    contact: "d-chiprevisor@dsek.se",
-    image: "/images/board/hanna.jpg" // Add the actual image path
-  },
-];
-const valberedning = [
-{
-    name: "Clara Schagerström",
-	position: "Valberedning",
-    class: "C23",
-    description: "A passionate learner and aspiring developer.",
-    contact: "d-chiprevisor@dsek.se",
-    image: "/images/board/hanna.jpg" // Add the actual image path
-  },
-  {
-    name: "Elsa Ryrlén",
-	position: "Valberedning",
-    class: "C21",
-    description: "Föreningens valberedning utgörs av en representant från var och en av de fyra senaste årskurserna på Datateknik och Infocom. Valberedningen utgörs av minst två representanter.",
-    contact: "d-chiprevisor@dsek.se",
-    image: "/images/board/hanna.jpg" // Add the actual image path
-  },
-  {
-    name: "Julia Blomgren",
-	position: "Valberedning",
-    class: "D21",
-    description: "A passionate learner and aspiring developer.",
-    contact: "d-chiprevisor@dsek.se",
-    image: "/images/board/hanna.jpg" // Add the actual image path
-  }
-];
-
-const jubileegroup = [
-{
-    name: "Anna Hallin",
-    class: "C23",
-  },
-  {
-    name: "Alice Ward",
-    class: "D24",
-  },
-  {
-    name: "Alma Karlsson",
-    class: "C23",
-  },
-  {
-    name: "Astrid Mildner",
-    class: "C23",
-  },
-  {
-    name: "Ellen Persson",
-    class: "C23",
-  },
-  {
-  name: "Linn Eripe",
-    class: "C23",
-  }
-];
 ---
 
 <!doctype html>
 <Body>
     <main>
         <div class="container">
-		<h1>Vad är D-Chip?</h1>
-        <div class="divider"></div>
-        <img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
-        <br>
-		<p>D-Chip är en fristående förening som bildades hösten 1995. Vårt syfte är att främja kvinnors och icke-binäras 
-            trivsel och trygghet på D-sektionen vid Teknologkåren vid Lunds Tekniska Högskola samt verka 
-            för att stärka deras engagemang.<br><br>
-
-            Under hösten anordnar vi bland annat en välkomstlunch dagen innan studiestart och
-            ett mentorskapsprogram för alla nya studenter, samt en rad andra aktiviteter och evenemang under resterande tid av året.<br><br>
-
-            Som nolla kallas man <b> microchip. </b> När man blivit upphöjd till etta får man kalla sig <b> D-Chip. </b> 
-            Alumner kallas även för <b> Super Hacker Babes,</b> en tradition sedan föreningen startade för 30 år sedan.
-            Ett D-Chip har, förutom råsa (datateknik) eller lila (infocom) spegater i sin tofs på teknologmössan, även en råsa rosett.</p>
+            <h1>{text.title}</h1>
+            <div class="divider"></div>
+            <img src="/images/main.png" alt="Picture of D-chip" class="big-image" />
+            <p>{text.description}</p>
         </div>
-        <br>
-		<h1 class="mt-12 mb-12"><span>Styrelsen</span></h1>
-        <div class="president-grid-container grid grid-cols-1 md:w-1/2 lg:w-1/3">
+        <h1 class="mt-24 mb-12"><span>{text.board}</span></h1>
+
+        <div class="president-grid-container grid grid-cols-1 md:w-1/2 lg:w-1/3 px-4">
             {
-                president.map(member => (
+                board.president.map(member => (
                     <div class="card">
-                        <img src={member.image} alt={member.name} class="profile-image" />
+                        <img src={member.image} alt={member.name} class="circular-image" />
                         <h3>{member.position}</h3>
                         <div class="divider"></div>
                         <h4>{member.name}, {member.class}</h4>
@@ -181,11 +39,12 @@ const jubileegroup = [
                 ))
             }
         </div>
-        <div class="grid-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+        <div class="grid-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
             {
-                teamMembers.map(member => (
+                board.teamMembers.map(member => (
                     <div class="card">
-                        <img src={member.image} alt={member.name} class="profile-image" />
+                        <img src={member.image} alt={member.name} class="circular-image" />
                         <h3>{member.position}</h3>
                         <div class="divider"></div>
                         <h4>{member.name}, {member.class}</h4>
@@ -195,97 +54,63 @@ const jubileegroup = [
                 ))
             }
         </div>
-        <br>
-        <h1 class="mt-12 mb-12"><span>Funktionärer</span></h1>
+
+        <h1 class="mt-24 mb-12"><span>{text.volunteers}</span></h1>
+
         <div class="grid-container grid grid-cols-1 md:grid-cols-2">
             <div class="card">
-                <h3>Revisorer</h3>
+                <h3>{text.auditors}</h3>
                 <div class="divider"></div>
-            {
-                revisorer.map(member => (
-                    <h4>{member.name}, {member.class}</h4>
-                ))
-            }
-            <p>Föreningen skall ha minst en, högst två, revisorer. Revisorerna skall vara myndiga svenska medborgare och medlemmar av D-sektionen vid Lunds Tekniska Högskola samt ha den insikt i ekonomiska förhållanden som uppdraget kräver.</p>
+                {
+                    board.revisorer.map(member => (
+                        <h4>{member.name}, {member.class}</h4>
+                    ))
+                }
+                <p>{text.auditorsDescription}</p>
             </div>
+
             <div class="card"> 
-            <h3>Valberedning</h3>
-            <div class="divider"></div>
-            {
-                valberedning.map(member => (
-                    <h4>{member.name}, {member.class}</h4>
-                ))
-            }
-            <p>Föreningens valberedning utgörs av en representant från var och en av de fyra senaste årskurserna på Datateknik och Infocom. Valberedningen utgörs av minst två representanter.</p>
+                <h3>{text.valberedning}</h3>
+                <div class="divider"></div>
+                {
+                    board.valberedning.map(member => (
+                        <h4>{member.name}, {member.class}</h4>
+                    ))
+                }
+                <p>{text.valberedningDescription}</p>
             </div>
         </div>
+
         <div class="jubilee-card">
-            <h3>Jubileumsgruppen 2025</h3>
+            <h3>{text.jubilee}</h3>
             <div class="divider"></div>
-            <div class="jubilee-names">
-            {
-                jubileegroup.map(member => (
-                    <h4>{member.name}, {member.class}</h4>
-                ))
-            }
+            <div class="jubilee-names m-2 ">
+                {
+                    board.jubileegroup.map(member => (
+                        <h4 class="mx-4">{member.name}, {member.class}</h4>
+                    ))
+                }
+            </div>
+            <p class="text-center w-[90%]">{text.jubileeDescription}</p>
         </div>
-        <p><center>Jubileumsgruppen har i uppgift att planera firandet av D-Chips 30-årsjubileum våren 2025.</center></p>
-    </div>
+
+        <div class="container mt-12">
+            <h1>{text.engage}</h1>
+            <p class="text-center">{text.engageDescription} {MAIL}.</p>
+            <a href={`/${lang}/contact`} class="contact-button">{text.button}</a>
         </div>
-        <br> <br>
-        <div class="container">
-        <div>
-            <h1>Vill du engagera dig?</h1>
-            <p class="centered"> Vad kul! Hör av dig till oss på våra sociala medier eller vår {MAIL}.</p>
-            <a href={`/${lang}/contact`} class="contact-button">Kontakta oss</a>
-        </div>
-    </div>
     </main>
 </Body>
 </html>
 
 <style>
-    body {
-        margin: 0;
-        color: #333;
-        text-align: center;
-    }
-
-    main {
-        max-width: 1200px;
-        margin: auto;
-        padding: 2em;
-    }
-
-	.big-image {
-		display: block;              /* Ensure the image behaves as a block element */
-        margin: 1em auto 0;
-        width: 50%;                 /* Adjust the width as needed */
-        height: auto;               /* Maintain aspect ratio */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
-        border-radius: 50px;         /* Optional: round the corners */
-    }
-
-    .container {
-        margin-bottom: 1em;
-    }
-
-    h1 {
-        font-size: 3.5em;
-        color: #4a4a4a;
-    }
-
     h1 span {
         background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
         border: 1px solid #e0e0e0;
         border-radius: 8px; /* Optional: round the corners */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
-        padding: 10px 20px;
-    }
-
-    p.centered {
-        text-align: center;
-        width: 100%;
+        padding: 0.25em 0.75em;
+        margin: 1em auto;
     }
 
     .president-grid-container {
@@ -293,20 +118,17 @@ const jubileegroup = [
         margin: 1em auto;
         height: auto;               /* Maintain aspect ratio */
         border-radius: 8px;         /* Optional: round the corners */
-        min-width: 360px;
     }
 
     .grid-container {
         display: grid;
         gap: 20px;
-        min-width: 400px;
         margin: 1em 0;
     }
 
     .card {
         display: flex;
         flex-direction: column;
-        /* justify-content: space-between; */
         align-items: center;
         background-color: rgba(255, 255, 255, 0.7);
         border: 1px solid #e0e0e0;
@@ -331,28 +153,9 @@ const jubileegroup = [
 
     .jubilee-names {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Två kolumner */
-        width: 80%;
-        text-align: left;
-    }
-
-    .jubilee-names h4 {
-        margin: 5px 5px; /* Minskar avståndet mellan namn */
-    }
-
-
-    /*.card:hover {
-        transform: translateY(-5px);
-    }*/
-
-    .profile-image {
-        display: block;              /* Ensure the image behaves as a block element */
-        margin-left: auto;          /* Center the image horizontally */
-        margin-right: auto;
-        /* Center the image horizontally */
-        width: 250px;
-        height: 250px;
-        border-radius: 50%; /* Makes the image circular */
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 90%;
+        text-align: center;
     }
 
     .contact {
@@ -370,23 +173,17 @@ const jubileegroup = [
         text-decoration: underline;
     }
 
-    .contact-button {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 1em;
-        background-color: #f180a1; /* Button color */
-        color: white;
-        border-radius: 8px;
-        text-decoration: none;
-        text-align: center;
-        margin-top: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
-        transition: background-color 0.3s ease;
+    @media (max-width: 768px) {
+    .jubilee-names {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolumner på små skärmar */
     }
+}
 
-    .contact-button:hover {
-        background-color: #f36a93; /* Darker color on hover */
+    /* För ännu mindre skärmar (max-width 480px) - använd 1 kolumn */
+    @media (max-width: 480px) {
+        .jubilee-names {
+            grid-template-columns: 1fr; /* 1 kolumn på mycket små skärmar */
+        }
     }
-
 </style>
 

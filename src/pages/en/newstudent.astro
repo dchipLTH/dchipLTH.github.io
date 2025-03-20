@@ -1,10 +1,8 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import en from '../../locales/en.json';
 import sv from '../../locales/sv.json';
 import Body from '../../components/Body.astro';
+import { text } from '../../content/text/en/newstudent.ts';
 
 // Extract the language from the first segment of the URL path
 const pathParts = Astro.url.pathname.split('/');
@@ -20,88 +18,27 @@ const translations = lang === 'en' ? en : sv;
     <main>
         <div>
             <div class="container">
-                <h1>Congratulations on your admission,</h1>
-                <h3>and welcome to the best student city in Sweden: Lund!</h3>
-                <p class="text-center">There are often a lot of questions you have as a new student. Below, we have tried to gather some useful information and links. </p><br>
-            <h2>Introduction Weeks</h2>
+            <h1>{text.title}</h1>
+            <h3>{text.subTitle}</h3>
+            <p class="text-center"> {text.info} </p> <br>
+        
+            <h2>{text.nollning}</h2>
             <div class="divider"></div>
-            <p>The introduction weeks ("nollning") can be described as a 6-week introduction to student life and the university experience. It is an intense period filled with various events, providing you with friends and memories for life. You can participate as much or as little as you want. <br><br>
-                <! On the D-guild's designated Introduction Weeks page, you can find a lot of useful information: information: >
-            </p>
-            <! <a href={`https://www.dsek.se/nollning`} class="button"> <! To the D-guild's website</a>
-
-            <h2>Welcoming Lunch</h2>
-            <div class="divider"></div>
-            <p>The day before the start of the semester, D-Chip traditionally organizes a welcome lunch on campus, where you, as a newly admitted woman or non-binary person to Computer Engineering or Information & Communication Technology, are welcome. The lunch is a perfect opportunity to meet other newly admitted students as well as older students. More information about the welcome lunch will be released sometime in early August.
+            <p> {text.nollningInfo}<br>
+                <! På D-sektionens egen nollningssida hittar du massvis med bra information: >
             </p> <br>
+            <! <a href={`https://www.dsek.se/nollning`} class="contact-button"> <! Till D-sektionens nollningssida</a>
         
         
-            <h2>Mentorship Program</h2>
+            <h2>{text.welcomingLunch}</h2>
             <div class="divider"></div>
-            <p>During the fall semester, D-Chip organizes a mentorship program where you, as a new student,
-                have the opportunity to connect with older female and non-binary students studying the same as you.
-                The program is intended to provide support for women and non-binary individuals in the D-guild at
-                the start of their studies and aims to create a safe and welcoming environment.<br><br>
-
-                The mentorship program is a great opportunity to get to know more women and non-binary individuals in the D-guild. In addition to being paired with a mentor, events and activities will also be organized where all participants in the program—both mentees and mentors—can gather and get to know each other. <br><br>
-                
-                Together with your mentor, you'll have the chance to talk about everything from student life and studies to life in Lund in general. The mentors are bound by confidentiality, meaning you can feel safe knowing that anything shared stays between you and your mentor. <br><br>
-            
-                Information on how to sign up for the mentorship program will be released sometime during the fall.
-            </p>
+            <p>{text.welcomingLunchInfo}</p> <br>
+        
+        
+            <h2>{text.mentorship}</h2>
+            <div class="divider"></div>
+            <p>{text.mentorshipInfo.split('\n').map(line => <>{line}<br/></>)}</p>
         </div>
     </main>
 </Body>
 </html>
-
-<style>
-
-	.big-image {
-		display: block;              /* Ensure the image behaves as a block element */
-    margin-left: auto;          /* Center the image horizontally */
-    margin-right: auto;         /* Center the image horizontally */
-    width: 50%;                 /* Adjust the width as needed */
-    height: auto;               /* Maintain aspect ratio */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
-    border-radius: 50px;         /* Optional: round the corners */
-}
-
-    h1 {
-        font-size: 3.5em;
-        margin-bottom: 0em;
-        color: #4a4a4a;
-    }
-
-    h3 {
-        margin-bottom: 10px;
-    }
-
-    .button {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 1em;
-        background-color: #f180a1; /* Button color */
-        color: white;
-        border-radius: 8px;
-        text-decoration: none;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
-        transition: background-color 0.3s ease;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .button:hover {
-        background-color: #f36a93; /* Darker color on hover */
-    }
-
-    .container {
-        width: 90%;
-        margin: 2em auto;
-    }
-
-    .divider {
-        margin: 10px auto;
-    }
-</style>
-

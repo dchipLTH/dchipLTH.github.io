@@ -51,10 +51,9 @@
   }
 
 /* Body - Apply thin text fonts */
+
 body {
 	font-family: 'AfacadFluxThin', serif;
-	margin: 0;
-	padding: 0;
 	text-align: left;
 	background: #ffcfddff;
 	word-wrap: break-word;
@@ -66,17 +65,22 @@ body {
 
 /* Main text content */
 main {
-	max-width: 85%;
-	margin: auto;
+	max-width: calc(100% - 6em);
+	padding: 2em 0;
+	margin: 0 auto;
 	background: #ffcfddff;
-	font-family: 'AfacadFluxThin', serif;
 	text-align: center;
+	font-family: 'AfacadFluxThin', serif;
+}
+
+.wrapper {
+    width: 90%;
+	margin: 0 auto;
 }
 
 /* Headings - Rotate between the desired heading fonts */
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'AfacadFlux', sans-serif;
-	margin: 0 0 0.5rem 0;
 	color: rgb(var(--black));
 	line-height: 1.2;
 	color: #484647;
@@ -116,10 +120,8 @@ a:hover {
 	color: var(--accent);
 }
 p {
-	margin-bottom: 1em;
 	text-align: justify;
 	margin: 0 auto;
-	width: 90%;
 	color: #484647;
 }
 .prose p {
@@ -133,34 +135,91 @@ img {
 	height: auto;
 	border-radius: 8px;
 }
-@media (max-width: 720px) {
+@media (max-width: 850px) {
 	body {
 		font-size: 18px;
 	}
-	main {
-		padding: 1em;
+
+	h1 {
+        font-size: 70px;
+    }
+	
+	h2 {
+		font-size: 2em;
 	}
+	
+	h3 {
+		font-size: 1.5em;
+	}
+	
+	h4 {
+		font-size: 1.2em;
+	}
+	
+	h5 {
+		font-size: 1em;
+	}
+}
+
+@media (max-width: 640px) {
+	
+	h1 {
+		font-size: 40px;
+	}
+
+	h2 {
+		font-size: 2.2em;
+	}
+	
+	h3 {
+		font-size: 2em;
+	}
+	
+	h4 {
+		font-size: 1.5em;
+	}
+}
+
+@media (max-width: 480px) {
+
+	h1 {
+		font-size: 40px;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+	
+	h3 {
+		font-size: 1.7em;
+	}
+	
+	h4 {
+		font-size: 1.5em;
+	}
+	
 }
 
 .divider {
 	height: 5px;
-	width: 90%;
+	width: 100%;
 	background-color: #f180a1;
 	border-radius: 8px;
-	margin: 0 auto 10px;
+	margin: 0.5em auto;
 	opacity: 0.2;
 }
 
 .container {
-	padding: 1em;
+	padding: 2em calc(4%);
 	background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
 	border-radius: 8px; /* Optional: round the corners */
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
-	margin: 0 auto;
+	max-width: 100%;
 }
 
 .contact-button {
     display: inline-block;
+	margin: 1em auto;
     padding: 10px 20px;
     font-size: 1em;
     background-color: #f180a1; /* Button color */
@@ -195,7 +254,27 @@ img {
     border-radius: 50%; /* Make the image circular */
     object-fit: cover; /* Cover to maintain aspect ratio */
 	display: block; /* Ensure the image is treated as a block element */
-    margin: 0 auto; /* Center the image */
+    margin: 0.5em auto; /* Center the image */
+	max-width: 300px; /* Increase size for circular images */
+	max-height: 300px; /* Same as width for perfect circle */
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1/1; /* Bibehåller cirkelformen */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+	transition: transform 0.2s; /* Add transition for hover effect */
+}
+
+.big-image {
+	display: block;              /* Ensure the image behaves as a block element */
+	margin: 1em auto;
+	width: 50%;                 /* Adjust the width as needed */
+	height: auto;               /* Maintain aspect ratio */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
+	border-radius: 50px;         /* Optional: round the corners */
+}
+
+.circular-image:hover {
+	transform: scale(1.05); /* Slightly enlarge image on hover */
 }
 
   /* customizable snowflake styling */

@@ -9,4 +9,12 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
     site: 'https://dchiplth.github.io',
     integrations: [mdx(), sitemap(), tailwind()],
+    vite: {
+        resolve: {
+          alias: {
+            '@content': '/src/content',
+          },
+        },
+      },
 });
+

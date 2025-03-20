@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Body from '../../components/Body.astro';
+import { text, cards } from '../../content/text/en/company';
 ---
 
 <!DOCTYPE html>
@@ -11,271 +12,224 @@ import Body from '../../components/Body.astro';
     <main>
         <section class="collab-intro">
             <div class="container">
-            <h1>Do you want to collaborate with us?</h1>
+            <h1>{text.title}</h1>
             <div class="divider"></div>
-            <p>
-                D-Chip is a network for women and non-binary students and alumni who are studying or have studied 
-                for a Master of Science in Engineering in Computer Science or Information and Communication Technology 
-                at Lund University’s Faculty of Engineering. Through a collaboration with D-Chip, your company can easily 
-                reach this group and build a relationship with them before they enter the job market.
-            </p>
+            <p>{text.info}</p>
         </div>
         </section>
 
          <!-- New Image Gallery Section -->
          <section class="gallery">
             <div class="gallery-grid">
-                <img src="/images/collab/2.jpg" alt="Corporate event with students">
-                <img src="/images/collab/3.jpg" alt="Company visit with partner company">
-                <img src="/images/collab/4.jpg" alt="Lunch lecture with the company">
+                <img src="/images/collab/2.jpg" alt="Företagsevent med studenter">
+                <img src="/images/collab/3.jpg" alt="Studiebesök hos partnerföretag">
+                <img src="/images/collab/4.jpg" alt="Lunchföreläsning med företaget">
             </div>
         </section>
 
         <div class="container">
-            <h2>How can we meet?</h2>
+            <h2>{text.title2}</h2>
             <div class="divider"></div>
-            <p>
-                At D-Chip, we organize a variety of exciting events to connect our members with the business world and 
-                create meaningful networks. Here are some examples of what we can offer:
-            </p>
+            <p>{text.indchip}</p>
         
             <div class="card-container">
-                <div class="card"><h4>Lunch Lecture</h4></div>
-                <div class="card"><h4>Chocolate Tasting</h4></div>
-                <div class="card"><h4>Sushi Night</h4></div>
-                <div class="card"><h4>Company Visit</h4></div>
-                <div class="card"><h4>Pub</h4></div>
-                <div class="card"><h4>Coffee Break</h4></div>
-                <div class="card"><h4>Dinner at a Restaurant</h4></div>
-                <div class="card"><h4>CV Writing</h4></div>
-                <div class="card"><h4>Wine Tasting</h4></div>
-                <div class="card"><h4>Case Night</h4></div>
+                {
+                    cards.map(card => (
+                        <div class="card"><h4>{card.card}</h4></div>
+                    ))
+                }
             </div>
         
-            <p>
-                Together, we can find the perfect activities to create memorable experiences and build strong relationships with 
-                the engineers of the future.
-            </p>
+            <p>{text.together}</p>
         </div>
         
+
         <section class="contact">
-            <div class="container">
-            <h2>Contact Us</h2>
+        <div class="container">
+            <h2>{text.contactus}</h2>
             <div class="divider"></div>
-            <p>
-                Are you interested in collaborating, or do you want to learn more? Don't hesitate to contact us. We look forward 
-                to hearing from you and creating a valuable partnership!
-            </p>
-        </div>
-            <div class="contact-info">
-                <img src="/images/board/elly.jpg" alt="Contact Person" class="contact-image">
-                <div class="contact-details">
+            <p>{text.collaboration}</p>
+
+            <div class="content-container">
+                <img src="/images/board/elly.jpg" alt="Kontaktperson" class="circular-image">
+                <div class="contact-details flex-1">
                     <p class="contact-name md:min-w-40">Elly Hedin Oleniusson</p>
-                    <p class="contact-role">Head of Corporate Relations</p>
+                    <p class="contact-role">{text.contactperson}</p>
                     <p class="p-contact-mail"><a href="mailto:d-chipnaringsliv@dsek.se">d-chipnaringsliv@dsek.se</a></p>
                 </div>
             </div>
-        
+        </div>
         </section>
     </main>
 </Body>
 </html>
 
 <style>
-    main {
-     padding: 2em;
-     max-width: 1200px;
-     margin: 0 auto;
- }
- 
- h1, h2, h3, h4 {
-     text-align: center;
-     color: #484647;
- }
 
- h1 {
-    font-size: 4vw;
- }
- 
- h4 {
-     font-size: 22px;
- }
- 
- p {
-     margin-bottom: 1.5em;
-     color: #484647;
-     text-align: justify;
- }
- 
- /* Card container */
- .what-we-offer {
-     background-color: rgba(255, 255, 255, 0.7);
-     padding: 2em;
-     border-radius: 12px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-     margin: 0 auto;
- }
- 
- .what-we-offer h3 {
-     text-align: center;
-     color: #484647;
-     font-size: 28px;
-     margin-bottom: 1em;
- }
- 
- .what-we-offer p {
-     width: 100%;
- }
- 
- .card-container {
-     width: 90%;
-     display: grid;
-     gap: 1em;
-     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-     margin: 2em auto;
- }
- 
- .card {
-     background-color: var(--accent);
-     width: 180px; /* Fixed width */
-     height: 80px; /* Fixed height */ 
-     padding: 1em;
-     border-radius: 8px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-     text-align: center;
-     transition: transform 0.3s, box-shadow 0.3s;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     
- }
- 
- .card h4 {
-     color: white;
-     font-size: 18px;
-     margin: 0;
- }
- 
- .card:hover {
-     transform: translateY(-5px);
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
- }
- /* Contact section */
- .contact {
-     margin: 2em auto;
-     text-align: center;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
- }
- 
- .contact-info {
-     margin-top: 2em;
-     display: flex;
-     align-items: center;
-     justify-content: space-around;
-     flex-wrap: wrap; /* Allows wrapping for smaller screens */
-     width: 70%; /* Use a percentage for flexibility */
-     max-width: 600px; /* Limit max width for large screens */
-     background-color: #fff;
-     padding: 1.5em;
-     border-radius: 50px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
- }
- 
- .contact-image {
-     border-radius: 50%;
-     width: 150px; /* Reduce size for better scaling */
-     height: 150px;
-     object-fit: cover;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-     transition: transform 0.3s;
- }
- 
- .contact-image:hover {
-     transform: scale(1.05);
- }
- 
- .contact-details p {
-     color: #484647;
-     text-align: center;
-     min-width: 200px;
- }
- 
- .contact-details a {
-     color: #f180a1;
-     text-decoration: none;
-     font-weight: bold;
- }
- 
- .contact-details a:hover {
-     text-decoration: underline;
- }
- 
- .contact-name {
-     font-size: 24px;
-     font-weight: bold;
-     margin: 0;
-     text-align: center;
- }
- 
- .contact-role {
-     font-size: 18px;
-     font-weight: 600;
-     margin-bottom: 0.7em;
-     text-align: center;
- }
- 
- .p-contact-mail {
-     margin-bottom: 0em;
- }
- 
- /* Media query for smaller screens */
- @media (max-width: 768px) {
-     .contact-info {
-         flex-direction: column; /* Stack items vertically */
-     }
- 
-     .contact-image {
-         width: 120px;
-         height: 120px;
-     }
- 
-     .contact-name {
-         font-size: 20px;
-     }
- 
-     .contact-role {
-         font-size: 16px;
-     }
- }
- 
- /* Gallery Styling */
- .gallery {
-     margin: 3em 0;
-     text-align: center;
- }
- 
- .gallery-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-     gap: 1em;
-     justify-items: center;
- }
- 
- .gallery-grid img {
-     width: 100%;
-     height: 200px;
-     object-fit: cover;
-     border-radius: 8px;
-     transition: transform 0.3s;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
- }
- 
- .gallery-grid img:hover {
-     transform: scale(1.05);
- }
- 
- 
- </style>
- 
+    .content-container {
+        display: flex;
+        justify-content: center; /* Centrera horisontellt */
+        align-items: center; /* Centrera vertikalt */
+        gap: 1.5em;
+        flex-wrap: wrap; /* Säkerställer att det anpassas på mindre skärmar */
+        text-align: center;
+        max-width:max-content;
+        margin: 1rem auto;
+    }
+
+    /* Card container */
+    .what-we-offer {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 2em;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        margin: 0 auto;
+    }
+
+    .what-we-offer h3 {
+        text-align: center;
+        color: #484647;
+        font-size: 28px;
+        margin-bottom: 1em;
+    }
+
+    .what-we-offer p {
+        width: 100%;
+    }
+
+    .card-container {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+        margin: 2em auto;
+        justify-content: center;
+    }
+
+    .card {
+        background-color: var(--accent);
+        padding: 1em;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .card h4 {
+        color: white;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    /* Contact section */
+    .contact {
+        margin: 2em auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        margin-top: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap; /* Allows wrapping for smaller screens */
+        width: 70%; /* Use a percentage for flexibility */
+        max-width: 600px; /* Limit max width for large screens */
+        background-color: #fff;
+        padding: 1.5em;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-details p {
+        color: #484647;
+        text-align: center;
+        min-width: 200px;
+    }
+
+    .contact-details a {
+        color: #f180a1;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .contact-details a:hover {
+        text-decoration: underline;
+    }
+
+    .contact-name {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+    }
+
+    .contact-role {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 0.7em;
+        text-align: center;
+    }
+
+    .p-contact-mail {
+        margin-bottom: 0em;
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+        .contact-info {
+            flex-direction: column; /* Stack items vertically */
+        }
+
+        .contact-image {
+            width: 120px;
+            height: 120px;
+        }
+
+        .contact-name {
+            font-size: 20px;
+        }
+
+        .contact-role {
+            font-size: 16px;
+        }
+    }
+
+    /* Gallery Styling */
+    .gallery {
+        margin: 3em 0;
+        text-align: center;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1em;
+        justify-items: center;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    }
+
+    .gallery-grid img:hover {
+        transform: scale(1.05);
+    }
+
+
+</style>
