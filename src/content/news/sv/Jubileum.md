@@ -1,11 +1,10 @@
 ---
-title: 'Jubileum' # obs: kan ej använda specialtecken här!
-description: 'beskrivning' # jag tror inte denna syns någonstans...?
-date: '2025-05-09' # datum för eventet
-time: '18.00'
-location: 'A-huset'
-heroImage: '/images/jubileum.png' # bild
+title: 'D-Chip fyller 30 år!'
+date: '2025-03-24' # publiceringsdatum 
+summary: 'Kom på jubileumsbalen!' # VALFRI, om ingen summery anges så kommer brödtexten nedan användas istället
 ---
+
+**D-Chip fyller 30 år!**
 
 Vi kommer fira det hela med en glittrande jubileumsbal som kommer äga rum fredagen den 9 maj. Välkomna är både D-Chips medlemmar & alumner och medlemmar på D-sektionen.
 
