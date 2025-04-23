@@ -4,7 +4,7 @@ description: 'beskrivning' # jag tror inte denna syns någonstans...?
 date: '2024-11-17' # datum för eventet
 time: '18:30' # tid för eventet
 location: 'plats' # plats för eventet
-heroImage: '/images/imagepath.jpg' # bild, se till att filformatet blir rätt!
+heroImage: '/images/event/default.png' # bild, se till att filformatet blir rätt!
 
 # Om knapp, lägg till texten nedan:
 
