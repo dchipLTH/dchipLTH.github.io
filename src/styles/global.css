@@ -66,7 +66,7 @@ body {
 /* Main text content */
 main {
 	max-width: calc(100% - 6em);
-	padding: 2em 0;
+	padding: 2em 0 0;
 	margin: 0 auto;
 	background: #ffcfddff;
 	text-align: center;
