@@ -213,7 +213,7 @@ const news = await getSortedNews(lang);
         gap: 2em;
     }
 
-    .flex-container {
+    :global(.flex-container) {
         display: flex;
         align-items: center;
         gap: 10em;
@@ -250,6 +250,26 @@ const news = await getSortedNews(lang);
         /* Adjust button and text sizes for mobile readability */
         .contact-button {
             font-size: 0.9em;
+        }
+
+    
+
+        .flex-container {
+            display: flex;
+            flex-direction: column ;
+            align-items: center;
+            text-align: center;
+            gap: 1em;
+        }
+
+        .member-link {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .flex-container img {
+            height: 150px;
+            width: auto;
         }
 
     }
