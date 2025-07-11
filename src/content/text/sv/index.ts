@@ -7,8 +7,7 @@ export const text = {
     universitetet genom att erbjuda en gemenskap där alla känner sig välkomna och inkluderade. 
     Det gör vi främst genom att hålla i många olika typer av evenemang, 
     som brukar vara väldigt uppskattade bland våra medlemmar.`,
-  welcomeInfo: `Som studerande kvinna eller icke-binär på programmen nämnda ovan är du automatiskt medlem i D-Chip
-    och varmt välkommen på alla våra event.`,
+  welcomeInfo: `Som studerande kvinna eller icke-binär på programmen nämnda ovan var du tidigare automatiskt medlem i D-Chip. Nytt för i år är att du registrerar dig som medlem. Se nedan!`,
 
   ideaTitle: "Har du en kul idé?",
   ideaText:

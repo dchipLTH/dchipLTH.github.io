@@ -8,9 +8,7 @@ export const text = {
                     at the university by providing a community where everyone feels welcome and included. 
                     We achieve this primarily by organizing a variety of events, 
                     which are usually highly appreciated by our members.`,
-  welcomeInfo: `As a woman or non-binary studying the programs mentioned above, 
-                    you're automatically a member of D-Chip and is warmly welcome at all our events.`,
-
+  welcomeInfo: `Previously, as a woman or non-binary studying the programs mentioned above, you'd automatically become a member of D-Chip. New this year is that you register. See below!`,
   ideaTitle: "Do you have a fun idea?",
   ideaText:
     "Don't hesitate to reach out to us! We welcome ideas on everything from events to collaborations.",
