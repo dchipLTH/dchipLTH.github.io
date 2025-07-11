@@ -58,7 +58,26 @@ const news = await getSortedNews(lang);
             </div>
         </div>
 
-        <!-- NEW: Instagram & Latest News Section -->
+         <!-- NEW: Become a member -->
+         <div class="content-container">
+            <div class="text-column">
+                <div class="container h-full">
+                    <h2>{text.memberTitle}</h2>
+                    <div class="divider"></div>
+                    <p>{text.memberInfo}</p>
+                    <br>
+                    <div class="grid-wrapper">
+                        <div class="flex-container">
+                            <a href="https://ebas.ungaforskare.se/blimedlem/106" class="member-link contact-button">{text.memberLink}</a>
+                            <img src="/images/qrcode-dchip-members.png" alt="QR kod att skanna för att bli medlem i D-Chip">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram & Latest News Section -->
         <div class="content-container mb-[30px] items-stretch">
             <!-- Instagram Feed Column -->
             <div class="instagram-column flex flex-col flex-1">
@@ -185,6 +204,27 @@ const news = await getSortedNews(lang);
     .social-icon {            
         width: 50px;                       /* Adjust the width of the round background */
         height: 50px;                      /* Adjust the height of the round background */
+    }
+
+    .grid-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+    }
+
+    .flex-container {
+        display: flex;
+        align-items: center;
+        gap: 10em;
+    }
+
+    .member-link {
+        padding: 10px 20px;
+    }
+    .flex-container img {
+        height: 200px;
+        width: auto;
     }
 
     /* Responsive design for mobile screens (up to 768px wide) */

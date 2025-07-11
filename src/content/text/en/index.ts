@@ -1,6 +1,6 @@
 export const text = {
-    welcomeTitle: "Welcome to D-Chip!",
-    welcomeText: `D-Chip is a non-profit, student-driven association 
+  welcomeTitle: "Welcome to D-Chip!",
+  welcomeText: `D-Chip is a non-profit, student-driven association 
                     for all women and non-binary individuals studying the 
                     MSE programs in Computer Science and Information & Communication Technologies, 
                     as well as the Master’s program in VR/AR, at Lund University’s Faculty of Engineering (LTH). 
@@ -8,17 +8,24 @@ export const text = {
                     at the university by providing a community where everyone feels welcome and included. 
                     We achieve this primarily by organizing a variety of events, 
                     which are usually highly appreciated by our members.`,
-    welcomeInfo: `As a woman or non-binary studying the programs mentioned above, 
+  welcomeInfo: `As a woman or non-binary studying the programs mentioned above, 
                     you're automatically a member of D-Chip and is warmly welcome at all our events.`,
-  
-    ideaTitle: "Do you have a fun idea?",
-    ideaText: "Don't hesitate to reach out to us! We welcome ideas on everything from events to collaborations.",
-  
-    followUs: "FOLLOW US HERE",
 
-    latestNews: "Latest news",
-    upcomingEvents: "Events",
+  ideaTitle: "Do you have a fun idea?",
+  ideaText:
+    "Don't hesitate to reach out to us! We welcome ideas on everything from events to collaborations.",
 
-    contactButton: "Contact us",
-    newsButton: "See more news"
+  followUs: "FOLLOW US HERE",
+
+  latestNews: "Latest news",
+  upcomingEvents: "Events",
+
+  contactButton: "Contact us",
+
+  newsButton: "See more news",
+
+  memberTitle: "Become a member in D-Chip!",
+  memberInfo:
+    "New this year is that we in D-Chip has become part of UF (Unga Forskare). Because of this, we are now going to become better at reaching out to our members. If you want to become a member, either click on the link below, or scan the QR-code!",
+  memberLink: "Become a member",
 };
