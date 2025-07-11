@@ -39,9 +39,26 @@ const translations = lang === 'en' ? en : sv;
 				<HeaderLink href={`/${lang}/newstudent`}>{translations.newstudent}</HeaderLink>
         </div>
         <div class="flex w-44 justify-center items-center gap-6 ">
-            <a class="text-[var(--black)]" href={lang === 'en' ? `/sv/` : `/en/`}>
+            <a class="text-[var(--black)]" id="lang-switch" href="#">
 				{lang === 'en' ? 'Svenska' : 'English'}</a>
             <ion-icon name="menu" class="hamburger text-3xl cursor-pointer xl:hidden"></ion-icon>
             <!--  <ion-icon name="close" class="hamburger text-3xl cursor-pointer lg:hidden"></ion-icon> -->
         </div>
 </header>
+
+
+<script>
+    // Change the language and get to the page the user is on
+    document.getElementById("lang-switch")?.addEventListener("click", function(e){
+        e.preventDefault()
+        const pathParts = window.location.pathname.split("/");
+        const currentLang = pathParts[1];
+        const newLang = currentLang === 'en' ? 'sv' : 'en';
+
+        if (['en', 'sv'].includes(currentLang)){
+            pathParts[1] = newLang;
+            const newPath = pathParts.join("/");
+            window.location.href = newPath;
+        }
+    })
+</script>
