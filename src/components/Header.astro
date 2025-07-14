@@ -55,10 +55,10 @@ const translations = lang === 'en' ? en : sv;
         const currentLang = pathParts[1];
         const newLang = currentLang === 'en' ? 'sv' : 'en';
 
-        if (['en', 'sv'].includes(currentLang)){
-            pathParts[1] = newLang;
-            const newPath = pathParts.join("/");
-            window.location.href = newPath;
-        }
+        // Replaces all paths with language to new language
+        const newPath = window.location.pathname.replaceAll(`/${currentLang}/`, `/${newLang}/`);
+
+        const fullNewUrl = newPath + window.location.search + window.location.hash;
+        window.location.href = fullNewUrl;
     })
 </script>

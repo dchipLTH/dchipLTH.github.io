@@ -4,21 +4,23 @@ import FormattedDate from '../../../components/FormattedDate.astro';
 import en from '../../../locales/en.json';
 import sv from '../../../locales/sv.json';
 import Body from '../../../components/Body.astro';
-import { text } from '../../../content/text/en/event';
+import {text as enText} from '../../../content/text/en/event';
+import {text as svText} from '../../../content/text/sv/event';
 
 const posts = (await getCollection('events')).sort(
 (a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
 );
 
-// Filter the posts to get only those in the 'sv' folder
-const enEvents = posts.filter((post) => post.slug.startsWith('en/'));
-
 // Extract the language from the first segment of the URL path
 const pathParts = Astro.url.pathname.split('/');
-const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specified
+const lang = pathParts[1] || 'en'; // Default to 'en' if no language is specified
+
+// Filter the posts to get only those in the 'sv' folder
+const filteredEvents = posts.filter((post) => post.slug.startsWith(`${lang}/`));
 
 // Set the appropriate translations based on the language
 const translations = lang === 'en' ? en : sv;
+const text = lang === 'en' ? enText : svText;
 ---
 
 <!doctype html>
@@ -33,7 +35,7 @@ const translations = lang === 'en' ? en : sv;
         <section>
             <ul>
                 {
-                    enEvents.map((post) => (
+                    filteredEvents.map((post) => (
                         <li>
                             <a href={`/${lang}/events/${post.slug}/`}>
                                 <img class="circular-image" src={post.data.heroImage} alt={post.data.title} />
