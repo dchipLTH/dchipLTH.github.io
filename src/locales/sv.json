@@ -3,6 +3,7 @@
   "about": "Om oss",
   "news": "Nyheter",
   "events": "Evenemang",
+  "volunteer": "Funkis",
   "files": "Dokument",
   "company": "Företag",
   "gallery": "Galleri",
@@ -11,6 +12,6 @@
   "thisLang": "Svenska",
   "backToEvent": "Tillbaka till alla event",
   "backToNews": "Tillbaka till alla nyheter",
-  "backToVolunteers": "Tillbaka till alla funkis anonser",
+  "backToVolunteers": "Tillbaka till alla funkis annonser",
   "newstudent": "Ny student"
 }

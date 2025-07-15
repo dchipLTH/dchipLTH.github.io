@@ -5,12 +5,14 @@ import Body from '../../components/Body.astro';
 import { getTranslations } from '../../utils/getTranslations';
 import { getSortedEvents } from '../../utils/getSortedEvents';
 import { getSortedNews } from '../../utils/getSortedNews';
+import { getSortedVolunteers } from '../../utils/getSortedVolunteers'
 import { FACEBOOK, INSTAGRAM, LINKEDIN } from '../../consts';
 import { text } from '../../content/text/en/index';
 
 const lang = getTranslations(Astro.url.pathname);
 const events = await getSortedEvents(lang);
 const news = await getSortedNews(lang);
+const volunteers = await getSortedVolunteers(lang);
 
 ---
 
@@ -125,6 +127,24 @@ const news = await getSortedNews(lang);
             }
         </ul>
     </div>
+    <div class="volunteer-container">
+        <h2>{text.volunteerHelp}</h2>
+        <div class="divider"></div>
+            <ul class="blog-posts"> {
+                volunteers.map((post) => (
+                    <li class="blog-post">
+                        <a href={`/${lang}/volunteer/${post.slug}/`}>
+                            <img class="circular-image" src={post.data.heroImage} alt="" />
+                            <h4 class="title m-0">{post.data.title}</h4>
+                            <p class="text-md text-[#484647] text-center">
+                                <FormattedDate date={post.data.date} />
+                            </p>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
     </main>
 </Body>
 </html>
@@ -135,6 +155,14 @@ const news = await getSortedNews(lang);
         display: flex;
         justify-content: space-between;
         gap: 1.5em;
+    }
+    .volunteer-container {
+        padding: 2em calc(4%);
+        background-color: rgba(255, 255, 255, 0.7); /* Optional background for contrast */
+        border-radius: 8px; /* Optional: round the corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+        max-width: 100%;
+        margin-top: 2em;
     }
 
 	.text-column {
