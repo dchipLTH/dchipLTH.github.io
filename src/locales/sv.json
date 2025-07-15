@@ -1,15 +1,16 @@
 {
-    "home": "Hem",
-    "about": "Om oss",
-    "news": "Nyheter",
-    "events": "Evenemang",
-    "files": "Dokument",
-    "company": "Företag",
-    "gallery": "Galleri",
-    "contact": "Kontakt",
-    "language": "Språk",
-    "thisLang": "Svenska",
-    "backToEvent": "Tillbaka till alla event",
-    "backToNews": "Tillbaka till alla nyheter",
-    "newstudent": "Ny student"
-  }
+  "home": "Hem",
+  "about": "Om oss",
+  "news": "Nyheter",
+  "events": "Evenemang",
+  "files": "Dokument",
+  "company": "Företag",
+  "gallery": "Galleri",
+  "contact": "Kontakt",
+  "language": "Språk",
+  "thisLang": "Svenska",
+  "backToEvent": "Tillbaka till alla event",
+  "backToNews": "Tillbaka till alla nyheter",
+  "backToVolunteers": "Tillbaka till alla funkis anonser",
+  "newstudent": "Ny student"
+}

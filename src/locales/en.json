@@ -1,15 +1,16 @@
 {
-    "home": "Home",
-    "about": "About us",
-    "news": "News",
-    "events": "Events",
-    "files": "Documents",
-    "company": "Company",
-    "gallery": "Gallery",
-    "contact": "Contact",
-    "language": "Language",
-    "thisLang": "English",
-    "backToEvent": "Back to all events",
-    "backToNews": "Back to all news",
-    "newstudent": "New student"
-  }
+  "home": "Home",
+  "about": "About us",
+  "news": "News",
+  "events": "Events",
+  "files": "Documents",
+  "company": "Company",
+  "gallery": "Gallery",
+  "contact": "Contact",
+  "language": "Language",
+  "thisLang": "English",
+  "backToEvent": "Back to all events",
+  "backToNews": "Back to all news",
+  "backToVolunteers": "Back to volunteerings",
+  "newstudent": "New student"
+}

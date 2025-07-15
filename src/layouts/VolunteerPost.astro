@@ -1,0 +1,143 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import en from '../locales/en.json';
+import sv from '../locales/sv.json';
+import Body from '../components/Body.astro';
+
+type Props = CollectionEntry<'volunteers'>['data'];
+
+const pathParts = Astro.url.pathname.split('/');
+const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specified
+
+// Set the appropriate translations based on the language
+const translations = lang === 'en' ? en : sv;
+
+const { title, date, heroImage, buttonLink, buttonText, summary } = Astro.props;
+---
+
+<Body>
+    <main class="pt-8">
+        <!-- Back to Events Button -->
+        <div class="back-button-container">
+            <a href={`/${lang}/events`} class="back-button">{translations.backToEvent}</a>
+        </div>
+        <article>
+            <div class="hero-image">
+                {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+            </div> <br>
+            <div class="container">
+            <div class="prose">
+                <div class="title">
+                        <h2>{title}</h2>
+                        <h4><FormattedDate date={date} /></h4>
+                </div>
+                <div class="divider"></div>
+                <div class="text"> 
+                    <slot />
+                </div>
+                <div class="event-content">
+                    <!-- Other content like title, description, image, etc. -->
+                  
+                    {buttonLink && buttonText && (
+                      <div class="button-container">
+                        <a href={buttonLink} class="event-button" target="_blank" rel="noopener noreferrer">
+                          {buttonText}
+                        </a>
+                      </div>
+                    )}
+                  </div>
+            </div>
+        </div>
+        </article>
+    </main>
+</Body>
+</html>
+
+<style>
+	.hero-image {
+		display: block;              /* Ensure the image behaves as a block element */
+		margin-left: auto;          /* Center the image horizontally */
+		margin-right: auto;         /* Center the image horizontally */
+		width: 20%;                 /* Adjust the width as needed */
+		height: auto;               /* Maintain aspect ratio */
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
+		border-radius: 8px;         /* Optional: round the corners */
+	}
+	.hero-image img {
+		display: block;
+		margin: 0 auto;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+	}
+	.prose {
+		max-width: calc(100% - 2em);
+		margin: auto;
+		color: rgb(var(--gray-dark));
+	}
+	.title {
+		margin: 0.5em 0;
+		text-align: center;
+		line-height: 1;
+	}
+	.text {
+		font-size: 1.5em;
+		text-align: justify;
+	}
+	/* Center the button */
+.button-container {
+display: flex;
+justify-content: center;  /* Horizontally centers the button */
+margin: 1em auto;          /* Adds some space above the button */
+}
+
+/* Style the button */
+.event-button {
+display: inline-block;
+padding: 1em 2em;                   /* Adjust padding for larger size */
+font-size: 1.25em;                  /* Larger text size */
+background-color: #f26c94;          /* Example button color */
+color: white;                       /* Text color */
+border: none;                       /* Remove default border */
+border-radius: 8px;                 /* Rounded corners */
+text-align: center;                 /* Center the text */
+text-decoration: none;              /* Remove underline */
+transition: background-color 0.3s;  /* Smooth background change on hover */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow for depth */
+}
+
+/* Hover effect */
+.event-button:hover {
+background-color: #f180a1;          /* Slightly darker on hover */
+}
+
+/* Style for the Back to Events button */
+.back-button-container {
+display: flex;
+justify-content: left;
+margin-top: 0em; /* Adds some space above the button */
+}
+
+/* Style the button */
+.back-button {
+display: inline-block;
+padding: 0.5em 1em;
+font-size: 1em;
+background-color: #f26c94;
+color: white;
+border: none;
+border-radius: 8px;
+text-align: center;
+text-decoration: none;
+transition: background-color 0.3s;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for the button */
+.back-button:hover {
+background-color: #f180a1;
+}
+</style>

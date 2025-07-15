@@ -18,6 +18,8 @@ export const text = {
   latestNews: "Senaste nyheterna",
   upcomingEvents: "Kommande evenemang",
 
+  volunteerHelp: "Hjälp till som D-Chip funkis!!",
+
   contactButton: "Kontakta oss",
   newsButton: "Se fler nyheter",
 
