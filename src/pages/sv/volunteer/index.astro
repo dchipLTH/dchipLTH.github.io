@@ -1,0 +1,78 @@
+---
+import { getCollection } from "astro:content";
+import en from "../../../locales/en.json";
+import sv from '../../../locales/sv.json';
+import Body from '../../../components/Body.astro';
+import {text} from '../../../content/text/sv/volunteer';
+import FormattedDateNews from "components/FormattedDateNews.astro";
+
+
+const volunteers = (await getCollection('volunteers')).sort(
+(a, b) =>  b.data.date.valueOf() - a.data.date.valueOf(),
+)
+
+// Extract the language from the first segment of the URL path
+const pathParts = Astro.url.pathname.split('/');
+const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specified
+
+// Filter the posts to get only those in the 'sv' folder
+const filteredEvents = volunteers.filter((post) => post.slug.startsWith(`${lang}/`));
+
+// Set the appropriate translations based on the language
+const translations = lang === 'en' ? en : sv;
+
+
+--- 
+<!doctype html>
+<Body>
+    <main>
+        <div class="container">
+            <h1 class="news-header text-center">{text.title}</h1>
+            <div class="divider"></div>
+            <p class="my-2 text-center">{text.info}</p>
+            <ul class="news-list">
+                {filteredEvents.map((post) => (
+                    <li class="news-post">
+                        <a href={`/${lang}/volunteer/${post.slug}`}>
+                        <img class="circular-image" src={post.data.heroImage} alt={post.data.title} />
+                        <h4 class="news-title mb-0">{post.data.title}</h4>
+                        <p class="news-date text-center text-black-font-bold">{text.published} <FormattedDateNews date={post.data.date}/></p>
+                        <p class="news-excerpt">{post.data.summary ? post.data.summary : ((post.body ? post.body.slice(0, 100) + "..." : ""))}</p>
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </main>
+</Body>
+
+
+<style>
+    .news-excerpt {
+        text-align: justify;
+        hyphens: auto;
+    }
+    ul {
+        display: grid; /* Use grid layout for the ul */
+        grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+        gap: 2rem; /* Space between items */
+        list-style-type: none;
+        margin: 1em;
+        padding: 0;
+    }
+
+    ul li a {
+        display: block; /* Make the whole area clickable */
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit color from parent */
+    }
+
+    @media (max-width: 768px) {
+        ul {
+            grid-template-columns: 1fr; /* Stack on smaller screens */
+            gap: 0.5em; /* Smaller gap */
+        }
+    }
+</style>
+
+
