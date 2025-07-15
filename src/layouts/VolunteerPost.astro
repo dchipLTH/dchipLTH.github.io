@@ -16,6 +16,7 @@ const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specifie
 // Set the appropriate translations based on the language
 const translations = lang === 'en' ? en : sv;
 
+
 const { title, date, heroImage, buttonLink, buttonText, summary } = Astro.props;
 ---
 
@@ -33,7 +34,7 @@ const { title, date, heroImage, buttonLink, buttonText, summary } = Astro.props;
             <div class="prose">
                 <div class="title">
                         <h2>{title}</h2>
-                        <h4><FormattedDate date={date} /></h4>
+                        <h4>{translations.published}: <FormattedDate date={date}/></h4>
                 </div>
                 <div class="divider"></div>
                 <div class="text"> 

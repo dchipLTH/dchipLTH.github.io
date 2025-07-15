@@ -36,7 +36,7 @@ const translations = lang === 'en' ? en : sv;
                         <a href={`/${lang}/volunteer/${post.slug}`}>
                         <img class="circular-image" src={post.data.heroImage} alt={post.data.title} />
                         <h4 class="news-title mb-0">{post.data.title}</h4>
-                        <p class="news-date text-center text-black-font-bold">{text.published} <FormattedDateNews date={post.data.date}/></p>
+                        <p class="news-date text-center text-black-font-bold">{text.published}: <FormattedDateNews date={post.data.date}/></p>
                         <p class="news-excerpt">{post.data.summary ? post.data.summary : ((post.body ? post.body.slice(0, 100) + "..." : ""))}</p>
                         </a>
                     </li>
