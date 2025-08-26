@@ -72,7 +72,7 @@ const revisorer = [
     class: "D21",
     description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
-    image: "/images/board/hanna.jpg", // Add the actual image path
+    image: "/images/board/NoPicture.jpg", // Add the actual image path
   },
   {
     name: "Ester Nielsen Gulis",
@@ -80,34 +80,26 @@ const revisorer = [
     class: "C22",
     description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
-    image: "/images/board/hanna.jpg", // Add the actual image path
+    image: "/images/board/NoPicture.jpg", // Add the actual image path
   },
 ];
 const valberedning = [
   {
-    name: "Clara Schagerström",
+    name: "Elly Hedin Oleniusson",
     position: "Valberedning",
     class: "D23",
     description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
-    image: "/images/board/hanna.jpg", // Add the actual image path
+    image: "/images/board/NoPicture.jpg", // Add the actual image path
   },
   {
-    name: "Elsa Ryrlén",
+    name: "Emma Lindberg",
     position: "Valberedning",
-    class: "C21",
+    class: "D24",
     description:
       "Föreningens valberedning utgörs av en representant från var och en av de fyra senaste årskurserna på Datateknik och Infocom. Valberedningen utgörs av minst två representanter.",
     contact: "d-chiprevisor@dsek.se",
-    image: "/images/board/hanna.jpg", // Add the actual image path
-  },
-  {
-    name: "Julia Blomgren",
-    position: "Valberedning",
-    class: "D21",
-    description: "A passionate learner and aspiring developer.",
-    contact: "d-chiprevisor@dsek.se",
-    image: "/images/board/hanna.jpg", // Add the actual image path
+    image: "/images/board/NoPicture.jpg", // Add the actual image path
   },
 ];
 
