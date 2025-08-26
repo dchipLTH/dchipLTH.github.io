@@ -8,7 +8,7 @@ import {text as enText} from '../../../content/text/en/event';
 import {text as svText} from '../../../content/text/sv/event';
 
 const posts = (await getCollection('events')).sort(
-(a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
+(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
 // Extract the language from the first segment of the URL path

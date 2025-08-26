@@ -2,7 +2,7 @@
 title: "Mentorskapsprogrammet 2025" # obs: kan ej använda specialtecken här!
 description: "Hjälp till i en projektgrupp för D-Chips mentorskapsprogram" # osäker på vart denna syns
 date: "2025-07-15" # datum för när formuläret har deadline? (osäker på vad det annars ska kunna vara här, ev. när eventet är)
-heroImage: "/images/event/default.png" # bild, se till att filformatet blir rätt!
+heroImage: "/images/mentorskaps-programmet.png" # bild, se till att filformatet blir rätt!
 
 # Om knapp, lägg till texten nedan:
 
