@@ -4,7 +4,7 @@ description: "Picknick för kvinnor och icke-binära 2025 på D-sektionen!" # ja
 date: "2025-09-01" # datum för eventet
 time: "12:00" # tid för eventet
 location: "E-Husets innergård" # plats för eventet
-heroImage: "/images/event/default.png" # bild, se till att filformatet blir rätt!
+heroImage: "/images/event/Picnic.png" # bild, se till att filformatet blir rätt!
 
 # Om knapp, lägg till texten nedan:
 

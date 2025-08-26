@@ -4,7 +4,7 @@ description: "Nationslunch på Helsingkrona för kvinnor och icke-binära 2025 p
 date: "2025-09-08" # datum för eventet
 time: "12:00" # tid för eventet
 location: "Helsingkrona Nation" # plats för eventet
-heroImage: "/images/event/default.png" # bild, se till att filformatet blir rätt!
+heroImage: "/images/event/NLunch.png" # bild, se till att filformatet blir rätt!
 
 # Om knapp, lägg till texten nedan:
 
