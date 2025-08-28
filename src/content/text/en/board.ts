@@ -96,8 +96,15 @@ const valberedning = [
     name: "Emma Lindberg",
     position: "Valberedning",
     class: "D24",
-    description:
-      "Föreningens valberedning utgörs av en representant från var och en av de fyra senaste årskurserna på Datateknik och Infocom. Valberedningen utgörs av minst två representanter.",
+    description: "A passionate learner and aspiring developer.",
+    contact: "d-chiprevisor@dsek.se",
+    image: "/images/board/NoPicture.jpg", // Add the actual image path
+  },
+  {
+    name: "Anna Hallin",
+    position: "Valberedning",
+    class: "C23",
+    description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/NoPicture.jpg", // Add the actual image path
   },

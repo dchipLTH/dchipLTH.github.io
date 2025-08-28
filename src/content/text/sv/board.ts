@@ -101,6 +101,14 @@ const valberedning = [
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/NoPicture.jpg", // Add the actual image path
   },
+  {
+    name: "Anna Hallin",
+    position: "Valberedning",
+    class: "C23",
+    description: "A passionate learner and aspiring developer.",
+    contact: "d-chiprevisor@dsek.se",
+    image: "/images/board/NoPicture.jpg", // Add the actual image path
+  },
 ];
 
 const jubileegroup = [
