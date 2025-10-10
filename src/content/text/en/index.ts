@@ -18,6 +18,8 @@ export const text = {
   latestNews: "Latest news",
   upcomingEvents: "Events",
 
+  pastEvents: "Past Events",
+
   volunteerHelp: "Help us by becoming a volunteer!!",
 
   contactButton: "Contact us",

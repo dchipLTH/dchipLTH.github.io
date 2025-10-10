@@ -10,7 +10,7 @@ import { FACEBOOK, INSTAGRAM, LINKEDIN } from '../../consts';
 import { text } from '../../content/text/sv/index';
 
 const lang = getTranslations(Astro.url.pathname);
-const events = await getSortedEvents(lang);
+const {comingEvents: events, pastEvents: pastEvents} = await getSortedEvents(lang);
 const news = await getSortedNews(lang);
 const volunteers = await getSortedVolunteers(lang);
 
@@ -126,6 +126,23 @@ const volunteers = await getSortedVolunteers(lang);
                 ))
             }
         </ul>
+        <!-- This is past events, newly added. TODO: more of a divider should be added here  -->
+        <h2>{text.pastEvents}</h2>
+        <div class="divider"></div>
+        <ul class="blog-posts"> {
+            pastEvents.map((post) => (
+                <li class="blog-post">
+                    <a href={`/${lang}/pastEvents/${post.slug}/`}>
+                        <img class="circular-image" src={post.data.heroImage} alt="" />
+                        <h4 class="title m-0">{post.data.title}</h4>
+                        <p class="text-md text-[#484647] text-center">
+                            <FormattedDate date={post.data.date} />
+                        </p>
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
     </div>
     <div class="volunteer-container">
         <h2>{text.volunteerHelp}</h2>
