@@ -6,6 +6,7 @@ import sv from '../../../locales/sv.json';
 import Body from '../../../components/Body.astro';
 import {text as enText} from '../../../content/text/en/event';
 import {text as svText} from '../../../content/text/sv/event';
+import { getSortedEvents } from 'utils/getSortedEvents';
 
 const posts = (await getCollection('events')).sort(
 (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -16,7 +17,7 @@ const pathParts = Astro.url.pathname.split('/');
 const lang = pathParts[1] || 'sv'; // Default to 'en' if no language is specified
 
 // Filter the posts to get only those in the 'sv' folder
-const filteredEvents = posts.filter((post) => post.slug.startsWith(`${lang}/`));
+const {comingEvents: filteredEvents, pastEvents: pastEvents} = await getSortedEvents(lang);
 
 // Set the appropriate translations based on the language
 const translations = lang === 'en' ? en : sv;
@@ -48,6 +49,27 @@ const text = lang === 'en' ? enText : svText;
                     ))
                 }
             </ul>
+            <section>
+                <h1>{text.titlePast}</h1>
+                <div class="divider"></div>
+                <p class="text-center">{text.infoPast}</p>
+            </section>
+            <section>
+                <ul>
+                    {
+                        pastEvents.map((post) => (
+                            <li>
+                                <a href={`/${lang}/events/${post.slug}/`}>
+                                    <img class="circular-image" src={post.data.heroImage} alt={post.data.title} />
+                                    <h4 class="title">{post.data.title}</h4>
+                                    <p class="text-md text-[#484647] text-center">
+                                        <FormattedDate date={post.data.date} />
+                                    </p>
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
         </section>
     </div>
     </main>
