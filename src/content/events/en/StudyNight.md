@@ -4,7 +4,7 @@ description: "Study Night with D-Chip for all women and non-binary at the D-sect
 date: "2025-10-16" # datum för eventet
 time: "17:00" # tid för eventet
 location: "E:1124" # plats för eventet
-heroImage: "/images/event/default.png" # bild, se till att filformatet blir rätt!
+heroImage: "/images/event/studyNight.png" # bild, se till att filformatet blir rätt!
 
 # Om knapp, lägg till texten nedan:
 
