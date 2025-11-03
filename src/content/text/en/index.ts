@@ -30,4 +30,14 @@ export const text = {
   memberInfo:
     "New this year is that we in D-Chip has become part of UF (Unga Forskare). Because of this, we are now going to become better at reaching out to our members. If you want to become a member, either click on the link below, or scan the QR-code!",
   memberLink: "Become a member",
+
+  // For the board
+  presidentTitle: "President",
+  infoTitle: "Head of Communications",
+  secretaryTitle: "Secretary",
+  economyTitle: "Treasurer",
+
+  boardTitle: "Search the board!",
+  boardInfo: "Here are the 4 posts out right now to search the board!",
+  boardNom: "Nominate here",
 };

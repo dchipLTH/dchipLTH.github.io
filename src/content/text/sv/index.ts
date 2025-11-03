@@ -29,4 +29,14 @@ export const text = {
   memberInfo:
     "Nytt för i år är att D-Chip har blivit medlemmar i UF (Unga Forskare). På detta sättet kommer vi kunna bli bättre på att nå ut till våra medlemmar. Vill du bli medlem är det bara att klicka länken nedan, eller skanna QR-koden!",
   memberLink: "Bli medlem",
+
+  // For the board
+  presidentTitle: "Ordförande",
+  infoTitle: "Informationsansvarig",
+  secretaryTitle: "Sekreterare",
+  economyTitle: "Ekonomiansvarig",
+
+  boardTitle: "Sök styrelsen!",
+  boardInfo: "Här är de 4 posterna som finns ute att söka just nu! Sök här: ",
+  boardNom: "Nominera här",
 };

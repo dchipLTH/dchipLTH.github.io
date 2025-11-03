@@ -79,6 +79,33 @@ const volunteers = await getSortedVolunteers(lang);
             </div>
         </div>
 
+
+
+        <div class="content-container">
+            <div class="text-column">
+                <div class="container h-full">
+                    <h2>{text.boardTitle}</h2>
+                    <div class="divider"></div>
+                    <p>{text.boardInfo}</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgXOf49AI2Hxc976K3xb_q1xgb-iKze_oHoV1F6qZAp1dhqA/viewform">{text.boardNom}</a>
+
+
+                    <div class="image-grid">
+                        <img src="/images/President.png" alt="Information on the President post">
+                        <img src="/images/Secretary.png" alt="Information on the Secretary post">
+                        <img src="/images/Tresurer.png" alt="Information on the Tresurer post">
+                        <img src="/images/Communications.png" alt="Information on the Head of Communications post">
+                    </div>
+
+
+                    
+                </div>
+            </div>
+        </div>
+
+
+        
+
         <!-- Instagram & Latest News Section -->
         <div class="content-container mb-[30px] items-stretch">
             <!-- Instagram Feed Column -->
@@ -275,6 +302,25 @@ const volunteers = await getSortedVolunteers(lang);
     }
 
 
+    
+   
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* desktop default */
+        gap: 0.5rem;
+        margin-top: 1rem;
+        justify-items: center;
+    }
+
+    .image-grid img {
+        width: 100%;
+        max-width: 80%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+
     /* Responsive design for mobile screens (up to 768px wide) */
     @media (max-width: 768px) {
         /* Stack elements vertically */
@@ -317,6 +363,11 @@ const volunteers = await getSortedVolunteers(lang);
         .flex-container img {
             height: 150px;
             width: auto;
+        }
+
+
+        .image-grid {
+            grid-template-columns: 1fr;
         }
 
     }
