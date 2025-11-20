@@ -157,7 +157,7 @@ const volunteers = await getSortedVolunteers(lang);
         <ul class="blog-posts"> {
             pastEvents.map((post) => (
                 <li class="blog-post">
-                    <a href={`/${lang}/pastEvents/${post.slug}/`}>
+                    <a href={`/${lang}/events/${post.slug}/`}>
                         <img class="circular-image" src={post.data.heroImage} alt="" />
                         <h4 class="title m-0">{post.data.title}</h4>
                         <p class="text-md text-[#484647] text-center">
