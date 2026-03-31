@@ -35,8 +35,11 @@ export const text = {
   infoTitle: "Informationsansvarig",
   secretaryTitle: "Sekreterare",
   economyTitle: "Ekonomiansvarig",
+  vicePresidentTitle: "Vice Ordförande",
+  eventTitle: "Eventansvarig",
+  corporateTitle: "Näringslivsansvarig",
 
   boardTitle: "Sök styrelsen!",
-  boardInfo: "Här är de 4 posterna som finns ute att söka just nu! Sök här: ",
+  boardInfo: "Här är de 3 posterna som finns ute att söka just nu! Sök här: ",
   boardNom: "Nominera här",
 };

@@ -36,8 +36,11 @@ export const text = {
   infoTitle: "Head of Communications",
   secretaryTitle: "Secretary",
   economyTitle: "Treasurer",
+  vicePresidentTitle: "Vice President",
+  eventTitle: "Event Manager",
+  corporateTitle: "Head of Corporate Relations",
 
   boardTitle: "Search the board!",
-  boardInfo: "Here are the 4 posts out right now to search the board!",
+  boardInfo: "Here are the 3 posts out right now to search the board!",
   boardNom: "Nominate here",
 };
