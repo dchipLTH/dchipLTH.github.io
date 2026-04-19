@@ -1,12 +1,12 @@
 const president = [
   {
-    name: "Hilma Larsson",
+    name: "Ida Erlandsson",
     position: "Ordförande",
-    class: "C23",
+    class: "D25",
     description:
       "Ordföranden har i uppgift att i samråd med styrelsen utöva ledningen av föreningen, samt att i officiella sammanhang representera föreningen.",
     contact: "d-chipordforande@dsek.se",
-    image: "/images/board/Hilma.jpg", // Add the actual image path
+    image: "/images/board/NoPicture.jpg", // Add the actual image path
   },
 ];
 const teamMembers = [
@@ -29,13 +29,13 @@ const teamMembers = [
     image: "/images/board/Philippa.jpg", // image path
   },
   {
-    name: "Lisa Clevestam",
+    name: "Alice Isaksson",
     position: "Informationsansvarig",
-    class: "C23",
+    class: "D25",
     description:
       "Informationsansvarig har i uppgift att vara ansvarig för föreningens hemsida och sociala medier. Hen ska även ansvara för distributionen av intern information rörande D-Chip.",
     contact: "d-chipinfo@dsek.se",
-    image: "/images/board/Lisa.jpg", // image path
+    image: "/images/board/NoPicture.jpg", // image path
   },
   {
     name: "Diana Al Allaf",
@@ -47,37 +47,37 @@ const teamMembers = [
     image: "/images/board/Diana.jpg", // image path
   },
   {
-    name: "Vivea Upadhyaya",
+    name: "Lilly Andersson",
     position: "Ekonomiansvarig",
     class: "D24",
     description:
       "Ekonomiansvarig har i uppgift att i samråd med styrelsen ha kontroll över föreningens pengar.",
     contact: "d-chipekonomi@dsek.se",
-    image: "/images/board/Vivea.jpg", // image path
+    image: "/images/board/NoPicture.jpg", // image path
   },
   {
-    name: "Maya Frank",
+    name: "Hannah Normén",
     position: "Sekreterare",
     class: "C24",
     description:
       "Sekreteraren har i uppgift att protokollföra alla föreningsmöten och styrelsemöten samt se till att dessa protokoll justeras och offentliggörs på lämpligt sätt.",
     contact: "d-chipsekreterare@dsek.se",
-    image: "/images/board/Maya.jpg", // image path
+    image: "/images/board/NoPicture.jpg", // image path
   },
 ];
 const revisorer = [
   {
-    name: "Kristina Sedelius",
+    name: "Hanna Arendt",
     position: "Revisor",
-    class: "D21",
+    class: "C23",
     description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/NoPicture.jpg", // Add the actual image path
   },
   {
-    name: "Ester Nielsen Gulis",
+    name: "Hilma Larsson",
     position: "Revisor",
-    class: "C22",
+    class: "C23",
     description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/NoPicture.jpg", // Add the actual image path
