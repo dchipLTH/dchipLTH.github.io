@@ -85,23 +85,32 @@ const revisorer = [
 ];
 const valberedning = [
   {
-    name: "Elly Hedin Oleniusson",
+    name: "Ellinor Brorsson",
     position: "Valberedning",
-    class: "D23",
+    class: "C25",
     description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/NoPicture.jpg", // Add the actual image path
   },
   {
-    name: "Emma Lindberg",
+    name: "Maya Frank",
+    position: "Valberedning",
+    class: "C24",
+    description: "A passionate learner and aspiring developer.",
+    contact: "d-chiprevisor@dsek.se",
+    image: "/images/board/NoPicture.jpg", // Add the actual image path
+  },
+  {
+    name: "Diana Al Allaf",
     position: "Valberedning",
     class: "D24",
     description: "A passionate learner and aspiring developer.",
     contact: "d-chiprevisor@dsek.se",
     image: "/images/board/NoPicture.jpg", // Add the actual image path
   },
+
   {
-    name: "Anna Hallin",
+    name: "Lisa Clevestam",
     position: "Valberedning",
     class: "C23",
     description: "A passionate learner and aspiring developer.",
