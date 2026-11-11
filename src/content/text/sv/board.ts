@@ -6,27 +6,27 @@ const president = [
     description:
       "Ordföranden har i uppgift att i samråd med styrelsen utöva ledningen av föreningen, samt att i officiella sammanhang representera föreningen.",
     contact: "d-chipordforande@dsek.se",
-    image: "/images/board/NoPicture.jpg", // Add the actual image path
+    image: "/images/board/Ida.jpg", // Add the actual image path
   },
 ];
 const teamMembers = [
   {
-    name: "Melissa Engberg",
+    name: "Luna Johannsen",
     position: "Vice Ordförande",
-    class: "D21",
+    class: "C25",
     description:
       "Vice ordförande har i uppgift att representera föreningen i ordförandes frånvaro samt utföra de uppgifter, som ligger i föreningens ändamål, vilka delegeras av ordförande.",
     contact: "d-chipvordforande@dsek.se",
-    image: "/images/board/Melissa.jpg", // image path
+    image: "/images/board/Luna.jpg", // image path
   },
   {
-    name: "Philippa Antunes",
+    name: "Ellen Brunsberg",
     position: "Eventansvarig",
-    class: "C23",
+    class: "C25",
     description:
       "Eventansvarig har huvudansvaret för de event som anordnas av föreningen och att handha föreningens säljbara artiklar.",
     contact: "d-chipevent@dsek.se",
-    image: "/images/board/Philippa.jpg", // image path
+    image: "/images/board/Ellen.jpg", // image path
   },
   {
     name: "Alice Isaksson",
@@ -35,16 +35,16 @@ const teamMembers = [
     description:
       "Informationsansvarig har i uppgift att vara ansvarig för föreningens hemsida och sociala medier. Hen ska även ansvara för distributionen av intern information rörande D-Chip.",
     contact: "d-chipinfo@dsek.se",
-    image: "/images/board/NoPicture.jpg", // image path
+    image: "/images/board/Alice.jpg", // image path
   },
   {
-    name: "Diana Al Allaf",
+    name: "Elin Helmerson",
     position: "Näringslivsansvarig",
     class: "D24",
     description:
       "Näringslivsansvarig har i uppgift att förvalta och initiera föreningens företagskontakter.",
     contact: "d-chipnaringsliv@dsek.se",
-    image: "/images/board/Diana.jpg", // image path
+    image: "/images/board/Elin.jpg", // image path
   },
   {
     name: "Lilly Andersson",
@@ -53,7 +53,7 @@ const teamMembers = [
     description:
       "Ekonomiansvarig har i uppgift att i samråd med styrelsen ha kontroll över föreningens pengar.",
     contact: "d-chipekonomi@dsek.se",
-    image: "/images/board/NoPicture.jpg", // image path
+    image: "/images/board/Lilly.jpg", // image path
   },
   {
     name: "Hannah Normén",
@@ -62,7 +62,7 @@ const teamMembers = [
     description:
       "Sekreteraren har i uppgift att protokollföra alla föreningsmöten och styrelsemöten samt se till att dessa protokoll justeras och offentliggörs på lämpligt sätt.",
     contact: "d-chipsekreterare@dsek.se",
-    image: "/images/board/NoPicture.jpg", // image path
+    image: "/images/board/Hannah.jpg", // image path
   },
 ];
 const revisorer = [
@@ -112,8 +112,7 @@ const valberedning = [
 ];
 
 const jubileegroup = [
-  {
-    name: "Anna Hallin",
+  /*  name: "Anna Hallin",
     class: "C23",
   },
   {
@@ -136,6 +135,7 @@ const jubileegroup = [
     name: "Linn Eripe",
     class: "C23",
   },
+  */
 ];
 
 export const board = {

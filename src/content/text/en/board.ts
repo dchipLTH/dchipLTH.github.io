@@ -6,27 +6,27 @@ const president = [
     description:
       "The president is responsible for, in consultation with the board, leading the association, as well as representing the association in official contexts.",
     contact: "d-chipordforande@dsek.se",
-    image: "/images/board/NoPicture.jpg", // Add the actual image path
+    image: "/images/board/Ida.jpg", // Add the actual image path
   },
 ];
 const teamMembers = [
   {
-    name: "Melissa Engberg",
+    name: "Luna Johannsen",
     position: "Vice President",
-    class: "D21",
+    class: "C25",
     description:
       "The vice president is responsible for representing the association in the absence of the president, as well as performing tasks that align with the association's purpose, as delegated by the president.",
     contact: "d-chipvordforande@dsek.se",
-    image: "/images/board/Melissa.jpg", // image path
+    image: "/images/board/Luna.jpg",// image path
   },
   {
-    name: "Philippa Antunes",
+    name: "Ellen Brunsberg",
     position: "Event manager",
-    class: "C23",
+    class: "C25",
     description:
       "The event manager is primarily responsible for the events organized by the association and for managing the association's sellable items.",
     contact: "d-chipevent@dsek.se",
-    image: "/images/board/Philippa.jpg", // image path
+    image: "/images/board/Ellen.jpg", // image path
   },
   {
     name: "Alice Isaksson",
@@ -35,16 +35,16 @@ const teamMembers = [
     description:
       "The Head of Communications is responsible for the association's website and social media. They are also in charge of distributing internal information related to D-Chip.",
     contact: "d-chipinfo@dsek.se",
-    image: "/images/board/NoPicture.jpg", // image path
+    image: "/images/board/Alice.jpg", // image path
   },
   {
-    name: "Diana Al Allaf",
+    name: "Elin Helmerson",
     position: "Head of Corporate Relations",
     class: "D24",
     description:
       "The Head of Corporate Relations is responsible for managing and initiating the association's corporate contacts.",
     contact: "d-chipnaringsliv@dsek.se",
-    image: "/images/board/Diana.jpg", // image path
+    image: "/images/board/Elin.jpg", // image path
   },
   {
     name: "Lilly Andersson",
@@ -53,7 +53,7 @@ const teamMembers = [
     description:
       "The treasurer is responsible for, in consultation with the board, overseeing the association's finances.",
     contact: "d-chipekonomi@dsek.se",
-    image: "/images/board/NoPicture.jpg", // image path
+    image: "/images/board/Lilly.jpg", // image path
   },
   {
     name: "Hannah Normén",
@@ -62,7 +62,7 @@ const teamMembers = [
     description:
       "The secretary is responsible for taking minutes at all association meetings and board meetings, as well as ensuring that the protocols are approved and published in an appropriate manner.",
     contact: "d-chipsekreterare@dsek.se",
-    image: "/images/board/NoPicture.jpg", // image path
+    image: "/images/board/Hannah.jpg", // image path
   },
 ];
 const revisorer = [
@@ -110,7 +110,9 @@ const valberedning = [
   },
 ];
 
+
 const jubileegroup = [
+  /*
   {
     name: "Anna Hallin",
     class: "C23",
@@ -135,7 +137,11 @@ const jubileegroup = [
     name: "Linn Eripe",
     class: "C23",
   },
+  */
 ];
+
+
+
 
 export const board = {
   president,
