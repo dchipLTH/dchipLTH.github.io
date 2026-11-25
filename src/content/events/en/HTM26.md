@@ -8,7 +8,7 @@ heroImage: "/images/event/HTM2026.jpg" # bild, se till att filformatet blir rät
 
 # Om knapp, lägg till texten nedan:
 
-buttonLink: "https://forms.gle/nY8WHdKw2Qt9LF8h7" # länk
+buttonLink: "https://docs.google.com/forms/d/e/1FAIpQLSc-PPIXncXZqgOUi2o2Calv8eNv_xjD6oFbgPtbMuyUVStomw/viewform" # länk
 buttonText: "Register here" # texten på knappen
 ---
 
