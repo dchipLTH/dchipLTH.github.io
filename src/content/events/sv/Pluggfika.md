@@ -1,5 +1,5 @@
 ---
-title: "Study Fika" # obs: kan ej använda specialtecken här!
+title: "Pluggfika" # obs: kan ej använda specialtecken här!
 description: "Study night with D-Chip for women and non-binary students in the D-Section" # jag tror inte denna syns någonstans...?
 date: "2026-10-12" # datum för eventet
 time: "16:00" # tid för eventet
